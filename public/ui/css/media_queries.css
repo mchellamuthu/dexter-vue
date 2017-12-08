@@ -1,0 +1,267 @@
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px) {
+/* STYLES GO HERE */
+	/*.class-settings .dropdown-toggle .class-settings-icon {
+		padding: 1.5rem 4.1rem 0.5rem 0.5rem;
+	}*/
+
+	.class-list .row .col-md-3 {
+		width: 32%;
+	}
+
+	.student-view-container .row .col-md-2 {
+		width: 19.666667%;
+	}
+
+	.group-view-container .row .col-md-2,
+	.group-multiple-select .row .col-md-2 {
+		width: 20.666667%;
+	}
+
+	.student-attendance-container .row .col-md-2,
+	.select-multiple-attendance-container .row .col-md-2 {
+		width: 18.666667%;
+	}
+}
+ 
+/* Smartphones (landscape) ----------- */
+@media only screen
+and (min-width : 321px) {
+/* STYLES GO HERE */
+	/*.class-settings .dropdown-toggle .class-settings-icon {
+		padding: 1.5rem 4.1rem 0.5rem 0.5rem;
+	}*/
+	.class-list .row .col-md-3 {
+		width: 32%;
+	}
+	.student-view-container .row .col-md-2 {
+		width: 19.666667%;
+	}
+	.group-view-container .row .col-md-2,
+	.group-multiple-select .row .col-md-2 {
+		width: 20.666667%;
+	}
+	.student-attendance-container .row .col-md-2,
+	.select-multiple-attendance-container .row .col-md-2 {
+		width: 18.666667%;
+	}
+}
+ 
+/* Smartphones (portrait) ----------- */
+@media only screen
+and (max-width : 320px) {
+/* STYLES GO HERE */
+	/*.class-settings .dropdown-toggle .class-settings-icon {
+		padding: 1.5rem 4.1rem 0.5rem 0.5rem;
+	}*/
+	.class-list .row .col-md-3 {
+		width: 32%;
+	}
+	.student-view-container .row .col-md-2 {
+		width: 19.666667%;
+	}
+	.group-view-container .row .col-md-2,
+	.group-multiple-select .row .col-md-2 {
+		width: 20.666667%;
+	}
+	.student-attendance-container .row .col-md-2,
+	.select-multiple-attendance-container .row .col-md-2 {
+		width: 18.666667%;
+	}
+}
+ 
+/* iPads (portrait and landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px) {
+/* STYLES GO HERE */
+	/*.class-settings .dropdown-toggle .class-settings-icon {
+		padding: 1.5rem 4.1rem 0.5rem 0.5rem;
+	}*/
+	.class-list .row .col-md-3 {
+		width: 32%;
+	}
+	.student-view-container .row .col-md-2 {
+		width: 19.666667%;
+	}
+	.group-view-container .row .col-md-2,
+	.group-multiple-select .row .col-md-2 {
+		width: 20.666667%;
+	}
+	.student-attendance-container .row .col-md-2,
+	.select-multiple-attendance-container .row .col-md-2 {
+		width: 18.666667%;
+	}
+}
+ 
+/* iPads (landscape) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape) {
+/* STYLES GO HERE */
+	/*.class-settings .dropdown-toggle .class-settings-icon {
+		padding: 1.5rem 4.1rem 0.5rem 0.5rem;
+	}*/
+	.class-list .row .col-md-3 {
+		width: 32%;
+	}
+	.student-view-container .row .col-md-2 {
+		width: 19.666667%;
+	}
+	.group-view-container .row .col-md-2,
+	.group-multiple-select .row .col-md-2 {
+		width: 20.666667%;
+	}
+	.student-attendance-container .row .col-md-2,
+	.select-multiple-attendance-container .row .col-md-2 {
+		width: 18.666667%;
+	}
+}
+ 
+/* iPads (portrait) ----------- */
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : portrait) {
+/* STYLES GO HERE */
+	/*.class-settings .dropdown-toggle .class-settings-icon {
+		padding: 1.5rem 4.1rem 0.5rem 0.5rem;
+	}*/
+	.class-list .row .col-md-3 {
+		width: 32%;
+	}
+	.student-view-container .row .col-md-2 {
+		width: 19.666667%;
+	}
+	.group-view-container .row .col-md-2,
+	.group-multiple-select .row .col-md-2 {
+		width: 20.666667%;
+	}
+	.student-attendance-container .row .col-md-2,
+	.select-multiple-attendance-container .row .col-md-2 {
+		width: 18.666667%;
+	}
+}
+ 
+/* Desktops and laptops ----------- */
+@media only screen
+and (min-width : 1224px) {
+/* STYLES GO HERE */
+	/*.class-settings .dropdown-toggle .class-settings-icon {
+		padding: 1.5rem 9.1rem 0.5rem 0.5rem;
+	}*/
+	.class-list .row .col-md-3 {
+		width: 25%;
+	}
+	.student-view-container .row .col-md-2 {
+		width: 16.666667%;
+	}
+	.group-view-container .row .col-md-2,
+	.group-multiple-select .row .col-md-2 {
+		width: 16.666667%;
+	}
+	.student-attendance-container .row .col-md-2,
+	.select-multiple-attendance-container .row .col-md-2 {
+		width: 16.666667%;
+	}
+}
+ 
+/* Large screens ----------- */
+@media only screen
+and (min-width : 1824px) {
+/* STYLES GO HERE */
+	/*.class-settings .dropdown-toggle .class-settings-icon {
+		padding: 1.5rem 4.1rem 0.5rem 0.5rem;
+	}*/
+	.class-list .row .col-md-3 {
+		width: 32%;
+	}
+	.student-view-container .row .col-md-2 {
+		width: 19.666667%;
+	}
+	.group-view-container .row .col-md-2,
+	.group-multiple-select .row .col-md-2 {
+		width: 20.666667%;
+	}
+	.student-attendance-container .row .col-md-2,
+	.select-multiple-attendance-container .row .col-md-2 {
+		width: 18.666667%;
+	}
+}
+ 
+/* iPhone 5 (portrait &amp; landscape)----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px) {
+/* STYLES GO HERE */
+	/*.class-settings .dropdown-toggle .class-settings-icon {
+		padding: 1.5rem 4.1rem 0.5rem 0.5rem;
+	}*/
+	.class-list .row .col-md-3 {
+		width: 32%;
+	}
+	.student-view-container .row .col-md-2 {
+		width: 19.666667%;
+	}
+	.group-view-container .row .col-md-2,
+	.group-multiple-select .row .col-md-2 {
+		width: 20.666667%;
+	}
+	.student-attendance-container .row .col-md-2,
+	.select-multiple-attendance-container .row .col-md-2 {
+		width: 18.666667%;
+	}
+}
+ 
+/* iPhone 5 (landscape)----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : landscape) {
+/* STYLES GO HERE */
+	/*.class-settings .dropdown-toggle .class-settings-icon {
+		padding: 1.5rem 4.1rem 0.5rem 0.5rem;
+	}*/
+	.class-list .row .col-md-3 {
+		width: 32%;
+	}
+	.student-view-container .row .col-md-2 {
+		width: 19.666667%;
+	}
+	.group-view-container .row .col-md-2,
+	.group-multiple-select .row .col-md-2 {
+		width: 20.666667%;
+	}
+	.student-attendance-container .row .col-md-2,
+	.select-multiple-attendance-container .row .col-md-2 {
+		width: 18.666667%;
+	}
+}
+ 
+/* iPhone 5 (portrait)----------- */
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : portrait) {
+/* STYLES GO HERE */
+	/*.class-settings .dropdown-toggle .class-settings-icon {
+		padding: 1.5rem 4.1rem 0.5rem 0.5rem;
+	}*/
+	.class-list .row .col-md-3 {
+		width: 32%;
+	}
+	.student-view-container .row .col-md-2 {
+		width: 19.666667%;
+	}
+	.group-view-container .row .col-md-2,
+	.group-multiple-select .row .col-md-2 {
+		width: 20.666667%;
+	}
+	.student-attendance-container .row .col-md-2,
+	.select-multiple-attendance-container .row .col-md-2 {
+		width: 18.666667%;
+	}
+}

@@ -1,0 +1,263 @@
+body {
+    background-color: rgb(245, 245, 243);
+}
+
+/*Student - Group - button - studentview - START*/
+.multiple-attendance-btn-group #student-btn {
+    background-color: rgb(0, 174, 239); 
+    border: 1px solid rgb(0, 174, 239); /* Green border */
+    color: white; /* White text */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+.multiple-attendance-btn-group #group-btn,
+.multiple-attendance-btn-group #view-report-button {
+    border-color: rgb(0, 174, 239); 
+    background-color: white; 
+    color: rgb(0, 174, 239); 
+    float: left;
+}
+
+#student-btn,
+#group-btn,
+#view-report-button {
+    width: 16rem;
+    height: 4rem;
+}
+
+.multiple-attendance-btn-group #student-btn > img {
+	width: 25px;
+}
+
+.multiple-attendance-btn-group #group-btn > img {
+	width: 30px;
+}
+/*Student - Group - button - studentview - END*/
+
+.attendance_block_layer {
+    background-color: white;
+    border-radius: 5px;
+    display: inline-block;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px;
+    user-select: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.2rem;
+    position: relative;
+    height: 8rem;
+    width: 16rem;
+    margin: 1rem 1.5rem;
+}
+
+.attendance_block_layer > img {
+    position: absolute;
+    height: 5rem;
+    top: 0.5rem;
+    left: 0px;
+    margin: 1rem;
+}
+
+.attendance_outdoor_layer,
+.group_attendance_outdoor_layer {
+    position: absolute;
+    top: -2rem;
+    right: -1rem;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    text-align: right;
+}
+
+.attendance_inner,
+.group_attendance_inner {
+    display: inline-block;
+    border: 3px solid white;
+    border-radius: 15rem;
+    color: white;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 3px 0px;
+    font-weight: 600;
+    min-width: 4rem;
+    font-size: 2rem;
+    background-color: rgb(218, 218, 218);
+}
+
+.attendance_inner>img,
+.group_attendance_inner>img {
+    width: 34px;
+    height: 34px;
+}
+
+.attendance_title {
+    position: absolute;
+    width: 7.5rem;
+    height: 6rem;
+    top: 0px;
+    right: 0px;
+    margin: 2rem 0.5rem 2rem 2rem;
+    font-size: 1.8rem;
+    text-align: left;
+}
+
+.select-all-stud {
+    text-align: left;
+    font-weight: 600;
+    color: rgb(0, 174, 239);
+    padding: 20px;
+}
+
+.select-all-stud a:hover {
+    text-decoration: none;
+}
+
+.selected-stud-count {
+    padding-top: 16px;
+}
+
+.select-all-stud a {
+    cursor: pointer;
+}
+
+.feedback-btn {
+    border: 1px solid rgb(218, 218, 218);
+    background-color: rgb(218, 218, 218);
+    color: white;
+    border-radius: 200px;
+    outline: none;
+    padding: 0.9rem 3.2rem;
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+
+/*.group_attendance_block_layer > img {
+    position: absolute;
+    height: 5rem;
+    top: 0.5rem;
+    left: 70px;
+    margin: 1rem;
+}*/
+
+.group-attendance-image {
+    position: absolute; 
+    width: 100%; 
+    text-align: center; 
+    top: 20px;
+}
+
+.group-student-image-outer {
+    height: 6rem; 
+    width: 5rem; 
+    display: inline-block; 
+    position: relative; 
+    margin: 0px 5px;
+}
+
+.group-student-image-background {
+    background-repeat: no-repeat; 
+    background-size: contain; 
+    background-position: center center; 
+    min-height: 100%; 
+    min-width: 100%;
+}
+
+.group-student-image-outer > img {
+    opacity: 0; 
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    top: 0px; 
+    left: 0px;
+}
+
+
+.group_attendance_block_layer {
+    background-color: white;
+    border-radius: 5px;
+    display: inline-block;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px;
+    user-select: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.2rem;
+    position: relative;
+    height: 13rem;
+    width: 23rem;
+    margin-top: 3rem;
+}
+
+.group_attendance_title {
+    position: absolute;
+    height: 6rem;
+    top: 67px;
+    left: 50px;
+    right: 0px;
+    margin: 2rem 0.5rem 2rem 2rem;
+    font-size: 1.8rem;
+    text-align: left;
+}
+
+.selecting-students-mobile {
+    margin: 2rem 2rem 0rem 2rem;
+}
+
+.selecting-students-mobile .btn {
+    background-color: white;
+    color: rgb(51, 190, 242);
+}
+
+#multiple-attendance-footer {
+    position:fixed;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    margin-bottom:0px;
+    background-color: white; 
+    padding: 1rem 10rem 1rem 1rem;
+}
+
+.select-multiple-attendance-container {
+    margin-top: 10rem; 
+    margin-bottom: 90px; 
+    text-align: center;
+}
+
+#select-multiple-whole-class,
+#select-multiple-add-new-student {
+    opacity: 0.5;
+    cursor: default;
+}
+
+#select-multiple-add-new-student > img {
+    position: absolute; 
+    height: 5rem; 
+    top: 0.5rem; 
+    left: 37px; 
+    margin: 1rem; 
+    padding: 11px;
+}
+
+.select-multiple-footer {
+    background-color: white;
+}
+
+#select-multiple-navbar-collapse .navbar-right,
+#select-multiple-group-navbar-collapse .navbar-right {
+    padding-top: 10px;
+}
+
+#select-multiple-navbar-collapse .navbar-right .cancel-btn,
+#select-multiple-group-navbar-collapse .navbar-right .cancel-btn {
+    background: white; 
+    color: rgb(163, 163, 163); 
+    border: none; 
+    user-select: none;
+}
+
+/*multiple - select - group - START*/
+.group-multiple-select {
+    margin-top: 10rem; 
+    margin-bottom: 90px; 
+    text-align: center;
+}
+/*multiple - select - group - END*/

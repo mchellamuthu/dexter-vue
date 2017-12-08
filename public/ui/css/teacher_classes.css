@@ -1,0 +1,219 @@
+body {
+	background-color: rgb(245, 245, 243);
+}
+
+/*Teacher profile details - START*/
+.profile-background {
+	background: url(http://p1.pichost.me/i/66/1910819.jpg) no-repeat center center; 
+	background-size: cover; 
+	height: 22rem; 
+	background-color: #060; 
+	color: #fff; 
+	text-align: center; 
+	text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+/*.profile-background-responsive {
+	background: url(http://p1.pichost.me/i/66/1910819.jpg) no-repeat center center; 
+	background-size: cover; 
+	background-color: #060; 
+	color: #fff; 
+	text-align: center; 
+	text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}*/
+
+.add-photo-section {
+	display: inline-block; 
+	text-align: center; 
+	max-width: 8rem; 
+	padding-top: 39px;
+	color: black;
+}
+
+.user-name {
+	max-width: 30rem; 
+	color: white; 
+	font-size: 1.8rem; 
+	margin-bottom: 1rem; 
+	font-weight: 600; 
+	white-space: nowrap; 
+	overflow: hidden; 
+	text-overflow: ellipsis; 
+	padding-top: 7rem;
+}
+
+/*.school-detail-content-responsive .user-name-responsive {
+	max-width: 30rem; 
+	color: white; 
+	font-size: 1.8rem; 
+	margin-bottom: 1rem; 
+	font-weight: 600; 
+	white-space: nowrap; 
+	overflow: hidden; 
+	text-overflow: ellipsis; 
+	padding-top: 1rem;
+}*/
+
+.add-profile-photo,
+.add-profile-picture {
+    position: relative; 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: 50% 50%; 
+    border-radius: 50%; 
+    background-color: rgb(218, 218, 218); 
+    width: 11.6rem; 
+    height: 11.6rem; 
+    background-image: url(https://teach-static.classdojo.com/36e5601dbcb095383dec6c18a40401b4.png); 
+    cursor: pointer;
+    margin-top: 50px;
+}
+
+.add-profile-picture {
+	display: none;
+}
+
+.school-detail-content {
+	text-align: left;
+}
+
+.school-name {
+	color: white;
+	margin-bottom: 1rem;
+}
+
+.pd-resource-btn {
+    background-color: rgb(0, 174, 239);
+    border-radius: 6rem;
+    border: 1px solid rgb(0, 174, 239);
+    color: white;
+    width: 16rem;
+    height: 4rem;
+}
+
+/*.pd-resource-responsive-btn {
+	background-color: rgb(0, 174, 239);
+    border-radius: 6rem;
+    border: 1px solid rgb(0, 174, 239);
+    color: white;
+    height: 4rem;
+}*/
+
+.pd-resource-btn:hover
+/*.pd-resource-responsive-btn:hover*/ {
+    background-color: rgb(0, 174, 239);
+    border-radius: 6rem;
+    border: 1px solid rgb(0, 174, 239);
+    color: white;
+}
+/*Teacher profile details - END*/
+
+/*Class list block - START */
+.class-block {
+	vertical-align: top; 
+	display: inline-block; 
+	margin: 5rem 0rem;
+}
+
+.class-block a {
+	cursor: pointer; 
+	text-decoration: none;
+}
+
+.class-image-content {
+	position: relative; 
+	background-color: white; 
+	border-radius: 6px; 
+	box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px; 
+	padding: 2rem; 
+	width: 22rem; 
+	min-height: 22rem;
+}
+
+.class-image-content img {
+	display: block; 
+	margin: 0 auto;
+	width: 9.4rem; 
+	height: 9.4rem; 
+	border-radius: 50%;
+}
+
+.class-image-content #class-name {
+	font-size: 1.6rem; 
+	font-weight: 600; 
+	margin-top: 2rem; 
+	color: rgb(54, 54, 54); 
+	text-align: center; 
+	width: 100%; 
+	overflow: hidden; 
+	white-space: nowrap; 
+	text-overflow: ellipsis;
+}
+
+.class-image-content #no-of-students {
+	font-size: 1.4rem; 
+	margin-top: 1rem; 
+	color: rgb(140, 140, 140);
+	text-align: center; 
+	width: 100%; 
+	overflow: hidden; 
+	white-space: nowrap; 
+	text-overflow: ellipsis;
+}
+
+.class-settings {
+	position: absolute; 
+	top: 5rem; 
+	right: 2rem;
+}
+
+.class-settings .dropdown-toggle {
+	position: relative; 
+	display: inline-block; 
+	cursor: pointer;
+}
+
+.class-settings .dropdown-toggle .class-settings-icon {
+	color: rgb(140, 140, 140); 
+	cursor: pointer; 
+	padding: 1.5rem 1.1rem 0.5rem 0.5rem; 
+	opacity: 0.6;
+}
+
+.class-image-content > img {
+	display: block; 
+	margin: 2rem auto;
+}
+
+.get-started-text {
+	font-size: 15px;
+}
+/*Class list block - END*/
+
+/*Demo list - START*/
+#dexter-demo > a {
+	text-decoration: none;
+}
+
+.getting-started-title {
+	font-size: -0.2rem; 
+	font-weight: 600; 
+	margin-bottom: 1rem; 
+	color: black;
+}
+
+.getting-started-sub-text {
+	font-size: 10px; 
+	font-weight: 200; 
+	color: black;
+}
+
+.getting-started-content {
+    margin: 37px 4px;
+    position: relative; 
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px; 
+    padding: 2rem 1rem;
+}
+/*Demo list - END*/

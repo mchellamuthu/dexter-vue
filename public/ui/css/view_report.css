@@ -1,0 +1,584 @@
+body {
+    background-color: rgb(245, 245, 243);
+}
+
+/*View-report-btn - START*/
+.view-report-btn-group #view-report-button {
+    background-color: rgb(0, 174, 239); 
+    border: 1px solid rgb(0, 174, 239); /* Green border */
+    color: white; /* White text */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+.view-report-btn-group #student-btn,
+.view-report-btn-group #group-btn {
+    border-color: rgb(0, 174, 239); 
+    background-color: white; 
+    color: rgb(0, 174, 239); 
+    float: left;
+}
+
+#student-btn,
+#group-btn,
+#view-report-button {
+    width: 16rem;
+    height: 4rem;
+}
+
+.view-report-btn-group #student-btn > img {
+  width: 25px;
+}
+
+.view-report-btn-group #group-btn > img {
+  width: 30px;
+}
+/*View-report-btn - END */
+
+/*view report tab - left menu - start*/
+#view-report-tab {
+    background-color: white; 
+    border-radius: 5px; 
+    border: 1px solid rgb(218, 218, 218); 
+    margin-top: 4rem; 
+    margin-bottom: 90px;
+}
+
+.view-report-left-menu {
+    border-right: 1px solid rgb(218, 218, 218); 
+    height: 50rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.view-report-menu {
+    border-bottom: 1px solid rgb(218, 218, 218); 
+    padding: 0px 1.5rem 0px 1rem; 
+    height: 10px; 
+    font-size: 1.2rem; 
+    display: block; 
+    background-color: rgb(245, 245, 243); 
+    cursor: pointer; 
+    min-height: 2.5rem; 
+    line-height: 2.5rem; 
+    font-weight: 600; 
+    color: rgb(140, 140, 140); 
+    margin: 0px -15px;
+}
+
+#connect-stud-and-parents > li > a {
+    margin: 0px -16px; 
+    padding-top: 0px; 
+    border-bottom: 1px solid rgb(218, 218, 218);
+}
+
+#connect-stud-and-parents > li.active > a {
+    background-color: rgb(230, 246, 253);
+}
+
+#connect-stud-and-parents > li > a .account-icon {
+    padding-top: 10px;
+}
+
+#connect-stud-and-parents > li > a .account-name {
+    padding-top: 6px;
+}
+
+#connect-stud-and-parents > li > a .student-name {
+    padding-top: 13px;
+}
+
+.account-progress-bar {
+    overflow: hidden; 
+    border-radius: 1.3rem; 
+    height: 1.3rem; 
+    margin-top: -7px;
+}
+
+.account-progress-bar-outer-layer {
+    height: 1.3rem; 
+    background: rgb(218, 218, 218); 
+    line-height: 1.3rem; 
+    border-radius: 1.3rem; 
+}
+
+.account-progress-bar-inner-layer {
+    background: rgb(41, 199, 255); 
+    border-radius: 1.3rem; 
+    float: left; 
+    width: 0%; 
+    position: relative; 
+    top: -0.1rem; 
+    left: -0.1rem; 
+    height: 1.5rem; 
+    line-height: 1.3rem; 
+    transition: width 0.6s ease;
+}
+
+#student-content {
+    border-bottom: 1px solid rgb(218, 218, 218); 
+    padding: 0px 1.5rem 0px 1rem; 
+    height: 10px; 
+    font-size: 1.2rem; 
+    display: block; 
+    background-color: rgb(245, 245, 243); 
+    cursor: pointer; 
+    min-height: 2.5rem; 
+    line-height: 2.5rem; 
+    font-weight: 600; 
+    color: rgb(140, 140, 140); 
+    margin: 0px -15px;
+}
+
+.student-name-sorting {
+    float: right; 
+    margin-top: -35px;
+}
+
+.student-name-sorting > a {
+    user-select: none; 
+    cursor: pointer; 
+    font-weight: 400; 
+    display: inline-block; 
+    outline: none; 
+    border: none rgb(0, 174, 239); 
+    text-decoration: none; 
+    color: rgb(140, 140, 140);
+}
+
+.student-name-sorting > a > ul {
+    border-radius: 8px; 
+    margin: -16rem 7rem;
+}
+/*view report tab - left menu - end*/
+
+/*view report tab - main content - start*/
+.parent-account-header-content,
+.student-account-header-content,
+.class-student-header-content {
+    height: 78px; 
+    margin: 0px -15px; 
+    padding: 2rem;
+    border-bottom: 1px solid rgb(218, 218, 218);
+}
+
+.parent-account-header-content > a,
+.student-account-header-content > a {
+    text-align: center; 
+    margin-left: 70px;
+}
+
+.parent-account-main-content,
+.student-account-main-content {
+    background-color: rgb(230, 246, 253); 
+    border: 1px solid rgb(0, 174, 239); 
+    padding: 2rem 2rem; 
+    border-radius: 5px; 
+    margin-top: 20px;
+    text-align: center;
+}
+
+.parent-account-main-content .btn,
+.student-account-main-content .btn {
+    width: 302px; 
+    margin: 20px 19px; 
+    background-color: rgb(51, 190, 242) !important; 
+    border-color: rgb(51, 190, 242) !important;
+}
+
+.parent-account-main-content > img {
+    margin-right: 10px; 
+    width: 16px;
+}
+
+.parent-account-main-content a {
+    color: rgb(0, 174, 239);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#student-list {
+    border: 1px solid rgb(218, 218, 218);
+    border-radius: 5px 5px 0px 0px; 
+    margin-top: 20px; 
+    background-color: #eee; 
+    margin-bottom: 20px;
+}
+
+#student-list .student-list-content {
+    padding: 1rem; 
+    border-bottom: 1px solid rgb(218, 218, 218);
+}
+
+#student-list .student-list-content > span {
+    padding-left: 20px;
+}
+
+#student-list .student-list-content > a {
+    float: right;
+    text-decoration: none;
+    font-weight: 600;
+    color: rgb(0, 174, 239);
+}
+
+.parents-connected {
+    text-align: center;
+    padding-top: 12px;
+}
+
+.class-student-header-content > img {
+    width: 5rem; 
+    height: 5rem;
+}
+
+#donut-btn {
+    background-color: rgb(0, 174, 239); 
+    border-color: rgb(0, 174, 239); 
+    color: white; width: 90px;
+}
+
+#attendance-btn {
+    margin-left: -9px; 
+    border-color: rgb(0, 174, 239); 
+    background-color: white; 
+    color: rgb(0, 174, 239);
+}
+
+#doNut {
+    padding-top: 20px;
+}
+
+#doNut .btn-group > a {
+    user-select: none; 
+    cursor: pointer; 
+    font-weight: 400; 
+    display: inline-block; 
+    outline: none; 
+    border: none rgb(0, 174, 239); 
+    text-decoration: none; 
+    color: rgb(0, 174, 239);
+}
+
+.view-spreadsheet {
+    user-select: none; 
+    cursor: pointer; 
+    font-weight: 400; 
+    display: inline-block; 
+    outline: none; 
+    border: none rgb(0, 174, 239); 
+    text-decoration: none; 
+    color: rgb(0, 174, 239); 
+    padding-left: 30rem;
+}
+
+.print-view {
+    padding-left: 7rem;
+}
+
+.points-to-date-range {
+    text-align: center; 
+    color: rgb(218, 218, 218); 
+    padding-top: 20px;
+}
+
+#doNut .chart-image > img {
+    width: 100%; 
+    max-width: 45rem; 
+    margin: auto;
+}
+
+.class-student-header-content .donut-attendance-btn {
+    position: absolute; 
+    right: 2rem;
+}
+
+.attendance-table-content {
+    width: 100%; 
+    margin-top: 4%; 
+    table-layout: fixed; 
+    border-spacing: 12px 0px; 
+    border-collapse: separate; 
+    height: 210px;
+}
+
+.attendance-table-content > tr > td > span {
+    color: rgb(140, 140, 140); 
+    margin-bottom: 0px;
+}
+
+#every-day-attendance {
+    height: 100%;
+}
+
+#every-day-attendance > td {
+    padding: 0px; 
+    height: 100%; 
+    vertical-align: top; 
+    min-height: 210px; 
+    cursor: pointer; 
+    margin-top: 3%; 
+    border: 1px solid rgb(218, 218, 218); 
+    border-radius: 0.5rem; 
+    background-image: initial; 
+    background-position: initial; 
+    background-size: initial; 
+    background-repeat: initial; 
+    background-attachment: initial; 
+    background-origin: initial; 
+    background-clip: initial; 
+    text-transform: none;
+}
+
+#every-day-attendance > td .icon-content {
+    background-color: rgb(245, 245, 245); 
+    padding-top: 5px; 
+    height: 40px; 
+    border-bottom: 1px solid rgb(218, 218, 218); 
+    text-align: center;
+}
+
+#every-day-attendance > td .icon-content > span {
+    color: white; 
+    font-size: 3rem;
+}
+
+#every-day-attendance > td .attendance-percent-content {
+    text-align: center; 
+    height: 100%; 
+    padding: 10% 3% 5%;
+}
+
+.student-name-sorting .dropdown-menu {
+    margin-top: -34rem;
+    margin-left: 6rem;
+    border-radius: 0.5rem;
+}
+
+/*view report tab - main content - end*/
+
+/*connection-chart-layer - START*/
+$bg: teal;
+$meter-size: 2rem;
+.connection-chart-layer {
+  width: 90%;
+  height: 90vh;
+  margin: 5vh auto 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circular-progress {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  overflow: hidden;
+  // background-color: $bg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.circular-progress .meter {
+    width: 9rem;
+    height: 9rem;
+    display: flex;
+    padding: 5rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.connection-percent {
+    font-size: 2rem; 
+    color: rgb(0, 174, 239);
+}
+
+.connection-text {
+    font-size: 1rem; 
+    color: rgb(140, 140, 140);
+}
+/*connection-chart-layer - END*/
+
+/*Week attendance - START*/
+.week-attendance-btn-group {
+    padding-top: 20px;
+}
+
+.week-attendance-btn-group #week-selection-prev-btn,
+.week-attendance-btn-group #week-name {
+    background-color: white;
+    border-color: rgb(0, 174, 239);
+    color: rgb(0, 174, 239);
+}
+
+.week-attendance-btn-group #week-selection-next-btn {
+    background-color: white;
+    border-color: rgb(218, 218, 218);
+    color: rgb(218, 218, 218);
+}
+
+.attendance-table-content {
+    width: 100%; 
+    margin-top: 4%; 
+    table-layout: fixed; 
+    border-spacing: 12px 0px; 
+    border-collapse: separate; 
+    height: 210px;
+}
+
+.attendance-table-content > tr > td > span {
+    color: rgb(140, 140, 140); 
+    margin-bottom: 0px;
+}
+
+#every-day-attendance {
+    height: 100%;
+}
+
+#every-day-attendance > td {
+    padding: 0px; 
+    height: 100%; 
+    vertical-align: top; 
+    min-height: 210px; 
+    cursor: pointer; 
+    margin-top: 3%; 
+    border: 1px solid rgb(218, 218, 218); 
+    border-radius: 0.5rem; 
+    background-image: initial; 
+    background-position: initial; 
+    background-size: initial; 
+    background-repeat: initial; 
+    background-attachment: initial; 
+    background-origin: initial; 
+    background-clip: initial; 
+    text-transform: none;
+}
+
+#every-day-attendance > td .icon-content {
+    background-color: rgb(245, 245, 245); 
+    padding-top: 5px; 
+    height: 40px; 
+    border-bottom: 1px solid rgb(218, 218, 218); 
+    text-align: center;
+}
+
+#every-day-attendance > td .icon-content > span {
+    color: white; 
+    font-size: 3rem;
+}
+
+#every-day-attendance > td .attendance-percent-content {
+    text-align: center; 
+    height: 100%; 
+    padding: 10% 3% 5%;
+}
+
+#monday-future-date, #tuesday-future-date, #wednesday-future-date, #thursday-future-date,
+#friday-future-date, #saturday-future-date, #sunday-future-date {
+  background-color: rgb(218, 218, 218);
+  padding: 0px; 
+    height: 100%; 
+    vertical-align: top; 
+    min-height: 210px; 
+    cursor: pointer; 
+    margin-top: 3%; 
+    border: 1px solid rgb(218, 218, 218); 
+    border-radius: 0.5rem; 
+    background-image: initial; 
+    background-position: initial; 
+    background-size: initial; 
+    background-repeat: initial; 
+    background-attachment: initial; 
+    background-origin: initial; 
+    background-clip: initial; 
+    text-transform: none;
+}
+
+.attendance-percent-content .everyday-attendance-details {
+  display: none;
+}
+
+.absent-on-monday {
+  color: red;
+  display: none;
+}
+
+.late-on-monday, .late-early-on-monday {
+  color: rgb(253, 193, 49);
+  display: none;
+}
+
+#select-absent{
+  color: red;
+}
+
+#select-late, #select-late-early {
+  color: rgb(253, 193, 49);
+}
+
+#select-present {
+  color: green;
+}
+
+.attendance-record-modal-body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0px;
+  max-height: 20rem;
+}
+
+.record-date {
+  padding: 1rem;
+  text-align: center;
+  background-color: rgb(218, 218, 218);
+}
+
+.record-date .btn {
+    border: 1px solid rgb(145, 210, 80);
+    background-color: rgb(145, 210, 80);
+    font-weight: 600;
+    border-radius: 5rem;
+    padding: 1rem 2rem;
+}
+
+.attendance-recorded-students > li {
+  background-color: white;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  list-style-type: none;
+}
+
+.attendance-recorded-students > li > img {
+  width: 5%;
+}
+
+.attendance-recorded-students > li > span {
+  padding-left: 10%;
+}
+
+.attendance-recorded-students .status-dropdown,
+.attendance-recorded-students .student-status {
+  float: right;
+}
+
+.modal-footer .btn {
+  background-color: rgb(51, 190, 242) !important;
+  border: rgb(51, 190, 242) !important;
+  color: white !important;
+  border-radius: 5rem;
+  padding: 1rem 2rem;
+}
+
+.selectpicker {
+  cursor: pointer;
+  border: hidden;
+  outline: none;
+}
+
+.selectpicker option {
+  padding: 2rem !important;
+}
+
+/*Week attendance - END*/

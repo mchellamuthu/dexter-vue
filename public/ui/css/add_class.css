@@ -1,0 +1,447 @@
+body {
+    background-color: rgb(62, 66, 93);
+}
+
+#add-class ul,
+#add-student ul,
+#done_adding_student ul,
+#send_invites ul {
+	padding-left: 0px; 
+	margin: 1.5rem;
+}
+
+#add-class ul .class-point,
+#add-student ul .students-point,
+#done_adding_student ul .invite-point,
+#send_invites ul .invite-point {
+	display: inline-block; 
+	width: 35%; 
+	text-align: center; 
+	color: rgb(255, 255, 255); 
+	font-weight: 600;
+}
+
+#add-school ul .class-point,
+#add-school ul .students-point,
+#add-school ul .invite-point,
+#add-class ul .students-point,
+#add-class ul .invite-point,
+#add-student ul .class-point,
+#add-student ul .invite-point,
+#done_adding_student ul .class-point,
+#done_adding_student ul .students-point,
+#send_invites ul .class-point {
+	display: inline-block; 
+	width: 25%; 
+	text-align: center; 
+	color: rgb(154, 161, 178);
+}
+
+.add-class-timeline,
+.add-student-timeline,
+.done-add-student-timeline {
+    background: rgba(0, 0, 0, 0.5); 
+    border-radius: 5px; 
+    height: 3px; 
+    position: relative;
+}
+
+.add-class-timeline .add-class-timeline-outer-fill-layer {
+    position: absolute; 
+    top: 0px; 
+    height: 3px; 
+    background: rgb(122, 191, 11); 
+    width: 19.5%; 
+    border-radius: 5px;
+}
+
+.add-student-timeline .add-student-timeline-outer-fill-layer {
+    position: absolute; 
+    top: 0px; 
+    height: 3px; 
+    background: rgb(122, 191, 11); 
+    width: 43.5%; 
+    border-radius: 5px;
+}
+
+.done-add-student-timeline .done-add-student-timeline-outer-fill-layer {
+    position: absolute; 
+    top: 0px; 
+    height: 3px; 
+    background: rgb(122, 191, 11); 
+    width: 68.5%; 
+    border-radius: 5px;
+}
+
+.add-class-timeline .add-class-timeline-outer-point {
+    position: absolute; 
+    top: 0px; 
+    left: 19.5%; 
+    width: 8px; 
+    height: 8px; 
+    margin-left: -4px; 
+    margin-top: -2.5px; 
+    border-radius: 100%; 
+    background: rgb(255, 255, 255);
+}
+
+.add-student-timeline .add-student-timeline-outer-point {
+    position: absolute; 
+    top: 0px; 
+    left: 43.5%; 
+    width: 8px; 
+    height: 8px; 
+    margin-left: -4px; 
+    margin-top: -2.5px; 
+    border-radius: 100%; 
+    background: rgb(255, 255, 255);
+}
+
+.done-add-student-timeline .done-add-student-timeline-outer-point {
+    position: absolute; 
+    top: 0px; 
+    left: 68.5%; 
+    width: 8px; 
+    height: 8px; 
+    margin-left: -4px; 
+    margin-top: -2.5px; 
+    border-radius: 100%; 
+    background: rgb(255, 255, 255);
+}
+
+.add-class-modal,
+.add-student-modal,
+.done-add-student-modal {
+    margin-top: 2rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    margin-bottom: 10rem;
+}
+
+.add-class-modal-header,
+.add-class-modal-body,
+.add-student-modal-header,
+.add-student-modal-body,
+.done-add-student-modal-header,
+.done-add-student-modal-body {
+    border-bottom: 1px solid #e5e5e5;
+    padding: 18px;
+}
+
+.add-class-modal-body .row .dropdown .btn > span {
+    bottom: 0.3rem; 
+    right: 4.1rem; 
+    left: 10rem;
+    position: absolute; 
+    width: 0px; 
+    height: 0px; 
+    border-width: 0.4rem; 
+    border-style: solid; 
+    border-color: rgb(140, 140, 140) transparent transparent; 
+    border-image: initial;
+}
+
+.add-class-modal-body .row .dropdown .dropdown-menu {
+    overflow-y: auto; 
+    overflow-x: hidden;
+    border-radius: 5px; 
+    z-index: 120;
+    max-height: 23.88rem;
+}
+
+.add-class-modal-body .form-horizontal label {
+    font-size: 12px;
+}
+
+.schools-list {
+    border: 1px solid rgb(218, 218, 218);
+    height: 20rem;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.add-student-modal-body-list {
+    background-color: rgb(245, 245, 245);
+    border-bottom: 1px solid #e5e5e5;
+    min-height: 15rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 120;
+    height: 23rem;
+}
+
+.add-class-modal-footer,
+.add-student-modal-footer,
+.done-add-student-modal-footer {
+    padding: 10px;
+    text-align: right;
+}
+
+
+.add-class-modal-footer > a,
+.add-student-modal-footer > a,
+.done-add-student-modal-footer > a {
+    user-select: none; 
+    cursor: pointer; 
+    font-weight: 600; 
+    display: inline-block; 
+    outline: none; 
+    border: none rgb(0, 174, 239); 
+    color: rgb(0, 174, 239); 
+    margin-right: 2rem;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.school-name {
+    color: rgb(0, 174, 239);
+    font-weight: 600;
+}
+
+.cant-find-institute {
+	padding: 1rem; 
+	border: 1px solid rgb(218, 218, 218); 
+	text-align: right; 
+	display: none;
+}
+
+.add-class-form {
+    margin-top: 2rem;
+}
+
+#dropdown-image-add-class > li .row .class-icons > a > img {
+	width: 5.6rem; 
+	height: 5.6rem;
+}
+
+#dropdown-image-add-class {
+	width: 40rem;
+	left: -12rem !important;
+}
+
+.class-icons {
+	padding: 6px 12px;
+}
+
+.add-class-modal-footer,
+.add-student-modal-footer,
+.done-add-student-modal-footer {
+    padding: 10px;
+    text-align: right;
+}
+
+
+.add-class-modal-footer > a,
+.add-student-modal-footer > a,
+.done-add-student-modal-footer > a {
+    user-select: none; 
+    cursor: pointer; 
+    font-weight: 600; 
+    display: inline-block; 
+    outline: none; 
+    border: none rgb(0, 174, 239); 
+    color: rgb(0, 174, 239); 
+    margin-right: 2rem;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.add-class-modal-footer .btn,
+.add-student-modal-footer .btn,
+.done-add-student-modal-footer .btn {
+    color: white;
+    font-weight: 600; 
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+}
+
+.add-student-modal-header a {
+	text-decoration: none; 
+	color: rgb(51, 190, 242);
+}
+
+.add-student-modal-header span {
+	float: right;
+}
+
+.input-error-msg, 
+.email-error-msg,
+.full-name-error-msg,
+.valid-email-error-msg {
+    color: rgb(242, 92, 84);
+    display: none;
+    padding: 0rem 2rem;
+}
+
+.add-student-modal-body input.invalid{
+    border: 2px solid rgb(242, 92, 84);
+}
+
+#first_and_last_name_input input,
+#roll_no_input input,
+#mobile_no_input input,
+#email_id_input input {
+    margin-top: 1rem;
+}
+
+.students-not-added-yet {
+	text-align: center; 
+	padding: 10rem;
+}
+
+#number-of-students {
+	background-color: white; 
+	padding: 1rem; 
+	border-bottom: 1px solid rgb(218, 218, 218); 
+	display: none; 
+	font-weight: 600;
+}
+
+#list {
+	list-style-type: none;
+}
+
+#list > li {
+    background-color: white;
+    padding: 2rem;
+    border-bottom: 1px solid rgb(218, 218, 218)
+}
+
+#done-students-adding {
+	display: none;
+}
+
+.institute-name-outer-block {
+	position: relative; 
+	color: white; 
+	background-color: rgb(0, 174, 239); 
+	padding: 3.5rem 0px;
+}
+
+.institute-select-background {
+	position: absolute; 
+	background-image: url(https://teach-static.classdojo.com/5aa0d9649551a45d247f04f6915e3c6f.png); 
+	background-size: 300px; 
+	top: 0px; 
+	left: 0px; 
+	right: 0px; 
+	bottom: 0px; 
+	opacity: 0.6;
+}
+
+.institute-name-inner-block {
+	text-align: center; 
+	text-shadow: rgba(0, 0, 0, 0.3) 0px 0px 4px;
+}
+
+.institute-name-inner-block h3 {
+	font-size: 1.8rem; 
+	margin: 0px 0px 0.5rem; 
+	padding: 0px;
+}
+
+.institute-name-inner-block h4 {
+	margin: 0px; 
+	padding: 0px; 
+	font-weight: normal;
+}
+
+.institute-request-image-block {
+	text-align: center;
+}
+
+.institute-request-image-block > img {
+	margin: 2rem 0px 0px;
+}
+
+.institute-request-text-block {
+	text-align: center; 
+	padding-top: 1rem;
+}
+
+#change-school {
+	user-select: none;  
+	cursor: pointer; 
+	font-weight: 600; 
+	display: inline-block; 
+	outline: none; 
+	color: rgb(0, 174, 239); 
+	text-decoration: none;
+}
+
+.import-list {
+	text-align: center; 
+	padding: 2rem;
+}
+
+.uploaded-doc {
+    border: 1px solid rgb(218, 218, 218);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.upload-icon {
+	padding-top: 2rem;
+}
+
+.upload-icon > i {
+	color: rgb(0, 174, 239);
+}
+
+#imported-list {
+	display: none; 
+	color: rgb(0, 174, 239); 
+}
+
+#preview-btn {
+	border-radius: 2rem; 
+	padding: 0.5rem 3rem; 
+	color: white; 
+	font-size: 1.6rem;
+}
+
+#import-list-btn {
+	border-radius: 2rem; 
+	padding: 0.5rem 3rem; 
+	color: white; 
+	font-size: 1.6rem;
+}
+
+#import_form .modal-body {
+	overflow-y: auto; 
+	overflow-x: hidden; 
+	height: 30rem;
+}
+
+.import-form-confirmation-text {
+	margin: 1rem 0rem; 
+	font-size: 11px;
+}
+
+#imported-student-detail-list .label-name {
+	font-size: 12px; 
+	font-weight: 600;
+}
+
+#first_and_last_name_input,
+#email_id_input,
+#roll_no_input,
+#mobile_no_input {
+	margin-top: 1rem; 
+	list-style-type: none;
+}
+
+#import-form-back-btn {
+	background-color: white; 
+	border-color: white; 
+	color: rgb(51, 190, 242); 
+	font-weight: 600;
+}
+
+#continue-import-list {
+	background-color: rgb(51, 190, 242); 
+	border: rgb(51, 190, 242); 
+	color: white; 
+	border-radius: 5rem; 
+	padding: 0.8rem 4rem;
+}

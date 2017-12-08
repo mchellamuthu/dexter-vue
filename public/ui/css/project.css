@@ -1,0 +1,5111 @@
+index-view - START*/
+.container-text h1,
+.container-text .h1 {
+	color: white !important;
+	/*margin-top: -76px !important;*/
+}
+
+#section2 .content-wrapper h3,
+#section2 .content-wrapper .h3 {
+	color: #f840b9;
+}
+
+.navbar {
+	border-radius: 0px;
+	margin-bottom: 0px !important;
+}
+
+.navbar-top {
+	top: 45px !important;
+}
+
+.navbar-brand>img {
+    height: 5rem;
+    width: 15rem;
+    margin-top: -1rem;
+}
+
+/*.navbar-default {
+	border: 0px !important;
+}*/
+
+.container-text {
+	padding-top: 150px;
+}
+
+.app-launch-img{
+	width: 1059px;
+	height: 400px;
+	margin-top: 50px;
+}
+
+.content-text {
+	background-color: #ebebeb;
+	margin-bottom:-77px;
+	height:175px;
+	position: relative;
+}
+
+#section1 {
+	padding-top:92px;
+	
+	background-color: white;
+}
+
+#section2 {
+	padding-top:9px;
+	
+	background-color: #F5DEB3;
+}
+
+#section3 {
+	padding-top:50px;
+	
+	background-color: white;
+}
+
+#section4 {
+	padding-top:50px;
+	
+	background-color: #424242;
+	color: white;
+}
+
+#section2 .content-wrapper {
+	margin-top: 45px;
+}
+
+#section3 .content-wrapper {
+	margin-top: 14px;
+}
+
+.content-wrapper .btn-sm {
+	font-size: 16px;
+}
+
+.img-wrapper {
+	margin-top :20px;
+	width: 300px;
+	height: 300px;
+}
+
+input {
+	background-color: #181818;
+	border: #181818;
+	border-radius: 4px;
+	padding: 7px;
+}
+
+#section4 a {
+	color: white !important;
+}
+
+/*.modal-content .modal-header {
+    height: auto;
+    padding-top: 30px;
+    padding-bottom: 0;
+    text-align: center;
+    border: 0;
+}*/
+
+.modal-content .logo-sm {
+	width: 60px;
+	height: auto;
+	margin-left: 240px;
+}
+
+.badge-and-selector {
+	margin: 4px;
+	display: block;
+}
+
+.badge-and-selector  p {
+	margin-top: 11px !important;
+}
+
+/*.modal-header {
+	border-bottom: 0px !important;
+}*/
+
+.dont-have-row {
+	background-color: #eee;
+	color: #000;
+}
+
+.gray-border {
+	border: 1px solid #DADADA;
+}
+
+.btn-signup {
+	width: 100%;
+    padding: 20px 5px;
+    margin: 0;
+    color: #000;
+    background-color: rgba(239,239,239,.3);
+    border-radius: 5px;
+}
+
+.modal-header-school-leader-signup,
+.modal-header-teacher-signup {
+	background-color: #f4f4f4;
+}
+
+.btn-block {
+	width: 100%;
+}
+
+.btn-login {
+    border: 2px solid #00aeef;
+    color: #00aeef;
+    background-color: #fff;
+}
+
+.modal-footer .btn {
+    border-radius: 30px;
+}
+
+.btn-wide.btn {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.student-signin-page {
+	width: 43rem; 
+	margin: 0px auto 2rem; 
+	border: 1px solid rgb(218, 218, 218); 
+	box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px; 
+	border-radius: 4px; 
+	background-color: white; 
+	position: relative;
+}
+
+.student-signin-page h3,
+.student-signin-page .h3 {
+	text-align: center; 
+	font-size: 2.4rem; 
+	font-weight: normal; 
+	margin: 0px 0px 2rem;
+}
+
+.student-signin-page input {
+	width: 100%; 
+	font-family: ProximaNova, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; 
+	font-size: 1.6rem; 
+	font-weight: normal; 
+	line-height: 2.2rem; 
+	padding: 1.2rem; 
+	border-radius: 0.5rem; 
+	box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 3px 0px inset; 
+	border: 1px solid rgb(218, 218, 218); 
+	outline: none; 
+	height: 4.8rem;
+	background-color: white;
+}
+
+.student-signin-page a {
+	user-select: none; 
+	cursor: pointer; 
+	font-weight: 600; 
+	display: inline-block; 
+	outline: none; border: none rgb(0, 174, 239); 
+	font-family: ProximaNova, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; 
+	color: rgb(0, 174, 239);
+}
+/*index-view - END*/
+
+/*Teacher class - view - START*/
+/*Teacher profile details - START*/
+.profile-background {
+	background: url(http://p1.pichost.me/i/66/1910819.jpg) no-repeat center center; 
+	background-size: cover; 
+	height: 22rem; 
+	background-color: #060; 
+	color: #fff; 
+	text-align: center; 
+	text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+/*.profile-background-responsive {
+	background: url(http://p1.pichost.me/i/66/1910819.jpg) no-repeat center center; 
+	background-size: cover; 
+	background-color: #060; 
+	color: #fff; 
+	text-align: center; 
+	text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}*/
+
+.add-photo-section {
+	display: inline-block; 
+	text-align: center; 
+	max-width: 8rem; 
+	padding-top: 39px;
+	color: black;
+}
+
+.user-name {
+	max-width: 30rem; 
+	color: white; 
+	font-size: 1.8rem; 
+	margin-bottom: 1rem; 
+	font-weight: 600; 
+	white-space: nowrap; 
+	overflow: hidden; 
+	text-overflow: ellipsis; 
+	padding-top: 7rem;
+}
+
+/*.school-detail-content-responsive .user-name-responsive {
+	max-width: 30rem; 
+	color: white; 
+	font-size: 1.8rem; 
+	margin-bottom: 1rem; 
+	font-weight: 600; 
+	white-space: nowrap; 
+	overflow: hidden; 
+	text-overflow: ellipsis; 
+	padding-top: 1rem;
+}*/
+
+.add-profile-photo,
+.add-profile-picture {
+    position: relative; 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: 50% 50%; 
+    border-radius: 50%; 
+    background-color: rgb(218, 218, 218); 
+    width: 11.6rem; 
+    height: 11.6rem; 
+    background-image: url(https://teach-static.classdojo.com/36e5601dbcb095383dec6c18a40401b4.png); 
+    cursor: pointer;
+    margin-top: 50px;
+}
+
+.add-profile-picture {
+	display: none;
+}
+
+.school-detail-content {
+	text-align: left;
+}
+
+.school-name {
+	color: white;
+	margin-bottom: 1rem;
+}
+
+.pd-resource-btn {
+    background-color: rgb(0, 174, 239);
+    border-radius: 6rem;
+    border: 1px solid rgb(0, 174, 239);
+    color: white;
+    width: 13rem;
+    height: 4rem;
+}
+
+.pd-resource-btn:hover
+/*.pd-resource-responsive-btn:hover*/ {
+    background-color: rgb(0, 174, 239);
+    border-radius: 6rem;
+    border: 1px solid rgb(0, 174, 239);
+    color: white;
+}
+/*Teacher profile details - END*/
+
+/*Class list block - START */
+.class-block {
+	vertical-align: top; 
+	display: inline-block; 
+	margin: 5rem 1rem;
+}
+
+.class-block a {
+	cursor: pointer; 
+	text-decoration: none;
+}
+
+.class-image-content {
+	position: relative; 
+	background-color: white; 
+	border-radius: 6px; 
+	box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px; 
+	padding: 2rem; 
+	width: 18rem; 
+	min-height: 22rem;
+}
+
+.class-image-content img {
+	display: block; 
+	margin: 0 auto;
+	width: 9.4rem; 
+	height: 9.4rem; 
+	border-radius: 50%;
+}
+
+.class-image-content #class-name {
+	font-size: 1.6rem; 
+	font-weight: 600; 
+	margin-top: 2rem; 
+	color: rgb(54, 54, 54); 
+	text-align: center; 
+	width: 100%; 
+	overflow: hidden; 
+	white-space: nowrap; 
+	text-overflow: ellipsis;
+}
+
+.class-image-content #no-of-students {
+	font-size: 1.4rem; 
+	color: rgb(140, 140, 140);
+	text-align: center; 
+	width: 100%; 
+	overflow: hidden; 
+	white-space: nowrap; 
+	text-overflow: ellipsis;
+}
+
+.class-settings {
+	position: relative; 
+	 top: 0px; 
+	 right: 0px;
+	 float: right;
+	 z-index: 999;
+}
+
+.class-settings .dropdown-toggle {
+	position: relative; 
+	display: inline-block; 
+	cursor: pointer;
+}
+
+.class-settings .dropdown-toggle .class-settings-icon {
+	color: rgb(140, 140, 140); 
+	cursor: pointer; 
+	/*padding: 1.5rem 9.1rem 0.5rem 0.5rem; */
+	opacity: 0.6;
+	padding: 1rem;
+}
+
+.class-image-content > img {
+	display: block; 
+	margin: 2rem auto;
+}
+
+.get-started-text {
+	font-size: 15px;
+}
+/*Class list block - END*/
+
+/*Demo list - START*/
+#dexter-demo > a {
+	text-decoration: none;
+}
+
+.getting-started-title {
+	font-size: -0.2rem; 
+	font-weight: 600; 
+	margin-bottom: 1rem; 
+	color: black;
+}
+
+.getting-started-sub-text {
+	font-size: 10px; 
+	font-weight: 200; 
+	color: black;
+}
+
+.getting-started-content {
+    margin: 37px 4px;
+    position: relative; 
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px; 
+    padding: 2rem 1rem;
+}
+/*Demo list - END*/
+/*Teacher class - view - END*/
+
+/*Add-institute-with-class - START*/
+.add-from-institute #add-school ul,
+.add-from-institute #add-class ul,
+.add-from-institute #add-student ul,
+.add-from-institute #done_adding_student ul,
+.add-from-institute #send_invites ul {
+	padding-left: 0px; 
+	margin: 1.5rem;
+}
+
+.add-from-institute #add-school ul .school-point,
+.add-from-institute #add-class ul .class-point,
+.add-from-institute #add-student ul .students-point,
+.add-from-institute #done_adding_student ul .invite-point,
+.add-from-institute #send_invites ul .invite-point {
+	display: inline-block; 
+	width: 20%; 
+	text-align: center; 
+	color: rgb(255, 255, 255); 
+	font-weight: 600;
+}
+
+.add-from-institute #add-school ul .class-point,
+.add-from-institute #add-school ul .students-point,
+.add-from-institute #add-school ul .invite-point,
+.add-from-institute #add-class ul .school-point,
+.add-from-institute #add-class ul .students-point,
+.add-from-institute #add-class ul .invite-point,
+.add-from-institute #add-student ul .class-point,
+.add-from-institute #add-student ul .school-point,
+.add-from-institute #add-student ul .invite-point,
+.add-from-institute #done_adding_student ul .school-point,
+.add-from-institute #done_adding_student ul .class-point,
+.add-from-institute #done_adding_student ul .students-point,
+.add-from-institute #send_invites ul .school-point,
+.add-from-institute #send_invites ul .class-point,
+.add-from-institute #send_invites ul .students-point {
+	display: inline-block; 
+	width: 25%; 
+	text-align: center; 
+	color: rgb(154, 161, 178);
+}
+
+.add-class-timeline,
+.add-student-timeline,
+.done-add-student-timeline,
+.add-school-timeline {
+    background: rgba(0, 0, 0, 0.5); 
+    border-radius: 5px; 
+    height: 3px; 
+    position: relative;
+}
+
+.add-from-institute #add-class .add-class-timeline .add-class-timeline-outer-fill-layer {
+    position: absolute; 
+    top: 0px; 
+    height: 3px; 
+    background: rgb(122, 191, 11); 
+    width: 37.5%; 
+    border-radius: 5px;
+}
+
+.add-from-institute #add-school .add-school-timeline .add-school-timeline-outer-fill-layer {
+    position: absolute; 
+    top: 0px; 
+    height: 3px; 
+    background: rgb(122, 191, 11); 
+    width: 12.5%; 
+    border-radius: 5px;
+}
+
+.add-from-institute #add-student .add-student-timeline .add-student-timeline-outer-fill-layer {
+    position: absolute; 
+    top: 0px; 
+    height: 3px; 
+    background: rgb(122, 191, 11); 
+    width: 60.5%; 
+    border-radius: 5px;
+}
+
+.add-from-institute #done_adding_student .done-add-student-timeline .done-add-student-timeline-outer-fill-layer {
+    position: absolute; 
+    top: 0px; 
+    height: 3px; 
+    background: rgb(122, 191, 11); 
+    width: 85.5%; 
+    border-radius: 5px;
+}
+
+.add-from-institute #add-class .add-class-timeline .add-class-timeline-outer-point {
+    position: absolute; 
+    top: 0px; 
+    left: 37.5%; 
+    width: 8px; 
+    height: 8px; 
+    margin-left: -4px; 
+    margin-top: -2.5px; 
+    border-radius: 100%; 
+    background: rgb(255, 255, 255);
+}
+
+.add-from-institute #add-school .add-school-timeline .add-school-timeline-outer-point {
+    position: absolute; 
+    top: 0px; 
+    left: 12.5%; 
+    width: 8px; 
+    height: 8px; 
+    margin-left: -4px; 
+    margin-top: -2.5px; 
+    border-radius: 100%; 
+    background: rgb(255, 255, 255);
+}
+
+.add-from-institute #add-student .add-student-timeline .add-student-timeline-outer-point {
+    position: absolute; 
+    top: 0px; 
+    left: 60.5%; 
+    width: 8px; 
+    height: 8px; 
+    margin-left: -4px; 
+    margin-top: -2.5px; 
+    border-radius: 100%; 
+    background: rgb(255, 255, 255);
+}
+
+.add-from-institute #done_adding_student .done-add-student-timeline .done-add-student-timeline-outer-point {
+    position: absolute; 
+    top: 0px; 
+    left: 85.5%; 
+    width: 8px; 
+    height: 8px; 
+    margin-left: -4px; 
+    margin-top: -2.5px; 
+    border-radius: 100%; 
+    background: rgb(255, 255, 255);
+}
+
+.add-class-modal,
+.add-student-modal,
+.done-add-student-modal {
+    margin-top: 2rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    margin-bottom: 10rem;
+}
+
+.add-class-modal-header,
+.add-class-modal-body,
+.add-student-modal-header,
+.add-student-modal-body,
+.done-add-student-modal-header,
+.done-add-student-modal-body,
+.add-school-modal-header {
+    border-bottom: 1px solid #e5e5e5;
+    padding: 18px;
+}
+
+.add-class-modal-body .row .dropdown .btn > span {
+    bottom: 0.3rem; 
+    right: 4.1rem; 
+    left: 10rem;
+    position: absolute; 
+    width: 0px; 
+    height: 0px; 
+    border-width: 0.4rem; 
+    border-style: solid; 
+    border-color: rgb(140, 140, 140) transparent transparent; 
+    border-image: initial;
+}
+
+.add-class-modal-body .row .dropdown .dropdown-menu {
+    overflow-y: auto; 
+    overflow-x: hidden;
+    border-radius: 5px; 
+    z-index: 120;
+    max-height: 23.88rem;
+}
+
+.add-class-modal-body .form-horizontal label {
+    font-size: 12px;
+}
+
+.schools-list {
+    border: 1px solid rgb(218, 218, 218);
+    height: 20rem;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+/*.add-student-modal-body-list {
+    background-color: rgb(245, 245, 245);
+    border-bottom: 1px solid #e5e5e5;
+    min-height: 15rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 120;
+    height: 23rem;
+}*/
+
+.add-class-modal-footer,
+.add-school-modal-footer,
+.add-student-modal-footer,
+.done-add-student-modal-footer {
+    padding: 10px;
+    text-align: right;
+}
+
+
+.add-class-modal-footer > a,
+.add-student-modal-footer > a,
+.done-add-student-modal-footer > a,
+.add-school-modal-footer > a {
+    user-select: none; 
+    cursor: pointer; 
+    font-weight: 600; 
+    display: inline-block; 
+    outline: none; 
+    border: none rgb(0, 174, 239); 
+    font-family: ProximaNova, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; 
+    color: rgb(0, 174, 239); 
+    margin-right: 2rem;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+
+
+.cant-find-institute {
+	padding: 1rem; 
+	border: 1px solid rgb(218, 218, 218); 
+	text-align: right; 
+	display: none;
+}
+
+.add-class-form {
+    margin-top: 2rem;
+}
+
+#dropdown-image-add-class > li .row .class-icons > a > img {
+	width: 5.6rem; 
+	height: 5.6rem;
+}
+
+#dropdown-image-add-class {
+	width: 40rem;
+	left: -12rem !important;
+}
+
+.class-icons {
+	padding: 6px 12px;
+}
+
+.add-class-modal-footer,
+.add-school-modal-footer,
+.add-student-modal-footer,
+.done-add-student-modal-footer {
+    padding: 10px;
+    text-align: right;
+}
+
+
+.add-class-modal-footer > a,
+.add-student-modal-footer > a,
+.done-add-student-modal-footer > a,
+.add-school-modal-footer > a {
+    user-select: none; 
+    cursor: pointer; 
+    font-weight: 600; 
+    display: inline-block; 
+    outline: none; 
+    border: none rgb(0, 174, 239); 
+    color: rgb(0, 174, 239); 
+    margin-right: 2rem;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+.add-class-modal-footer .btn,
+.add-student-modal-footer .btn,
+.done-add-student-modal-footer .btn {
+    color: white;
+    font-weight: 600; 
+    border-radius: 2rem;
+    padding: 1rem 3rem;
+}
+
+.add-student-modal-header a {
+	text-decoration: none; 
+	color: rgb(51, 190, 242);
+}
+
+.add-student-modal-header span {
+	float: right;
+}
+
+.input-error-msg, 
+.email-error-msg,
+.full-name-error-msg,
+.valid-email-error-msg {
+    color: rgb(242, 92, 84);
+    display: none;
+    padding: 0rem 2rem;
+}
+
+.add-student-modal-body input.invalid{
+    border: 2px solid rgb(242, 92, 84);
+}
+
+#first_and_last_name_input input,
+#roll_no_input input,
+#mobile_no_input input,
+#email_id_input input {
+    margin-top: 1rem;
+}
+
+.students-not-added-yet {
+	text-align: center; 
+	padding: 10rem;
+}
+
+#number-of-students {
+	background-color: white; 
+	padding: 1rem; 
+	border-bottom: 1px solid rgb(218, 218, 218); 
+	display: none; 
+	font-weight: 600;
+}
+
+#list {
+	list-style-type: none;
+}
+
+#list > li {
+    background-color: white;
+    padding: 2rem;
+    border-bottom: 1px solid rgb(218, 218, 218)
+}
+
+#done-students-adding {
+	display: none;
+}
+
+.institute-name-outer-block {
+	position: relative; 
+	color: white; 
+	background-color: rgb(0, 174, 239); 
+	padding: 3.5rem 0px;
+}
+
+.institute-select-background {
+	position: absolute; 
+	background-image: url(https://teach-static.classdojo.com/5aa0d9649551a45d247f04f6915e3c6f.png); 
+	background-size: 300px; 
+	top: 0px; 
+	left: 0px; 
+	right: 0px; 
+	bottom: 0px; 
+	opacity: 0.6;
+}
+
+.institute-name-inner-block {
+	text-align: center; 
+	text-shadow: rgba(0, 0, 0, 0.3) 0px 0px 4px;
+}
+
+.institute-name-inner-block h3 {
+	font-size: 1.8rem; 
+	margin: 0px 0px 0.5rem; 
+	padding: 0px;
+}
+
+.institute-name-inner-block h4 {
+	margin: 0px; 
+	padding: 0px; 
+	font-weight: normal;
+}
+
+.institute-request-image-block {
+	text-align: center;
+}
+
+.institute-request-image-block > img {
+	margin: 2rem 0px 0px;
+}
+
+.institute-request-text-block {
+	text-align: center; 
+	padding-top: 1rem;
+}
+
+#change-school {
+	user-select: none;  
+	cursor: pointer; 
+	font-weight: 600; 
+	display: inline-block; 
+	outline: none; 
+	color: rgb(0, 174, 239); 
+	text-decoration: none;
+}
+
+.import-list {
+	text-align: center; 
+	padding: 2rem;
+}
+
+.uploaded-doc {
+    border: 1px solid rgb(218, 218, 218);
+    padding: 1rem;
+    border-radius: 1rem;
+}
+
+.upload-icon {
+	padding-top: 2rem;
+}
+
+.upload-icon > i {
+	color: rgb(0, 174, 239);
+}
+
+#imported-list {
+	display: none; 
+	color: rgb(0, 174, 239); 
+}
+
+#preview-btn {
+	border-radius: 2rem; 
+	padding: 0.5rem 3rem; 
+	color: white; 
+	font-size: 1.6rem;
+}
+
+#import-list-btn {
+	border-radius: 2rem; 
+	padding: 0.5rem 3rem; 
+	color: white; 
+	font-size: 1.6rem;
+}
+
+#import_form .modal-body {
+	overflow-y: auto; 
+	overflow-x: hidden; 
+	height: 30rem;
+}
+
+.import-form-confirmation-text {
+	margin: 1rem 0rem; 
+	font-size: 11px;
+}
+
+#imported-student-detail-list .label-name {
+	font-size: 12px; 
+	font-weight: 600;
+}
+
+#first_and_last_name_input,
+#email_id_input,
+#roll_no_input,
+#mobile_no_input {
+	margin-top: 1rem; 
+	list-style-type: none;
+}
+
+#import-form-back-btn {
+	background-color: white; 
+	border-color: white; 
+	color: rgb(51, 190, 242); 
+	font-weight: 600;
+}
+
+#continue-import-list {
+	background-color: rgb(51, 190, 242); 
+	border: rgb(51, 190, 242); 
+	color: white; 
+	border-radius: 5rem; 
+	padding: 0.8rem 4rem;
+}
+
+#request-to-join-school {
+    color: white;
+}
+/*Add-institute-with-class -  END*/
+
+/*Student-group -  START*/
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+    }
+}
+
+/*Student - Group - button - studentview - START*/
+.student-view-btn-group #student-btn {
+    background-color: rgb(0, 174, 239); 
+    border: 1px solid rgb(0, 174, 239); /* Green border */
+    color: white; /* White text */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+.student-view-btn-group #group-btn,
+.student-view-btn-group #view-report-button {
+    border-color: rgb(0, 174, 239); 
+    background-color: white; 
+    color: rgb(0, 174, 239); 
+    float: left;
+}
+
+#student-btn,
+#group-btn,
+#view-report-button {
+    width: 16rem;
+    height: 4rem;
+}
+
+.student-view-btn-group #student-btn > img {
+	width: 25px;
+}
+
+.student-view-btn-group #group-btn > img {
+	width: 30px;
+}
+/*Student - Group - button - studentview - END*/
+
+/*Students - view - container - START*/
+.student-view-container {
+	margin: 6rem 0rem;
+}
+
+.student-view-container .row a {
+    background-color: white; 
+    border-radius: 5px; 
+    display: inline-block; 
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px; 
+    user-select: none; 
+    cursor: pointer; 
+    text-align: center; 
+    font-size: 1.2rem; 
+    position: relative; 
+    height: 8rem; 
+    width: 16rem; 
+    margin: 1rem 1.5rem;
+}
+
+.student-view-container .row .add-new-student {
+    background-color: rgba(255, 255, 255, 0.5); 
+    border-radius: 5px; 
+    display: inline-block; 
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px; 
+    user-select: none; 
+    cursor: pointer; 
+    text-align: center; 
+    font-size: 1.2rem; 
+    position: relative; 
+    height: 8rem; 
+    width: 16rem; 
+    margin: 1rem 1.5rem;
+}
+
+.student-view-container .row a > img {
+    position: absolute; 
+    height: 5rem; 
+    top: 0.5rem; 
+    left: 0px; 
+    margin: 1rem;
+}
+
+#student-name {
+    position: absolute; 
+    width: 7.5rem; 
+    height: 6rem; 
+    top: 0px; 
+    right: 0px; 
+    margin: 2rem 0.5rem 2rem 2rem; 
+    font-size: 1.8rem; 
+    text-align: left;
+    overflow: hidden;
+}
+
+.student-select-outer-layer {
+    position: absolute; 
+    top: -2rem; 
+    right: -2rem; 
+    padding: 0px; 
+    margin: 0px; 
+    border: 0px; 
+    text-align: right;
+}
+
+.student-select-inner-layer {
+    display: inline-block; 
+    border: 3px solid white; 
+    border-radius: 20rem; 
+    color: white; 
+    text-align: center; 
+    padding: 0.5rem; 
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 3px 0px; 
+    font-weight: 600; 
+    min-width: 4rem; 
+    font-size: 2rem; 
+    background-color: rgb(218, 218, 218);
+}
+
+.student-select-inner-layer > img {
+    display: block;
+    height: 24px;
+    width: 23px;
+}
+/*Students - view - container - END*/
+
+/*Student-attendance-footer - START*/
+.student-attendance-footer {
+	background-color: white;
+}
+
+#student-attendance-footer-navbar-collapse > ul > li > a > img {
+	margin-right: 1rem;
+}
+/*Student-attendance-footer - END*/
+
+/*Student - Group - button - groupview - START*/
+.group-view-btn-group #group-btn {
+    background-color: rgb(0, 174, 239); 
+    border: 1px solid rgb(0, 174, 239); /* Green border */
+    color: white; /* White text */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+.group-view-btn-group #student-btn,
+.group-view-btn-group #view-report-button {
+    border-color: rgb(0, 174, 239); 
+    background-color: white; 
+    color: rgb(0, 174, 239); 
+    float: left;
+}
+
+#student-btn,
+#group-btn,
+#view-report-button {
+    width: 16rem;
+    height: 4rem;
+}
+
+.group-view-btn-group #student-btn > img {
+	width: 25px;
+}
+
+.group-view-btn-group #group-btn > img {
+	width: 30px;
+}
+/*Student - Group - button - groupview - END*/
+
+/*Group - view - container - START*/
+.group-view-container {
+	margin: 7rem 0rem; 
+}
+
+.group_block_layer > img {
+    position: absolute;
+    height: 5rem;
+    top: 0.5rem;
+    left: 70px;
+    margin: 1rem;
+}
+
+.group_block_layer {
+    background-color: white;
+    border-radius: 5px;
+    display: inline-block;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px;
+    user-select: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.2rem;
+    position: relative;
+    height: 13rem;
+    width: 18rem;
+    margin: 0rem 2rem;
+}
+
+.add-new-group {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    display: inline-block;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px;
+    user-select: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.2rem;
+    position: relative;
+    height: 13rem;
+    width: 18rem;
+    margin: 0rem 2rem;
+}
+
+.group-image {
+    position: absolute; 
+    width: 100%; 
+    text-align: center; 
+    top: 20px;
+}
+
+.group-student-image-outer {
+    height: 6rem; 
+    width: 3rem; 
+    display: inline-block; 
+    position: relative; 
+    margin: 0px 5px;
+}
+
+.group-student-image-background {
+    background-repeat: no-repeat; 
+    background-size: contain; 
+    background-position: center center; 
+    min-height: 100%; 
+    min-width: 100%;
+}
+
+.group-student-image-outer > img {
+    opacity: 0; 
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    top: 0px; 
+    left: 0px;
+}
+
+.group_title {
+    position: absolute;
+    height: 4rem;
+    top: 67px;
+    left: 0px;
+    right: 0px;
+    margin: 2rem 0.5rem 2rem 2rem;
+    font-size: 1.8rem;
+}
+
+.group-select-outer-layer {
+    position: absolute; 
+    top: -2rem; 
+    right: -2rem; 
+    padding: 0px; 
+    margin: 0px; 
+    border: 0px; 
+    text-align: right;
+}
+
+.group-select-inner-layer {
+    display: inline-block; 
+    border: 3px solid white; 
+    border-radius: 20rem; 
+    color: white; 
+    text-align: center; 
+    padding: 0.5rem; 
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 3px 0px; 
+    font-weight: 600; 
+    min-width: 4rem; 
+    font-size: 2rem; 
+    background-color: rgb(218, 218, 218);
+}
+
+.add-new-group-block > img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 4rem;
+    height: 4rem; 
+}
+
+.add-new-student-block > img {
+    position: absolute; 
+    height: 5rem; 
+    top: 0.5rem; 
+    left: 37px !important; 
+    margin: 1rem; 
+}
+/*Group - view - container - END*/
+/*Student-group - END*/
+
+/*View report - START*/
+/*View-report-btn - START*/
+.view-report-btn-group #view-report-button {
+    background-color: rgb(0, 174, 239); 
+    border: 1px solid rgb(0, 174, 239); /* Green border */
+    color: white; /* White text */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+.view-report-btn-group #student-btn,
+.view-report-btn-group #group-btn {
+    border-color: rgb(0, 174, 239); 
+    background-color: white; 
+    color: rgb(0, 174, 239); 
+    float: left;
+}
+
+#student-btn,
+#group-btn,
+#view-report-button {
+    width: 16rem;
+    height: 4rem;
+}
+
+.view-report-btn-group #student-btn > img {
+  width: 25px;
+}
+
+.view-report-btn-group #group-btn > img {
+  width: 30px;
+}
+/*View-report-btn - END */
+
+/*view report tab - left menu - start*/
+#view-report-tab {
+    background-color: white; 
+    border-radius: 5px; 
+    border: 1px solid rgb(218, 218, 218); 
+    margin-top: 4rem; 
+    margin-bottom: 90px;
+}
+
+.view-report-left-menu {
+    border-right: 1px solid rgb(218, 218, 218); 
+    height: 50rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.view-report-menu {
+    border-bottom: 1px solid rgb(218, 218, 218); 
+    padding: 0px 1.5rem 0px 1rem; 
+    height: 10px; 
+    font-size: 1.2rem; 
+    display: block; 
+    background-color: rgb(245, 245, 243); 
+    cursor: pointer; 
+    min-height: 2.5rem; 
+    line-height: 2.5rem; 
+    font-weight: 600; 
+    color: rgb(140, 140, 140); 
+    margin: 0px -15px;
+}
+
+#connect-stud-and-parents > li > a {
+    margin: 0px -16px; 
+    padding-top: 0px; 
+    border-bottom: 1px solid rgb(218, 218, 218);
+}
+
+#connect-stud-and-parents > li.active > a {
+    background-color: rgb(230, 246, 253);
+}
+
+#connect-stud-and-parents > li > a .account-icon {
+    padding-top: 10px;
+}
+
+#connect-stud-and-parents > li > a .account-name {
+    padding-top: 6px;
+}
+
+#connect-stud-and-parents > li > a .student-name {
+    padding-top: 13px;
+}
+
+.account-progress-bar {
+    overflow: hidden; 
+    border-radius: 1.3rem; 
+    height: 1.3rem; 
+    margin-top: -7px;
+}
+
+.account-progress-bar-outer-layer {
+    height: 1.3rem; 
+    background: rgb(218, 218, 218); 
+    line-height: 1.3rem; 
+    border-radius: 1.3rem; 
+}
+
+.account-progress-bar-inner-layer {
+    background: rgb(41, 199, 255); 
+    border-radius: 1.3rem; 
+    float: left; 
+    width: 0%; 
+    position: relative; 
+    top: -0.1rem; 
+    left: -0.1rem; 
+    height: 1.5rem; 
+    line-height: 1.3rem; 
+    transition: width 0.6s ease;
+}
+
+#student-content {
+    border-bottom: 1px solid rgb(218, 218, 218); 
+    padding: 0px 1.5rem 0px 1rem; 
+    height: 10px; 
+    font-size: 1.2rem; 
+    display: block; 
+    background-color: rgb(245, 245, 243); 
+    cursor: pointer; 
+    min-height: 2.5rem; 
+    line-height: 2.5rem; 
+    font-weight: 600; 
+    color: rgb(140, 140, 140); 
+    margin: 0px -15px;
+}
+
+.student-name-sorting {
+    float: right; 
+    margin-top: -35px;
+}
+
+.student-name-sorting > a {
+    user-select: none; 
+    cursor: pointer; 
+    font-weight: 400; 
+    display: inline-block; 
+    outline: none; 
+    border: none rgb(0, 174, 239); 
+    text-decoration: none; 
+    color: rgb(140, 140, 140);
+}
+
+.student-name-sorting > a > ul {
+    border-radius: 8px; 
+    margin: -16rem 7rem;
+}
+/*view report tab - left menu - end*/
+
+/*view report tab - main content - start*/
+.parent-account-header-content,
+.student-account-header-content,
+.class-student-header-content {
+    height: 78px; 
+    margin: 0px -15px; 
+    padding: 2rem;
+    border-bottom: 1px solid rgb(218, 218, 218);
+}
+
+.parent-account-header-content > a,
+.student-account-header-content > a {
+    text-align: center; 
+    margin-left: 70px;
+}
+
+.parent-account-main-content,
+.student-account-main-content {
+    background-color: rgb(230, 246, 253); 
+    border: 1px solid rgb(0, 174, 239); 
+    padding: 2rem 2rem; 
+    border-radius: 5px; 
+    margin-top: 20px;
+    text-align: center;
+}
+
+.parent-account-main-content .btn,
+.student-account-main-content .btn {
+    width: 302px; 
+    margin: 20px 19px; 
+    background-color: rgb(51, 190, 242) !important; 
+    border-color: rgb(51, 190, 242) !important;
+}
+
+.parent-account-main-content > img {
+    margin-right: 10px; 
+    width: 16px;
+}
+
+.parent-account-main-content a {
+    color: rgb(0, 174, 239);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+#student-list {
+    border: 1px solid rgb(218, 218, 218);
+    border-radius: 5px 5px 0px 0px; 
+    margin-top: 20px; 
+    background-color: #eee; 
+    margin-bottom: 20px;
+}
+
+#student-list .student-list-content {
+    padding: 1rem; 
+    border-bottom: 1px solid rgb(218, 218, 218);
+}
+
+#student-list .student-list-content > span {
+    padding-left: 20px;
+}
+
+#student-list .student-list-content > a {
+    float: right;
+    text-decoration: none;
+    font-weight: 600;
+    color: rgb(0, 174, 239);
+}
+
+.parents-connected {
+    text-align: center;
+    padding-top: 12px;
+}
+
+.class-student-header-content > img {
+    width: 5rem; 
+    height: 5rem;
+}
+
+#donut-btn {
+    background-color: rgb(0, 174, 239); 
+    border-color: rgb(0, 174, 239); 
+    color: white; width: 90px;
+}
+
+#attendance-btn {
+    margin-left: -9px; 
+    border-color: rgb(0, 174, 239); 
+    background-color: white; 
+    color: rgb(0, 174, 239);
+}
+
+#doNut {
+    padding-top: 20px;
+}
+
+#doNut .btn-group > a {
+    user-select: none; 
+    cursor: pointer; 
+    font-weight: 400; 
+    display: inline-block; 
+    outline: none; 
+    border: none rgb(0, 174, 239); 
+    text-decoration: none; 
+    color: rgb(0, 174, 239);
+}
+
+.view-spreadsheet {
+    user-select: none; 
+    cursor: pointer; 
+    font-weight: 400; 
+    display: inline-block; 
+    outline: none; 
+    border: none rgb(0, 174, 239); 
+    text-decoration: none; 
+    color: rgb(0, 174, 239); 
+    padding-left: 30rem;
+}
+
+.print-view {
+    padding-left: 7rem;
+}
+
+.points-to-date-range {
+    text-align: center; 
+    color: rgb(218, 218, 218); 
+    padding-top: 20px;
+}
+
+#doNut .chart-image > img {
+    width: 100%; 
+    max-width: 45rem; 
+    margin: auto;
+}
+
+.class-student-header-content .donut-attendance-btn {
+    position: absolute; 
+    right: 2rem;
+}
+
+.attendance-table-content {
+    width: 100%; 
+    margin-top: 4%; 
+    table-layout: fixed; 
+    border-spacing: 12px 0px; 
+    border-collapse: separate; 
+    height: 210px;
+}
+
+.attendance-table-content > tr > td > span {
+    color: rgb(140, 140, 140); 
+    margin-bottom: 0px;
+}
+
+#every-day-attendance {
+    height: 100%;
+}
+
+#every-day-attendance > td {
+    padding: 0px; 
+    height: 100%; 
+    vertical-align: top; 
+    min-height: 210px; 
+    cursor: pointer; 
+    margin-top: 3%; 
+    border: 1px solid rgb(218, 218, 218); 
+    border-radius: 0.5rem; 
+    background-image: initial; 
+    background-position: initial; 
+    background-size: initial; 
+    background-repeat: initial; 
+    background-attachment: initial; 
+    background-origin: initial; 
+    background-clip: initial; 
+    text-transform: none;
+}
+
+#every-day-attendance > td .icon-content {
+    background-color: rgb(245, 245, 245); 
+    padding-top: 5px; 
+    height: 40px; 
+    border-bottom: 1px solid rgb(218, 218, 218); 
+    text-align: center;
+}
+
+#every-day-attendance > td .icon-content > span {
+    color: white; 
+    font-size: 3rem;
+}
+
+#every-day-attendance > td .attendance-percent-content {
+    text-align: center; 
+    height: 100%; 
+    padding: 10% 3% 5%;
+}
+
+#every-day-attendance > td .attendance-percent-content span {
+    word-break: break-word;
+}
+
+.student-name-sorting .dropdown-menu {
+    margin-top: -34rem;
+    margin-left: 6rem;
+    border-radius: 0.5rem;
+}
+
+/*view report tab - main content - end*/
+
+/*connection-chart-layer - START*/
+$bg: teal;
+$meter-size: 2rem;
+.connection-chart-layer {
+  width: 90%;
+  height: 90vh;
+  margin: 5vh auto 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circular-progress {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  overflow: hidden;
+  // background-color: $bg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.circular-progress .meter {
+    width: 9rem;
+    height: 9rem;
+    display: flex;
+    padding: 5rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.connection-percent {
+    font-size: 2rem; 
+    color: rgb(0, 174, 239);
+}
+
+.connection-text {
+    font-size: 1rem; 
+    color: rgb(140, 140, 140);
+}
+/*connection-chart-layer - END*/
+
+/*Week attendance - START*/
+.week-attendance-btn-group {
+    padding-top: 20px;
+}
+
+.week-attendance-btn-group #week-selection-prev-btn,
+.week-attendance-btn-group #week-name {
+    background-color: white;
+    border-color: rgb(0, 174, 239);
+    color: rgb(0, 174, 239);
+}
+
+.week-attendance-btn-group #week-selection-next-btn {
+    background-color: white;
+    border-color: rgb(218, 218, 218);
+    color: rgb(218, 218, 218);
+}
+
+.attendance-table-content {
+    width: 100%; 
+    margin-top: 4%; 
+    table-layout: fixed; 
+    border-spacing: 12px 0px; 
+    border-collapse: separate; 
+    height: 210px;
+}
+
+.attendance-table-content > tr > td > span {
+    color: rgb(140, 140, 140); 
+    margin-bottom: 0px;
+}
+
+#every-day-attendance {
+    height: 100%;
+}
+
+#every-day-attendance > td {
+    padding: 0px; 
+    height: 100%; 
+    vertical-align: top; 
+    min-height: 210px; 
+    cursor: pointer; 
+    margin-top: 3%; 
+    border: 1px solid rgb(218, 218, 218); 
+    border-radius: 0.5rem; 
+    background-image: initial; 
+    background-position: initial; 
+    background-size: initial; 
+    background-repeat: initial; 
+    background-attachment: initial; 
+    background-origin: initial; 
+    background-clip: initial; 
+    text-transform: none;
+}
+
+#every-day-attendance > td .icon-content {
+    background-color: rgb(245, 245, 245); 
+    padding-top: 5px; 
+    height: 40px; 
+    border-bottom: 1px solid rgb(218, 218, 218); 
+    text-align: center;
+}
+
+#every-day-attendance > td .icon-content > span {
+    color: white; 
+    font-size: 3rem;
+}
+
+#every-day-attendance > td .attendance-percent-content {
+    text-align: center; 
+    height: 100%; 
+    padding: 10% 3% 5%;
+}
+
+#monday-future-date, #tuesday-future-date, #wednesday-future-date, #thursday-future-date,
+#friday-future-date, #saturday-future-date, #sunday-future-date {
+  background-color: rgb(218, 218, 218);
+  padding: 0px; 
+    height: 100%; 
+    vertical-align: top; 
+    min-height: 210px; 
+    cursor: pointer; 
+    margin-top: 3%; 
+    border: 1px solid rgb(218, 218, 218); 
+    border-radius: 0.5rem; 
+    background-image: initial; 
+    background-position: initial; 
+    background-size: initial; 
+    background-repeat: initial; 
+    background-attachment: initial; 
+    background-origin: initial; 
+    background-clip: initial; 
+    text-transform: none;
+}
+
+.attendance-percent-content .everyday-attendance-details {
+  display: none;
+}
+
+.absent-on-monday {
+  color: red;
+  display: none;
+}
+
+.late-on-monday, .late-early-on-monday {
+  color: rgb(253, 193, 49);
+  display: none;
+}
+
+#select-absent{
+  color: red;
+}
+
+#select-late, #select-late-early {
+  color: rgb(253, 193, 49);
+}
+
+#select-present {
+  color: green;
+}
+
+.attendance-record-modal-body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 0px;
+  max-height: 20rem;
+}
+
+.record-date {
+  padding: 1rem;
+  text-align: center;
+  background-color: rgb(218, 218, 218);
+}
+
+.record-date .btn {
+    border: 1px solid rgb(145, 210, 80);
+    background-color: rgb(145, 210, 80);
+    font-weight: 600;
+    border-radius: 5rem;
+    padding: 1rem 2rem;
+}
+
+.attendance-recorded-students > li {
+  background-color: white;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  list-style-type: none;
+}
+
+.attendance-recorded-students > li > img {
+  width: 5%;
+}
+
+.attendance-recorded-students > li > span {
+  padding-left: 10%;
+}
+
+.attendance-recorded-students .status-dropdown,
+.attendance-recorded-students .student-status {
+  float: right;
+}
+
+/*.modal-footer .btn {
+  background-color: rgb(51, 190, 242) !important;
+  border: rgb(51, 190, 242) !important;
+  color: white !important;
+  border-radius: 5rem;
+  padding: 1rem 2rem;
+}
+*/
+.selectpicker {
+  cursor: pointer;
+  border: hidden;
+  outline: none;
+}
+
+.selectpicker option {
+  padding: 2rem !important;
+}
+
+/*Week attendance - END*/
+/*View report - End*/
+
+/*Attendance-view - START*/
+.attendance_block {
+    background-color: white;
+    border-radius: 5px;
+    display: inline-block;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px;
+    user-select: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.2rem;
+    position: relative;
+    height: 8rem;
+    width: 16rem;
+    margin: 1rem 1.5rem;
+}
+
+.attendance_block>img {
+    position: absolute;
+    height: 5rem;
+    top: 0.5rem;
+    left: 0px;
+    margin: 1rem;
+}
+
+.attendance_title {
+    position: absolute;
+    width: 7.5rem;
+    height: 6rem;
+    top: 0px;
+    right: 0px;
+    margin: 2rem 0.5rem 2rem 2rem;
+    font-size: 1.8rem;
+    text-align: left;
+}
+
+.attendance_outdoor_layer {
+    position: absolute;
+    top: -2rem;
+    right: -1rem;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    text-align: right;
+}
+
+.attendance_inner {
+    display: inline-block;
+    border: 3px solid white;
+    border-radius: 15rem;
+    color: white;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 3px 0px;
+    font-weight: 600;
+    min-width: 4rem;
+    font-size: 2rem;
+    background-color: rgb(218, 218, 218);
+}
+
+.attendance_inner>img {
+    width: 34px;
+    height: 34px;
+}
+
+.attendance-cancel-btn {
+    background-color: white;
+    border: none;
+    color: rgb(163, 163, 163);
+}
+
+.save-attendance-btn {
+    border: 1px solid rgb(51, 190, 242);
+    background-color: rgb(51, 190, 242);
+    border-radius: 20px;
+    color: white;
+    font-weight: 600;
+}
+
+.mark-all-present,
+.mark-all-absent {
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#attendance-footer {
+    position:fixed;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    margin-bottom:0px;
+}
+
+.student-attendance-container {
+    margin-top: 50px; 
+    margin-bottom: 90px; 
+}
+
+.student-attendance-container #whole-class,
+#add-new-student {
+    opacity: 0.5; 
+    user-select: none; 
+    cursor: default;
+}
+
+#add-new-student > img {
+    position: absolute; 
+    height: 5rem; 
+    top: 0.5rem; 
+    left: 37px; 
+    margin: 1rem; 
+    padding: 11px;
+}
+
+.attendance-footer {
+    background-color: white;
+}
+
+.mark-all-present > img,
+.mark-all-absent > img {
+    margin-right: 1rem;
+}
+
+#attendance-navbar-collapse .navbar-right {
+    margin-top: 10px;
+}
+/*Attendance-view - END*/
+
+/*Multiple-select-attendance - Start*/
+/*Student - Group - button - studentview - START*/
+.multiple-attendance-btn-group #student-btn {
+    background-color: rgb(0, 174, 239); 
+    border: 1px solid rgb(0, 174, 239); /* Green border */
+    color: white; /* White text */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+.multiple-attendance-btn-group #group-btn,
+.multiple-attendance-btn-group #view-report-button {
+    border-color: rgb(0, 174, 239); 
+    background-color: white; 
+    color: rgb(0, 174, 239); 
+    float: left;
+}
+
+#student-btn,
+#group-btn,
+#view-report-button {
+    width: 16rem;
+    height: 4rem;
+}
+
+.multiple-attendance-btn-group #student-btn > img {
+	width: 25px;
+}
+
+.multiple-attendance-btn-group #group-btn > img {
+	width: 30px;
+}
+/*Student - Group - button - studentview - END*/
+
+.attendance_block_layer {
+    background-color: white;
+    border-radius: 5px;
+    display: inline-block;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px;
+    user-select: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.2rem;
+    position: relative;
+    height: 8rem;
+    width: 16rem;
+    margin: 1rem 1.5rem;
+}
+
+.attendance_block_layer > img {
+    position: absolute;
+    height: 5rem;
+    top: 0.5rem;
+    left: 0px;
+    margin: 1rem;
+}
+
+.attendance_outdoor_layer,
+.group_attendance_outdoor_layer {
+    position: absolute;
+    top: -2rem;
+    right: -1rem;
+    padding: 0px;
+    margin: 0px;
+    border: 0px;
+    text-align: right;
+}
+
+.attendance_inner,
+.group_attendance_inner {
+    display: inline-block;
+    border: 3px solid white;
+    border-radius: 15rem;
+    color: white;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 3px 0px;
+    font-weight: 600;
+    min-width: 4rem;
+    font-size: 2rem;
+    background-color: rgb(218, 218, 218);
+}
+
+.attendance_inner>img,
+.group_attendance_inner>img {
+    width: 34px;
+    height: 34px;
+}
+
+.attendance_title {
+    position: absolute;
+    width: 7.5rem;
+    height: 6rem;
+    top: 0px;
+    right: 0px;
+    margin: 2rem 0.5rem 2rem 2rem;
+    font-size: 1.8rem;
+    text-align: left;
+}
+
+.select-all-stud {
+    text-align: left;
+    font-weight: 600;
+    color: rgb(0, 174, 239);
+    padding: 20px;
+}
+
+.select-all-stud a:hover {
+    text-decoration: none;
+}
+
+.selected-stud-count {
+    padding-top: 16px;
+}
+
+.select-all-stud a {
+    cursor: pointer;
+}
+
+.feedback-btn {
+    border: 1px solid rgb(218, 218, 218);
+    background-color: rgb(218, 218, 218);
+    color: white;
+    border-radius: 200px;
+    outline: none;
+    padding: 0.9rem 3.2rem;
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+
+.group-attendance-image {
+    position: absolute; 
+    width: 100%; 
+    text-align: center; 
+    top: 20px;
+}
+
+.group_attendance_block_layer {
+    background-color: white;
+    border-radius: 5px;
+    display: inline-block;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px;
+    user-select: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.2rem;
+    position: relative;
+    height: 13rem;
+    width: 18rem;
+    margin: 0rem 1rem;
+}
+
+.group_attendance_block_layer > img {
+	margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 4rem;
+    height: 4rem;
+}
+
+.group_attendance_title {
+    position: absolute;
+    height: 4rem;
+    top: 67px;
+    left: 0px;
+    right: 0px;
+    margin: 2rem 0.5rem 2rem 2rem;
+    font-size: 1.8rem;
+}
+
+.selecting-students-mobile {
+    margin: 2rem 2rem 0rem 2rem;
+}
+
+.selecting-students-mobile .btn {
+    background-color: white;
+    color: rgb(51, 190, 242);
+}
+
+#multiple-attendance-footer {
+    position:fixed;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    margin-bottom:0px;
+    background-color: white; 
+    padding: 1rem 10rem 1rem 1rem;
+}
+
+.select-multiple-attendance-container {
+    margin: 7rem 0rem; 
+}
+
+#select-multiple-whole-class,
+#select-multiple-add-new-student {
+    opacity: 0.5;
+    cursor: default;
+}
+
+#select-multiple-add-new-student > img {
+    position: absolute; 
+    height: 5rem; 
+    top: 0.5rem; 
+    left: 37px; 
+    margin: 1rem; 
+    padding: 11px;
+}
+
+.select-multiple-footer {
+    background-color: white;
+}
+
+#select-multiple-navbar-collapse .navbar-right,
+#select-multiple-group-navbar-collapse .navbar-right {
+    padding-top: 10px;
+}
+
+#select-multiple-navbar-collapse .navbar-right .cancel-btn,
+#select-multiple-group-navbar-collapse .navbar-right .cancel-btn {
+    background: white; 
+    color: rgb(163, 163, 163); 
+    border: none; 
+    user-select: none;
+}
+
+/*multiple - select - group - START*/
+.group-multiple-select {
+    margin-top: 7rem; 
+    margin-bottom: 90px; 
+}
+/*multiple - select - group - END*/
+/*Multiple-select-attendance - END*/
+
+/*Story-view - START*/
+.story-icon-btn {
+    background-color: rgb(230, 246, 253) !important;
+    border: 1px solid rgb(0, 174, 239);
+    height: 5rem;
+    border-radius: 5px;
+    width: 100%;
+    padding: 1px 10rem 1px 2px;
+}
+
+.student-stories {
+    margin-top: 3rem;
+}
+
+.student-list-for-stories {
+    background-color: white; 
+    border: 1px solid rgb(218, 218, 218); 
+    height: 35.9rem; 
+    overflow-y: auto; 
+    border-radius: 5px; 
+    margin-top: 1rem;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li a {
+  color: #93a3b5;
+  font-size: 14px;
+  font-weight: 400;
+  padding-left: 20px;
+}
+
+.profile-usermenu ul li a > img {
+  width: 30px; 
+  height: 30px;
+}
+
+.profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul li.active > a { 
+    background-color: rgb(230, 246, 253) !important;
+    border: 1px solid rgb(0, 174, 239);
+}
+
+.welcome-class-story {
+    background-color: white; 
+    border: 1px solid rgb(218, 218, 218); 
+    padding: 3rem !important;
+}
+
+#welcome-class-image-content > img {
+  width: 10rem; 
+  height: 10rem;
+}
+
+.welcome-class-story .welcome-class-story-header {
+  font-size: 1.6rem; 
+  font-weight: 600; 
+  margin-bottom: 1rem;
+}
+
+.welcome-class-story p {
+  font-size: 1.4rem; 
+  font-weight: 200;
+}
+
+.welcome-class-story .btn {
+  background-color: rgb(0, 174, 239) !important; 
+  border-color: rgb(0, 174, 239) !important;
+}
+
+#uploading-image-content {
+  display: none;
+}
+
+.post-message-content {
+  background-color: white; 
+  border: 1px solid rgb(0, 174, 239);
+  padding: 1rem 1rem !important;
+}
+
+.uploaded-doc {
+    border: 1px solid rgb(218, 218, 218);
+    padding: 1rem;
+    border-radius: 1rem;
+    display: none;
+}
+
+#add-profile-buttons,
+#add-profile-button-in-edit-post {
+  color: rgb(0, 174, 239);
+  height: 2rem;
+}
+
+.add-photo-btn, .add-file-btn, .add-card-btn {
+  background-color: white; 
+  cursor: pointer;
+}
+
+.post-btn {
+  background-color: rgb(0, 174, 239) !important; 
+  border-color: rgb(0, 174, 239) !important; 
+  border-radius: 1rem; 
+  border-radius: 35rem; 
+  padding: 5px 23px;
+}
+
+.post-message-content textarea::-webkit-input-placeholder {
+color: rgb(0, 174, 239) !important;
+}
+ 
+.post-message-content textarea:-moz-placeholder { /* Firefox 18- */
+color: rgb(0, 174, 239) !important;  
+}
+ 
+.post-message-content textarea::-moz-placeholder {  /* Firefox 19+ */
+color: rgb(0, 174, 239) !important;  
+}
+ 
+.post-message-content textarea:-ms-input-placeholder {  
+color: rgb(0, 174, 239) !important;  
+}
+
+.profile-icon-post {
+  position: relative; 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: 50% 50%; 
+  border-radius: 50%; 
+  background-color: rgb(204, 236, 205); 
+  width: 5rem; height: 5rem; 
+  background-image: url(https://teach-static.classdojo.com/e72625cc16fa8fd41db88b1fc66beed8.png);
+}
+
+
+/*Comment posted - START*/
+.post-comment-content {
+  background-color: white;
+  border: 1px solid rgb(218, 218, 218);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px;
+  border-radius: 5px;
+}
+
+.post-comment-header {
+  border-bottom: 1px solid rgb(218, 218, 218);
+}
+
+.post-comment-footer {
+  border-top: 1px solid rgb(218, 218, 218);
+}
+
+.post-comment-header .profile-icon-post {
+  margin: 1rem;
+}
+
+.poster-name,
+.posted-day {
+  padding: 2rem;
+}
+
+.poster-name .glyphicon {
+  font-size: 9px;
+}
+
+.poster-name span,
+.posted-day span {
+  font-weight: normal;
+}
+
+.post-comment-body {
+  background-image: url(https://images.classdojo.com/dojofilepicker/97576b51-471b-440d-9c97-3e11c9000274/0OhDfNURRetW5L9KiaXu_cdojoimage1.png);
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset;
+  width: 100%;
+  height: 50rem;
+  margin: 0px -1px;
+  cursor: pointer;
+}
+
+.comments-content {
+  margin: 2rem;
+}
+
+.message-string,
+.no-of-likes-and-comments {
+  font-weight: normal;
+  margin: 2rem 0rem;
+}
+
+.no-of-likes-and-comments {
+  font-size: 11px;
+}
+
+.likes-and-comments .btn:hover,
+.likes-and-comments .btn {
+  background-color: white;
+  border: 1px solid rgb(218, 218, 218);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset
+}
+
+.likes-and-comments .btn:active,
+.likes-and-comments .btn:focus,
+.likes-and-comments .btn-default:active,
+.likes-and-comments .btn-default:focus {
+  background-color: #d4d4d4 !important;
+  border-color: #8c8c8c !important;
+  outline: none;
+}
+
+
+.no-of-likes-and-comments .fa {
+  color: rgb(140, 140, 140);
+}
+
+.delete-post-cancel-btn {
+  border: none;
+  background: transparent;
+  color: rgb(51, 190, 242);
+  font-weight: 600;
+}
+
+.delete-post-btn {
+  border-radius: 5rem;
+  padding: 1rem 2rem;
+}
+
+#delete-post-modal .modal-body {
+  font-weight: normal;
+}
+
+
+#add-profile-button-in-edit-post .add-photo-btn {
+  display: none;
+}
+
+.no-of-likes-and-comments,
+.no-of-likes-and-comments hr,
+.no-of-likes-and-comments .no-of-likes,
+.no-of-likes-and-comments .no-of-comments {
+  display: none;
+}
+
+.comments-posting {
+  border-top: 1px solid rgb(218, 218, 218);
+  padding: 1rem;
+  display: none;
+}
+
+.comment-input,
+.comments-posting .poster-name {
+  padding: 1rem;
+}
+
+/*Comment posted - END*/
+/*Story-view - END*/
+
+/*Message-view - START*/
+#message-content {
+	background-color: white;
+	border: 1px solid rgb(218, 218, 218);
+	border-radius: 1rem;
+	margin: 1rem 0rem;
+}
+
+.message-header-block {
+	padding: 0px;
+}
+
+.message-title,
+.message-main-content-title {
+	font-size: 14px;
+    font-weight: 600;
+    padding: 12px;
+    border-bottom: 1px solid rgb(218, 218, 218);
+    display: block;
+}
+
+#parent-name, #parent-to-invite {
+	font-size: 10px;
+	padding-bottom: 0.4rem; 
+	overflow: hidden; 
+	white-space: nowrap; 
+	text-overflow: ellipsis;
+}
+
+#all-parent-connect {
+	font-size: 10px;
+    font-weight: bold;
+}
+
+#parent-to-invite {
+	color: rgb(0, 174, 239);
+}
+
+.message-main-content {
+	border-left: 1px solid rgb(218, 218, 218);
+	padding: 0px;
+}
+
+.chatting-message-block {
+	height: 35rem;
+	overflow-y: auto;
+	overflow-x: hidden;
+	margin: 1rem 0rem;
+}
+
+/**/
+.vertical-menu {
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 40rem;
+}
+
+.vertical-menu > li {
+	list-style-type: none;
+}
+
+.vertical-menu > li a {
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.vertical-menu li.active > a {
+    background-color: rgb(217, 245, 255);
+	font-weight: 600; 
+}
+
+.view-message {
+	margin-top: 6rem;
+}
+
+.chat-block-image > img {
+	width: 15rem;
+}
+
+.comment-hint {
+	position: relative; 
+	text-align: left; 
+	width: 20rem; 
+	background-color: rgb(245, 245, 245); 
+	border-radius: 1rem; 
+	padding: 1.5rem;
+	margin-top: 5rem;
+}
+
+.comment-hint-text {
+	width: 0px; 
+	height: 0px; 
+	border-top: 1rem solid transparent; 
+	border-right: 2rem solid rgb(245, 245, 245); 
+	border-bottom: 1rem solid transparent; 
+	position: absolute; 
+	left: -1.5rem; 
+	top: calc(50% - 1rem);
+}
+
+.parents-seen {
+	text-align: left; 
+	padding: 1rem; 
+	color: rgb(0, 174, 239);
+}
+
+.start-to-message-text {
+	font-size: 12px;
+    padding: 1rem 6rem;
+}
+
+.get-invites-to-message {
+	font-weight: 600;
+	background-color: rgb(0, 174, 239);
+	border: 1px solid rgb(0, 174, 239);
+	border-radius: 5px;
+}
+
+.get-invites-to-message:hover {
+	background-color: rgb(51, 190, 242);
+	border: 1px solid rgb(51, 190, 242);
+}
+
+.message-main-content .navbar {
+	margin: 0px;
+	padding: 1rem 2rem;
+}
+
+#popover-content {
+	display: none;
+}
+
+.popover-content {
+	width: 22rem !important;
+}
+
+.popover {
+	left: -10rem !important;
+}
+
+.popover > .arrow {
+	left: 15rem !important;
+}
+
+#date-picker-input {
+	width: 10rem !important;
+}
+
+#time-picker-input {
+	width: 9rem !important;
+}
+
+#choose-date-and-time {
+	margin: 1rem 0rem;
+}
+
+#message-send-btn,
+#message-caret-btn {
+	background-color: rgb(218, 218, 218);
+    border: 1px solid rgb(218, 218, 218);
+    color: white;
+}
+
+/*Chat conversation - START*/
+
+.chat {
+	padding: 2rem;
+}
+
+.conversation-start {
+    position: relative;
+    width: 100%;
+    margin-bottom: 27px;
+    text-align: center;
+}
+
+.conversation-start span {
+	font-size: 14px;
+    display: inline-block;
+    color: gray;
+}
+
+.conversation-start span:after {
+	right: 0;
+}
+
+.conversation-start span:before {
+	left: 0;
+}
+
+.conversation-start span:after,
+.conversation-start span:before {
+	position: absolute;
+    top: 10px;
+    display: inline-block;
+    width: 40%;
+    height: 1px;
+    content: '';
+    background-color: lightgray;
+}
+
+.bubble {
+    font-size: 12px;
+    position: relative;
+    display: inline-block;
+    clear: both;
+    margin-bottom: 8px;
+    padding: 5px 14px;
+    vertical-align: top;
+    border-radius: 5px;
+}
+
+.bubble:before {
+	position: absolute;
+    display: block;
+    width: 8px;
+    height: 6px;
+    content: '\00a0';
+    transform: rotate(29deg) skew(-35deg);
+}
+
+.bubble-you {
+	float: left;
+    color: white;
+    background-color: rgb(0, 174, 239);
+    align-self: flex-start;
+    @include animation-name(slideFromLeft);
+}
+
+.bubble-you:before {
+	left: -3px;
+    background-color: rgb(0, 174, 239);
+}
+
+.bubble-me {
+	float: right;
+    color: dark;
+    background-color: #eceff1;
+    align-self: flex-end;
+    @include animation-name(slideFromRight);
+}
+
+.bubble-me:before {
+	right: -3px;
+    background-color: #eceff1;
+}
+/*Chat conversation - END*/
+
+/*Scheduled messages - START*/
+.scheduled-messages {
+	background-color: rgb(250, 250, 249);
+	padding: 1rem 2rem;
+	border-bottom: 1px solid rgb(218, 218, 218);
+}
+
+.no-of-scheduled-messages {
+	padding: 1rem 0rem;
+	color: #717474;
+}
+
+.no-of-scheduled-messages > a {
+	color: rgb(0, 174, 239);
+	text-decoration: none;
+	cursor: pointer;
+	outline: none;
+	font-weight: 400;
+	float: right;
+}
+
+#scheduled-message-list,
+.scheduled-messages {
+	display: none;
+}
+
+#scheduled-message-list li {
+	list-style-type: none;
+	padding: 1rem 0rem;
+	border-top: 1px solid rgb(218, 218, 218)
+}
+
+#scheduled-message-list li .scheduled-list-content .scheduled-date {
+	font-weight: 600;
+}
+
+.scheduled-list-content-close-btn {
+	float: right;
+	margin-top: -3rem;
+	cursor: pointer;
+	font-size: 2rem;
+	color: #b6b8b8;
+}
+/*Scheduled messages - END*/
+/*Message-view - END*/
+
+/*Header-navigation - START*/
+/*Updating email - Start*/
+.dojo-header-content {
+    padding: 0px;
+    border-radius: 0px;
+    text-shadow: rgba(255, 255, 255, 0.5) 0px 1px;
+    font-weight: bold;
+    border: none;
+    background-color: rgb(216, 242, 252);
+    color: rgb(54, 54, 54);
+}
+
+.dojo-header-text {
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.dojo-header-text a {
+	text-decoration: none;
+	color: rgb(0, 174, 239);
+}
+
+/*Updating email - End*/
+
+/*navigation bar - user - start*/
+.navbar-settings {
+    background-color: rgb(87, 91, 125);
+    border-color: rgb(87, 91, 125);
+    margin-bottom: 0px;
+}
+
+.withImageAndIcon {
+    font-weight: bold;
+}
+
+.withImageAndIcon > div {
+    vertical-align: middle;
+    display:inline-block;
+    margin-right: 1.2em;
+}
+
+.profile-icon,
+.updated-profile-icon {
+    position: relative; 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: 50% 50%; 
+    border-radius: 50%; 
+    background-color: rgb(204, 236, 205); 
+    width: 3rem; height: 3rem; 
+    background-image: url(https://teach-static.classdojo.com/e72625cc16fa8fd41db88b1fc66beed8.png);
+}
+
+#bs-example-navbar-collapse-1 .dropdown-toggle {
+    background-color: rgb(87, 91, 125);
+    border: rgb(87, 91, 125);
+    color: white;
+}
+
+#bs-example-navbar-collapse-1 .nav > li > ul > li > a > img {
+    display: inline-block; 
+    width: 2rem; 
+    height: 2rem;
+}
+
+#bs-example-navbar-collapse-1 .nav > li > a {
+    color: white;
+}
+/*navigation bar - user - end*/
+
+/*Dropdown menu - START*/
+.dropdown-menu {
+    padding: 0px;
+}
+
+.dropdown-menu > li > a {
+    padding: 8px 20px;
+}
+
+.dropdown-menu > li:not(:last-child) {
+    border-bottom: 1px solid rgb(218, 218, 218);
+}
+/*Dropdown menu - END*/
+
+#bs-example-navbar-collapse-1 .nav > li > a .updated-profile-icon {
+    display: none;
+}
+
+a {
+    outline: none !important;
+    text-decoration: none !important;
+}
+
+@media (min-width: 768px) {
+  .navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+  }
+}
+
+.class-name {
+    margin-top: 2rem;
+    color: white;
+    font-weight: 600;
+}
+
+/*student-group-selection-btn - START*/
+.main_navigation {
+    background-color: white;
+}
+
+.main_navigation .your-class-back-btn {
+    background-color: white;
+    border: white;
+    color: black;
+    font-size: 14px;
+    padding: 0px;
+}
+
+.custom_menu li {
+    font-size: 14px;
+}
+
+.custom_menu li.active > a {
+    color: rgb(0, 174, 239) !important;
+    box-shadow: rgb(0, 174, 239) 0px -2px 0px 0px inset;
+    background-color: white !important;
+}
+
+.settings-dropdown > li > a > img {
+    padding-right: 7px;
+}
+
+.settings-dropdown > .open > a {
+    background-color: white !important; 
+    border: 0px; 
+    color: black !important; 
+    font-size: 1.4rem; 
+    font-weight: 500;
+}
+/*student-group-selection-btn - END*/
+/*Header-navigation - END*/
+
+/*Modal - START*/
+/*Teacher modal - START*/
+.refer-teacher-body-content .gift-icon {
+	padding: 3rem;
+}
+
+.refer-teacher-body-content .gift-icon > img {
+	display: block; 
+	margin: 0 auto;
+}
+
+.refer-teacher-body-content .gift-text {
+	font-size: 20px; 
+	font-weight: 700; 
+	text-align: center; 
+	padding: 1rem;
+}
+
+.refer-teacher-body-content .referral-link {
+	text-align: center; 
+	font-size: 12px;
+}
+
+.refer-teacher-body-content .link {
+	text-align: center;
+}
+
+.refer-teacher-body-content .link > a {
+	color: rgb(0, 174, 239); 
+	text-decoration: none;
+}
+
+.address-input {
+	padding: 2rem 0rem;
+}
+
+.address-input .input-group input {
+	box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 3px 0px inset;
+}
+
+.address-input .input-group span {
+	background-color: rgb(51, 190, 242); 
+	border-color: rgb(51, 190, 242); 
+	color: white;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.public-share {
+	text-align: center;
+}
+
+.public-share .btn {
+	border-radius: 5rem; 
+	border: 1px solid rgb(0, 174, 239); 
+	background-color: rgb(0, 174, 239); 
+	padding: 10px 26px;
+	color: white;
+	font-weight: 600;
+}
+/*Teacher modal - END*/
+
+/*My Institue modal - START*/
+.institute-header {
+	padding: 3rem 5rem 0px 5rem;
+}
+
+#myEditModalTab > li {
+	width: 130px; 
+	text-align: center;
+}
+
+#myEditModalTab > li.active > a{
+    border-color: white white rgb(51, 190, 242) white; 
+    border-bottom: 2px solid rgb(51, 190, 242);
+    color: rgb(51, 190, 242);
+    font-weight: 600;
+}
+
+.institute-body {
+	margin-top: 0px !important; 
+	overflow-y: auto; 
+	height: 45rem;
+}
+
+#add-new-student {
+	user-select: none; 
+	cursor: pointer; 
+	font-weight: 600; 
+	display: inline-block; 
+	outline: none; 
+	border: none rgb(0, 174, 239); 
+	color: rgb(0, 174, 239); 
+	text-align: center;
+	text-decoration: none;
+}
+
+#add-new-student span {
+	padding-left: 17px;
+}
+
+.myInstitute-parent-content {
+	background-color: rgb(230, 246, 253); 
+	border: 1px solid rgb(0, 174, 239); 
+	height: 21.9rem; 
+	padding: 14px 2rem; 
+	border-radius: 5px; 
+	margin-top: 20px;
+	text-align: center;
+}
+
+.parent-invite-btn {
+	width: 302px; 
+	margin: 20px 19px; 
+	padding: 14px; 
+	background-color: rgb(51, 190, 242) !important; 
+	border-color: rgb(51, 190, 242) !important;
+}
+
+.parent-invite-btn > img {
+	margin-right: 10px; 
+	width: 16px;
+}
+
+.parent-invite-btn span {
+	color: white;
+}
+
+.parents-connected {
+	text-align: center;
+	padding-top: 12px;
+}
+
+$bg: teal;
+$meter-size: 2rem;
+.connection-chart-layer {
+  width: 90%;
+  height: 90vh;
+  margin: 5vh auto 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circular-progress {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  overflow: hidden;
+  // background-color: $bg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.circular-progress .meter {
+    width: 9rem;
+    height: 9rem;
+    display: flex;
+    padding: 5rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.connection-percent {
+    font-size: 2rem; 
+    color: rgb(0, 174, 239);
+}
+
+.connection-text {
+    font-size: 1rem; 
+    color: rgb(140, 140, 140);
+}
+
+#student-list,
+#add-student-list {
+    border: 1px solid rgb(218, 218, 218);
+    border-radius: 5px 5px 0px 0px; 
+    margin-top: 20px; 
+    background-color: #eee; 
+    margin-bottom: 20px;
+}
+
+#add-student-list > a {
+	text-decoration: none;
+	list-style-type: none;
+}
+
+#add-student-list > a > li {
+	padding: 1rem; 
+	border-bottom: 1px solid rgb(218, 218, 218);
+}
+
+#student-list .student-list-content {
+    padding: 1rem; 
+    border-bottom: 1px solid rgb(218, 218, 218);
+}
+
+#student-list .student-list-content > span,
+#add-student-list > a > li > span {
+    padding-left: 20px;
+}
+
+#student-list .student-list-content > a {
+    float: right;
+    text-decoration: none;
+    font-weight: 600;
+    color: rgb(0, 174, 239);
+}
+
+#collapseTwo .panel-body .row .student-portfolio,
+#student-edit-profile .panel-body .row .student-portfolio,
+#student-account-tab .panel-body .row .student-portfolio,
+#student-accounts .student-portfolio {
+    background-color: rgb(230, 246, 253); 
+    border: 1px solid rgb(0, 174, 239); 
+    padding: 14px 2rem; 
+    border-radius: 5px; 
+}
+
+#collapseTwo .panel-body .row .jumbotron > a,
+#student-edit-profile .panel-body .row .jumbotron > a,
+#student-account-tab .panel-body .row .jumbotron > a {
+    user-select: none; 
+    cursor: pointer; 
+    font-weight: 600; 
+    display: inline-block; 
+    outline: none; 
+    border: none rgb(0, 174, 239); 
+    font-family: ProximaNova, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; 
+    color: rgb(0, 174, 239);
+}
+
+#collapseTwo .panel-body .row .student-portfolio .btn,
+#student-edit-profile .panel-body .row .student-portfolio .btn,
+#student-account-tab .panel-body .row .student-portfolio .btn {
+    width: 302px; 
+    margin: 20px 0px; 
+    padding: 14px;
+}
+
+#collapseTwo .panel-body .row .student-log,
+#student-edit-profile .panel-body .row .student-log,
+#student-account-tab .panel-body .row .student-log {
+    background-color: rgb(230, 246, 253); 
+    border: 1px solid rgb(0, 174, 239); 
+    padding: 14px 2rem; 
+    border-radius: 5px; 
+}
+
+#collapseTwo .panel-body .row .add-student-1 {
+    border: 2px solid rgb(218, 218, 218); 
+    height: 45px; 
+    padding: 14px 2rem; 
+    border-radius: 5px;
+}
+
+#collapseTwo .panel-body .row .add-student-2 {
+    border: 2px solid rgb(218, 218, 218); 
+    height: 45px; 
+    padding: 14px 2rem; 
+    border-radius: 5px; 
+    margin-top: -32px; 
+    margin-bottom: 10px;
+}
+
+#collapseTwo .panel-body .row .add-student-1 > img,
+#collapseTwo .panel-body .row .add-student-2 > img {
+    height: 2rem; 
+    width: 2rem; 
+    margin-top: -8px;
+}
+
+#collapseTwo .panel-body .row .add-student-1 > span,
+#collapseTwo .panel-body .row .add-student-2 > span {
+    margin-left: 10px;
+}
+
+.student-task, .positive-tab-add-skills, .need-work-add-skills {
+    position: relative;
+    width: 12rem;
+    height: 12rem;
+    cursor: pointer;
+    background-color: rgb(250, 250, 250);
+    box-shadow: rgb(218, 218, 218) 0px 0px 0px 1px inset;
+    border-radius: 5px;
+    text-align: center;
+    padding: 1rem;
+    margin: 0.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.student-task>img, .positive-tab-add-skills>img, .need-work-add-skills>img {
+    width: 4rem;
+    height: 4rem;
+    margin-top: 23px;
+}
+
+.student-task .task-points {
+	position: absolute; 
+	top: 0.8rem; 
+	right: 1rem;
+}
+
+.student-task .task-name,
+.positive-tab-add-skills .task-name,
+.need-work-add-skills .task-name {
+	height: 4.5rem; 
+	padding-top: 1rem; 
+	color: black;
+}
+/*.helping-task-text {
+    max-height: 3.3rem;
+    overflow: hidden;
+}*/
+
+.selected-btn {
+    display: inline-block;
+    border: 3px solid white;
+    border-radius: 20rem;
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 3px 0px;
+    min-width: 3.5rem;
+    font-size: 1.4rem;
+    background-color: rgb(147, 213, 83);
+}
+
+#dropdown-image-add-class,
+#dropdown-image-edit-skill,
+#dropdown-image-add-skill {
+	overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 5px;
+    z-index: 120;
+    max-height: 23.88rem;
+    width: 40rem;
+	left: -12rem !important;
+}
+
+#dropdown-image-add-class > li .row .class-icons > a > img,
+#dropdown-image-edit-skill > li .row .skill-icons > a > img,
+#dropdown-image-add-skill > li .row .skill-icons > a > img {
+	width: 5.6rem; 
+	height: 5.6rem;
+}
+
+.class-icons {
+	padding: 6px 12px;
+}
+
+.class-icon-selection-dropdown,
+.skill-icon-selection-dropdown /*Edit skill modal*/ {
+	padding-top: 5rem;
+}
+
+.class-icon-selection-dropdown .btn span {
+	bottom: 0.3rem;
+    right: 4.1rem;
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-width: 0.4rem;
+    border-style: solid;
+    border-color: rgb(140, 140, 140) transparent transparent;
+    border-image: initial;
+}
+
+#add_class_details {
+	width: 60%; 
+	margin-top: 2rem;
+}
+
+.skill-points-btn {
+	text-align: center;
+}
+
+.skill-points-btn .btn {
+	width: 15rem;
+}
+
+.skill-points-btn #positive-desktop-btn {
+	background-color: rgb(0, 174, 239); 
+	border-color: rgb(0, 174, 239); 
+	color: white;
+}
+
+.skill-points-btn #needs-desktop-work-btn {
+	margin-left: -9px; 
+	border-color: rgb(0, 174, 239); 
+	background-color: white; 
+	color: rgb(0, 174, 239);
+}
+
+.positive-desktop-container,
+.need-work-containter {
+	width: 64%;
+}
+
+.positive-desktop-container .row,
+.need-work-containter .row {
+	margin-top: 13px; 
+	width: 100%;
+}
+
+.parents-like-points {
+	border: 1px solid rgb(218, 218, 218); 
+	height: 10.9rem; 
+	padding: 14px 2rem; 
+	border-radius: 5px; 
+	margin-top: 4rem;
+	text-align: center;
+}
+
+.selecteable-radio-points {
+	margin-top: 13px;
+}
+
+#teacher-edit-modal .row .input-group {
+	margin-top: 10px;
+}
+
+#teacher-edit-modal .row .input-group input {
+	height: 33px;
+}
+
+.share-class-details {
+	border: 1px solid rgb(218, 218, 218); 
+	height: 20.9rem; 
+	padding: 14px 2rem; 
+	border-radius: 5px;
+}
+
+.share-class-details-content,
+.share-class-details-link {
+	padding-top: 10px;
+}
+
+.share-class-details-link > a {
+	user-select: none; 
+	cursor: pointer; 
+	font-weight: 600; 
+	display: inline-block;
+	outline: none; 
+	border: none rgb(0, 174, 239); 
+	color: rgb(0, 174, 239); 
+}
+/*My Institute modal - END*/
+
+/*Edit skill modal - START*/
+.edit-skill-modal-body,
+.add-skill-modal-body {
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: 30rem;
+	padding: 1rem;
+}
+
+.skill-icon-selection-dropdown .btn span {
+	bottom: 0px;
+    right: 5px;
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-width: 0.4rem;
+    border-style: solid;
+    border-color: rgb(140, 140, 140) transparent transparent;
+    border-image: initial;
+}
+
+#edit_skill_details,
+#add_skill_details {
+	width: 80%;
+	margin-top: 2rem;
+}
+
+#edit_skill_details .form-group label,
+#add_skill_details .form-group label {
+	text-align: right;
+}
+
+.edit-skill-modal-footer,
+.add-skill-modal-footer {
+	padding: 1rem 2rem;
+}
+
+#edit-skill-delete-btn {
+	float: left;
+}
+
+#edit-skill-save-btn,
+#add-skill-save-btn {
+	float: right;
+}
+
+#edit-skill-delete-btn > a {
+	color: rgb(245, 125, 118);
+	font-weight: 600;
+}
+
+#edit-skill-save-btn > a,
+#add-skill-save-btn > a {
+	color: rgb(0, 174, 239);
+	font-weight: 600;
+	margin: 3rem;
+}
+
+#edit-skill-save-btn .btn,
+#add-skill-save-btn .btn {
+	background-color: rgb(0, 174, 239);
+	border-color: rgb(0, 174, 239);
+	color: white;
+	font-weight: 600;
+	border-radius: 5rem;
+    padding: 7px 3rem;
+}
+
+/*Edit skill modal - END*/
+
+/*Account settings modal - START*/
+.account-settings-body {
+    height: 44rem; 
+    overflow-y: auto; 
+    padding: 0px !important;
+}
+
+#account-settings-sidebar {
+    border-right: 1px solid #e5e5e5; 
+    height: 100%; 
+    background-color: #e2f0ff; 
+    color: black;
+}
+
+#account-settings-sidebar .sidebar .nav-stacked > li > a {
+    margin: 0px -16px; 
+    border-bottom: 1px solid rgb(218, 218, 218);
+    color: black;
+    font-size: 11px;
+}
+
+#account-settings-sidebar .sidebar .nav-stacked > li.active > a {
+    color: rgb(0, 174, 239);
+    background-color: white;
+}
+
+.edit-profile-content {
+    border: 1px solid rgb(218, 218, 218);
+    margin-top: 2rem;
+    border-radius: 5px;
+}
+
+#account-settings-profile-icon {
+    padding: 20px 0px;
+    border-bottom: 1px solid rgb(218, 218, 218);
+}
+
+.account-settings-profile-icon {
+    position: relative; 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: 50% 50%; 
+    border-radius: 50%; 
+    background-color: rgb(204, 236, 205); 
+    width: 8rem; height: 8rem; 
+    background-image: url(https://teach-static.classdojo.com/e72625cc16fa8fd41db88b1fc66beed8.png);
+}
+
+#add-photo {
+    padding: 10px;
+}
+
+#add-photo > a {
+    text-decoration: none;
+    color: rgb(0, 174, 239);
+}
+
+#account-edit-profile-form {
+    padding: 2rem 7rem;
+    text-align: center;
+}
+
+.change-pwd-content {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+#account-edit-profile-form label,
+.change-pwd-content label {
+    font-weight: 200;
+}
+
+.change-pwd-content .btn {
+    border-radius: 5rem;
+    color: white;
+    padding: 8px 3rem;
+}
+.change-pwd-content input {
+   box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 3px 0px;  
+}
+
+.form-check label {
+    font-size: 11px;
+    font-weight: 200;
+}
+
+.seven-cols .col-md-1,
+  .seven-cols .col-xs-1  {
+    width: 14.285714285714285714285714285714%;
+    *width: 14.285714285714285714285714285714%;
+  }
+
+.add-photo-modal-body {
+    height: 30rem; 
+    overflow-y: auto; 
+    padding: 0px !important;
+    background-color: #ecedec; 
+}
+
+#add-photo-modal-sidebar {
+    border-right: 2px solid rgb(218, 218, 218); 
+    height: 100%; 
+    color: black;
+}
+
+#add-photo-modal-sidebar .sidebar .nav-stacked > li > a {
+    margin: 0px -16px; 
+    border-bottom: 2px solid rgb(218, 218, 218);
+    color: black;
+}
+
+.drag-file-content {
+    border: 2px dashed rgb(218, 218, 218);
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+}
+/*Account settings modal - END*/
+
+/*Reset bubbles - modal - START*/
+.student-group-btn #student-reset-bubbles-btn {
+    background-color: rgb(0, 174, 239); 
+    border-color: rgb(0, 174, 239); 
+    color: white; 
+    width: 10rem;
+}
+
+.student-group-btn #group-reset-bubbles-btn {
+    margin-left: -9px; 
+    border-color: rgb(0, 174, 239); 
+    background-color: white; 
+    color: rgb(0, 174, 239); 
+    width: 10rem;
+}
+
+.student-reset-bubble-container {
+    text-align: center;
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.student-reset-bubble-container .row a {
+    background-color: white; 
+    border-radius: 5px; 
+    display: inline-block; 
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px; 
+    user-select: none; 
+    cursor: pointer; 
+    text-align: center; 
+    font-size: 1.2rem; 
+    position: relative; 
+    height: 8rem; 
+    width: 16rem; 
+    margin: 1rem 1.5rem;
+}
+
+.student-reset-bubble-container .row .add-new-student {
+    background-color: rgba(255, 255, 255, 0.5); 
+    border-radius: 5px; 
+    display: inline-block; 
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px; 
+    user-select: none; 
+    cursor: pointer; 
+    text-align: center; 
+    font-size: 1.2rem; 
+    position: relative; 
+    height: 8rem; 
+    width: 16rem; 
+    margin: 1rem 1.5rem;
+}
+
+.student-reset-bubble-container .row a > img {
+    position: absolute; 
+    height: 5rem; 
+    top: 0.5rem; 
+    left: 0px; 
+    margin: 1rem;
+}
+
+#student-name {
+    position: absolute; 
+    width: 7.5rem; 
+    height: 6rem; 
+    top: 0px; 
+    right: 0px; 
+    margin: 2rem 0.5rem 2rem 2rem; 
+    font-size: 1.8rem; 
+    text-align: left;
+    overflow: hidden;
+}
+
+.reset-bubble-modal-body {
+    background-color: rgb(245, 245, 243);
+}
+
+.reset-bubble-modal-body .student-group-btn {
+    text-align: center; 
+    width: 100%;
+}
+
+.group-reset-bubble-container {
+    width: 100%; 
+}
+
+.group_block_layer > img {
+    position: absolute; 
+    height: 5rem; 
+    top: 2.5rem; 
+    left: 81px; 
+    margin: 1rem; 
+    padding: 11px;
+}
+
+.reset-bubble-text {
+    border: 1px solid rgb(218, 218, 218); 
+    padding: 14px 2rem; 
+    border-radius: 5px; 
+    margin: 4rem 20rem 0rem 20rem;
+    text-align: center;
+}
+
+.reset-bubble-footer-btn {
+    padding: 0rem 2rem;
+}
+
+.reset-bubble-footer-btn .select-all-stud {
+    float: left;
+    padding: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.reset-bubble-footer-btn .cancel-feedback-btn {
+    float: right;
+    margin-top: 10px;
+}
+
+.reset-bubble-footer-btn .cancel-feedback-btn .cancel-btn {
+    background: white !important; 
+    color: rgb(163, 163, 163); 
+    border: none; 
+    user-select: none;
+}
+
+.reset-bubble-footer-btn .cancel-feedback-btn .reset-bubble-btn {
+    color: white;
+    border-radius: 5px;
+}
+
+/*Reset bubbles - modal - END*/
+
+/*Give feedback modal - START*/
+.give-feedback-positive-negative-btn {
+    text-align: center;
+}
+
+.give-feedback-positive-negative-btn #positive-feedback-btn {
+    background-color: rgb(0, 174, 239); 
+    border-color: rgb(0, 174, 239); 
+    color: white; 
+    width: 25%;
+}
+
+.give-feedback-positive-negative-btn #needs-work-feedback-btn {
+    margin-left: -9px; 
+    border-color: rgb(0, 174, 239); 
+    background-color: white; 
+    color: rgb(0, 174, 239); 
+    width: 25%;
+}
+
+.positive-feedback-container,
+.need-work-feedback-container {
+    width: 100%;
+}
+
+.positive-feedback-container .row,
+.need-work-feedback-container .row {
+    margin-top: 13px;
+}
+
+.need-work-feedback-to-add-skills {
+    position: relative;
+    width: 12rem;
+    height: 12rem;
+    cursor: pointer;
+    background-color: rgb(250, 250, 250);
+    box-shadow: rgb(218, 218, 218) 0px 0px 0px 1px inset;
+    border-radius: 5px;
+    text-align: center;
+    padding: 1rem;
+    margin: 0.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.need-work-feedback-to-add-skills>img {
+    width: 4rem;
+    height: 4rem;
+    margin-top: 23px;
+}
+
+.need-work-feedback-to-add-skills .task-name {
+    height: 4.5rem; 
+    padding-top: 1rem; 
+    color: black;
+}
+
+.student-feedback-footer {
+	padding: 0px;
+}
+
+.student-feedback-footer #add-photo-for-feedback {
+	border-right: 1px solid rgb(218, 218, 218); 
+	height: 100%; 
+	padding: 15px; 
+	cursor: pointer;
+}
+
+.student-feedback-footer #add-post-for-feedback {
+	padding: 15px; 
+	cursor: pointer;
+}
+
+/*Give feedback modal - END*/
+
+/*Add new student modal- START*/
+#addNewStudentModalLabel {
+	float: left;
+}
+
+.import-student-list-in-add-new-student {
+	float: right;
+}
+
+.close-btn-add-new-student {
+	background-color: transparent;
+	border: none;
+	color: rgb(51, 190, 242);
+	font-weight: 600;
+}
+
+.save-btn-add-new-student {
+	background-color: rgb(51, 190, 242);
+    border: rgb(51, 190, 242);
+    padding: 1rem 3rem;
+}
+/*Add new student modal - END*/
+
+/*Group view - modal - START*/
+.group-view-modal-body,
+.create-new-group-modal-body {
+	padding: 2rem 1rem;
+    background-color: rgb(245, 245, 243);
+}
+
+.group-view-modal-body .group-view-modal-container,
+.create-new-group-modal-body .create-new-group-modal-container {
+	margin: 0px;
+}
+
+.group-view-modal-body .group-view-modal-container .row a,
+.create-new-group-modal-body .create-new-group-modal-container .row a {
+	background-color: white;
+    border-radius: 5px;
+    display: inline-block;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px;
+    user-select: none;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    height: 7rem;
+    width: 12rem;
+    margin: 1rem -1rem;
+}
+
+.group-view-modal-body .group-view-modal-container .row a > img,
+.create-new-group-modal-body .create-new-group-modal-container .row a > img {
+	position: absolute;
+    height: 4rem;
+    top: 0.5rem;
+    left: 0px;
+    margin: 1rem;
+}
+
+.group-view-modal-body .group-view-modal-container .row a > #group-view-modal-student-name,
+.create-new-group-modal-body .create-new-group-modal-container .row a > #create-group-modal-student-name {
+	position: absolute;
+    width: 6.5rem;
+    height: 5rem;
+    top: 25px;
+    right: 0px;
+    font-size: 12px;
+    overflow: hidden;
+}
+
+.award-group-btn {
+	background-color: rgb(51, 190, 242);
+	color: white;
+	text-align: center;
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.group-name-content {
+	background-color: white;
+}
+
+.group-name-content .form-inline .form-group {
+	padding: 2rem;
+}
+
+.group-name-content .form-inline .form-group label {
+	font-weight: normal;
+}
+
+.create-group-modal-cancel-btn {
+	background-color: white; 
+	border: none; 
+	color: rgb(51, 190, 242);
+	font-weight: 600;
+}
+
+#create-group-btn {
+	border-radius: 5rem; 
+	color: white;
+	font-weight: 600;
+	padding: 1rem 2rem;
+}
+
+/*Group view -  modal - END*/
+/*Modal - END*/
+
+/*student-account-content - START*/
+.student-account-content {
+  background-color: rgb(229, 246, 253); 
+  border: 1px solid rgba(0, 174, 239, 0.35); 
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px; 
+  border-radius: 5px;
+  /*text-align: center;*/
+  padding: 2rem;
+}
+
+.customize-students {
+  margin-top: 8px;
+}
+
+.points-to-student-account {
+  margin-top: 8px;
+}
+
+.student-account-content > img {
+  padding: 2rem 0rem; 
+  width: 100%;
+}
+
+.poster-btn {
+  text-align: center; 
+  padding: 1rem;
+}
+
+.poster-btn .btn {
+  width: 100%;
+  border: 1px solid rgb(51, 190, 242);
+  background-color: rgb(51, 190, 242);
+}
+
+.poster-btn > img {
+  margin-right: 10px; 
+  width: 16px;
+}
+
+.invite-codes {
+  text-align: center;
+}
+
+.invite-codes > a {
+  color: rgb(51, 190, 242);
+  text-decoration: none;
+}
+
+.student-portfolio {
+  background-color: rgb(229, 246, 253); 
+  border: 1px solid rgba(0, 174, 239, 0.35); 
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px; 
+  border-radius: 5px; 
+  text-align: center;
+  padding: 1rem !important;
+}
+
+.student-portfolio > a {
+  text-decoration: none;
+}
+
+.poster-btn .btn span {
+  color: white;
+  font-weight: 600;
+  padding-left: 10px;
+}
+/*student-account-content - END*/
+
+
+.student-account-body-content {
+  max-height: 60rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+/*student-acccount - END*/
+
+/*Add class - START*/
+.add-from-class #add-class ul,
+.add-from-class #add-student ul,
+.add-from-class #done_adding_student ul,
+.add-from-class #send_invites ul {
+	padding-left: 0px; 
+	margin: 1.5rem;
+}
+
+.add-from-class #add-class ul .class-point,
+.add-from-class #add-student ul .students-point,
+.add-from-class #done_adding_student ul .invite-point,
+.add-from-class #send_invites ul .invite-point {
+	display: inline-block; 
+	width: 35%; 
+	text-align: center; 
+	color: rgb(255, 255, 255); 
+	font-weight: 600;
+}
+
+.add-from-class #add-school ul .class-point,
+.add-from-class #add-school ul .students-point,
+.add-from-class #add-school ul .invite-point,
+.add-from-class #add-class ul .students-point,
+.add-from-class #add-class ul .invite-point,
+.add-from-class #add-student ul .class-point,
+.add-from-class #add-student ul .invite-point,
+.add-from-class #done_adding_student ul .class-point,
+.add-from-class #done_adding_student ul .students-point,
+.add-from-class #send_invites ul .class-point {
+	display: inline-block; 
+	width: 25%; 
+	text-align: center; 
+	color: rgb(154, 161, 178);
+}
+
+.add-class-timeline,
+.add-student-timeline,
+.done-add-student-timeline {
+    background: rgba(0, 0, 0, 0.5); 
+    border-radius: 5px; 
+    height: 3px; 
+    position: relative;
+}
+
+.add-from-class #add-class .add-class-timeline .add-class-timeline-outer-fill-layer {
+    position: absolute; 
+    top: 0px; 
+    height: 3px; 
+    background: rgb(122, 191, 11); 
+    width: 19.5%; 
+    border-radius: 5px;
+}
+
+.add-from-class #add-student .add-student-timeline .add-student-timeline-outer-fill-layer {
+    position: absolute; 
+    top: 0px; 
+    height: 3px; 
+    background: rgb(122, 191, 11); 
+    width: 43.5%; 
+    border-radius: 5px;
+}
+
+.add-from-class #done_adding_student .done-add-student-timeline .done-add-student-timeline-outer-fill-layer {
+    position: absolute; 
+    top: 0px; 
+    height: 3px; 
+    background: rgb(122, 191, 11); 
+    width: 68.5%; 
+    border-radius: 5px;
+}
+
+.add-from-class #add-class .add-class-timeline .add-class-timeline-outer-point {
+    position: absolute; 
+    top: 0px; 
+    left: 19.5%; 
+    width: 8px; 
+    height: 8px; 
+    margin-left: -4px; 
+    margin-top: -2.5px; 
+    border-radius: 100%; 
+    background: rgb(255, 255, 255);
+}
+
+.add-from-class #add-student .add-student-timeline .add-student-timeline-outer-point {
+    position: absolute; 
+    top: 0px; 
+    left: 43.5%; 
+    width: 8px; 
+    height: 8px; 
+    margin-left: -4px; 
+    margin-top: -2.5px; 
+    border-radius: 100%; 
+    background: rgb(255, 255, 255);
+}
+
+.add-from-class #done_adding_student .done-add-student-timeline .done-add-student-timeline-outer-point {
+    position: absolute; 
+    top: 0px; 
+    left: 68.5%; 
+    width: 8px; 
+    height: 8px; 
+    margin-left: -4px; 
+    margin-top: -2.5px; 
+    border-radius: 100%; 
+    background: rgb(255, 255, 255);
+}
+
+.add-class-modal,
+.add-student-modal,
+.done-add-student-modal {
+    margin-top: 2rem;
+    background-color: white;
+    border-radius: 0.5rem;
+    margin-bottom: 10rem;
+}
+
+.add-class-modal-header,
+.add-class-modal-body,
+.add-student-modal-header,
+.add-student-modal-body,
+.done-add-student-modal-header,
+.done-add-student-modal-body {
+    border-bottom: 1px solid #e5e5e5;
+    padding: 18px;
+}
+
+.add-class-modal-body .row .dropdown .btn > span {
+    bottom: 0.3rem; 
+    right: 4.1rem; 
+    left: 10rem;
+    position: absolute; 
+    width: 0px; 
+    height: 0px; 
+    border-width: 0.4rem; 
+    border-style: solid; 
+    border-color: rgb(140, 140, 140) transparent transparent; 
+    border-image: initial;
+}
+
+.add-class-modal-body .row .dropdown .dropdown-menu {
+    overflow-y: auto; 
+    overflow-x: hidden;
+    border-radius: 5px; 
+    z-index: 120;
+    max-height: 23.88rem;
+}
+
+.add-class-modal-body .form-horizontal label {
+    font-size: 12px;
+}
+
+.schools-list {
+    border: 1px solid rgb(218, 218, 218);
+    height: 20rem;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+.add-student-modal-body-list {
+    background-color: rgb(245, 245, 245);
+    border-bottom: 1px solid #e5e5e5;
+    min-height: 15rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 120;
+    height: 23rem;
+}
+
+.add-class-modal-footer,
+.add-student-modal-footer,
+.done-add-student-modal-footer {
+    padding: 10px;
+    text-align: right;
+}
+
+
+.add-class-modal-footer > a,
+.add-student-modal-footer > a,
+.done-add-student-modal-footer > a {
+    user-select: none; 
+    cursor: pointer; 
+    font-weight: 600; 
+    display: inline-block; 
+    outline: none; 
+    border: none rgb(0, 174, 239); 
+    color: rgb(0, 174, 239); 
+    margin-right: 2rem;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+
+
+
+/*.student-task:hover,
+.positive-tab-add-skills:hover,
+.need-work-add-skills:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}*/
+
+#positiveDesktopTab .positive-desktop-container .row .student-task:hover,
+#positiveDesktopTab .positive-desktop-container .row .positive-tab-add-skills:hover,
+#needsDesktopWorkTab .need-work-containter .row .need-work-add-skills:hover {
+	background-color: rgba(0, 0, 0, 0.8);
+}
+
+.main-content {
+	margin: 2rem;
+}
+
+
+/*--------------------------
+   Teacher view page
+----------------------------*/
+
+
+/*Teacher overview page - START*/
+.teacher-class-view-btn {
+	padding: 2rem 0rem;
+	text-align: center;
+}
+
+.teacher-class-view-btn .btn-group #class-btn,
+.teacher-class-view-btn .btn-group #group-class-btn {
+	width: 15rem;
+}
+
+.teacher-class-view-btn .btn-group #class-btn {
+	background-color: rgb(0, 174, 239);
+    border-color: rgb(0, 174, 239);
+    color: white;
+}
+
+.teacher-class-view-btn .btn-group #group-class-btn {
+	color: rgb(0, 174, 239);
+	border-color: rgb(0, 174, 239);
+}
+/*Teacher overview page - END*/
+
+/*Teacher Group page - START*/
+.teacher-class-group-view-btn {
+	padding: 2rem 0rem;
+	text-align: center;
+}
+
+.teacher-class-group-view-btn .btn-group #teacher-class-btn,
+.teacher-class-group-view-btn .btn-group #teacher-group-class-btn {
+	width: 15rem;
+}
+
+.teacher-class-group-view-btn .btn-group #teacher-group-class-btn {
+	background-color: rgb(0, 174, 239);
+    border-color: rgb(0, 174, 239);
+    color: white;
+}
+
+.teacher-class-group-view-btn .btn-group #teacher-class-btn {
+	color: rgb(0, 174, 239);
+	border-color: rgb(0, 174, 239);
+}
+/*Teacher Group page - END*/
+
+/*Staff overview page - START*/
+.staff-overview-page-btn {
+	padding: 2rem 0rem;
+	text-align: center;
+}
+
+.staff-overview-page-btn .btn-group #staff-overview-btn,
+.staff-overview-page-btn .btn-group #staff-overview-group-btn {
+	width: 15rem;
+}
+
+.staff-overview-page-btn .btn-group #staff-overview-btn {
+	background-color: rgb(0, 174, 239);
+    border-color: rgb(0, 174, 239);
+    color: white;
+}
+
+.staff-overview-page-btn .btn-group #staff-overview-group-btn {
+	color: rgb(0, 174, 239);
+	border-color: rgb(0, 174, 239);
+}
+/*Staff overview page - END*/
+
+/*Staff Group page - START*/
+.staff-group-view-page-btn {
+	padding: 2rem 0rem;
+	text-align: center;
+}
+
+.staff-group-view-page-btn .btn-group #staff-btn,
+.staff-group-view-page-btn .btn-group #staff-group-view-btn {
+	width: 15rem;
+}
+
+.staff-group-view-page-btn .btn-group #staff-group-view-btn {
+	background-color: rgb(0, 174, 239);
+    border-color: rgb(0, 174, 239);
+    color: white;
+}
+
+.staff-group-view-page-btn .btn-group #staff-btn {
+	color: rgb(0, 174, 239);
+	border-color: rgb(0, 174, 239);
+}
+/*Staff Group page - END*/
+
+/*Class list block - START */
+.class-block {
+	vertical-align: top; 
+	display: inline-block; 
+	margin: 1rem;
+}
+
+.class-block a {
+	cursor: pointer; 
+	text-decoration: none;
+}
+
+.class-image-content {
+	position: relative; 
+	background-color: white; 
+	border-radius: 6px; 
+	box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px; 
+	padding: 2rem; 
+	width: 18rem; 
+	min-height: 22rem;
+}
+
+.class-image-content img {
+	display: block; 
+	margin: 0 auto;
+	width: 9.4rem; 
+	height: 9.4rem; 
+	border-radius: 50%;
+}
+
+.class-image-content #class-name {
+	font-size: 1.6rem; 
+	font-weight: 600; 
+	margin-top: 2rem; 
+	color: rgb(54, 54, 54); 
+	text-align: center; 
+	width: 100%; 
+	overflow: hidden; 
+	white-space: nowrap; 
+	text-overflow: ellipsis;
+}
+
+.class-image-content #no-of-students {
+	font-size: 1.4rem; 
+	color: rgb(140, 140, 140);
+	text-align: center; 
+	width: 100%; 
+	overflow: hidden; 
+	white-space: nowrap; 
+	text-overflow: ellipsis;
+}
+
+.class-settings {
+	position: relative; 
+	 top: 0px; 
+	 right: 0px;
+	 float: right;
+	 z-index: 999;
+}
+
+.class-settings .dropdown-toggle {
+	position: relative; 
+	display: inline-block; 
+	cursor: pointer;
+}
+
+.class-settings .dropdown-toggle .class-settings-icon {
+	color: rgb(140, 140, 140); 
+	cursor: pointer; 
+	/*padding: 1.5rem 9.1rem 0.5rem 0.5rem; */
+	opacity: 0.6;
+	padding: 1rem;
+}
+
+.class-image-content > img {
+	display: block; 
+	margin: 2rem auto;
+}
+
+.get-started-text {
+	font-size: 15px;
+}
+/*Class list block - END*/
+
+/*Staff view - START*/
+.staff-block {
+	vertical-align: top; 
+	display: inline-block; 
+}
+
+.staff-block a {
+    background-color: white; 
+    border-radius: 5px; 
+    display: inline-block; 
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px; 
+    user-select: none; 
+    cursor: pointer; 
+    text-align: center; 
+    font-size: 1.2rem; 
+    position: relative; 
+    height: 10rem; 
+    width: 20rem; 
+    margin: 1rem 1.5rem;
+}
+
+.staff-block a > img {
+    position: absolute; 
+    height: 8rem; 
+    top: 0.5rem; 
+    left: 0px; 
+    margin: 1rem;
+}
+
+.staff-block a #student-name {
+    position: absolute; 
+    width: 7.5rem; 
+    height: 6rem; 
+    top: 0px; 
+    right: 0px; 
+    margin: 4rem 0rem; 
+    font-size: 1.8rem; 
+    text-align: left;
+    overflow: hidden;
+}
+
+/*Staff view - END*/
+
+/*Story view  navbar - START*/
+.story-feed-container {
+	background-color: white;
+}
+
+.story-view-side-navbar {
+	margin: 2rem 1rem 1rem 20rem;
+}
+
+.story-view-side-navbar > ul > li > a > img {
+	width: 12%;
+    margin-right: 5px;
+}
+
+.story-view-side-navbar .nav > li > a {
+	padding: 5px 15px;
+	color: black;
+}
+
+.story-view-side-navbar .nav > li > a:hover,
+.story-view-side-navbar .nav > li.active {
+	background-color: rgba(0, 174, 239, 0.26);
+	border-radius: 2px;
+	color: white;
+	font-weight: 600;
+}
+
+.story-view-side-navbar .nav .classes,
+.story-view-side-navbar .nav .class-groups,
+.story-view-side-navbar .nav .staffs,
+.story-view-side-navbar .nav .staff-group {
+	padding: 20px 15px 3px 15px;
+	font-weight: 600;
+}
+
+.story-feed-section {
+    padding: 2rem;
+    border-left: 1px solid rgb(218, 218, 218);
+    min-height: 100%;
+}
+
+.story-feed-section .story-feed-content {
+	padding: 3rem !important;
+	background-color: white;
+	border: 1px solid rgb(218, 218, 218);
+}
+
+#story-feed-image > img {
+	width: 10rem;
+	height: 10rem;
+}
+
+#post-message-image-uploading,
+.post-message-document-upload {
+	display: none;
+}
+/*Story view navbar - END*/
+
+.post-message-content {
+  background-color: white; 
+  border: 1px solid rgb(0, 174, 239);
+  padding: 1rem 1rem !important;
+}
+
+.post-message-document-upload {
+    border: 1px solid rgb(218, 218, 218);
+    padding: 1rem;
+    border-radius: 1rem;
+    display: none;
+}
+
+.post-msg-add-photo-btn, .post-msg-add-file-btn, .post-msg-add-card-btn {
+  background-color: white; 
+  cursor: pointer;
+  color: rgb(0, 174, 239);
+}
+
+.post-btn,
+.story-post-btn {
+  background-color: rgb(0, 174, 239) !important; 
+  border-color: rgb(0, 174, 239) !important; 
+  border-radius: 1rem; 
+  border-radius: 35rem; 
+  padding: 5px 23px;
+}
+
+.post-message-content textarea::-webkit-input-placeholder {
+color: rgb(0, 174, 239) !important;
+}
+ 
+.post-message-content textarea:-moz-placeholder { /* Firefox 18- */
+color: rgb(0, 174, 239) !important;  
+}
+ 
+.post-message-content textarea::-moz-placeholder {  /* Firefox 19+ */
+color: rgb(0, 174, 239) !important;  
+}
+ 
+.post-message-content textarea:-ms-input-placeholder {  
+color: rgb(0, 174, 239) !important;  
+}
+
+.profile-icon-post {
+  position: relative; 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: 50% 50%; 
+  border-radius: 50%; 
+  background-color: rgb(204, 236, 205); 
+  width: 5rem; height: 5rem; 
+  background-image: url(https://teach-static.classdojo.com/e72625cc16fa8fd41db88b1fc66beed8.png);
+}
+
+/*Comment posted - START*/
+.story-post-comment-content {
+  background-color: white;
+  border: 1px solid rgb(218, 218, 218);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px;
+  border-radius: 5px;
+}
+
+.story-post-comment-header {
+  border-bottom: 1px solid rgb(218, 218, 218);
+}
+
+.story-post-comment-footer {
+  border-top: 1px solid rgb(218, 218, 218);
+}
+
+.story-post-comment-header .profile-icon-post {
+  margin: 1rem;
+}
+
+.story-poster-name,
+.story-posted-day {
+  padding: 2rem;
+}
+
+.story-poster-name .glyphicon {
+  font-size: 9px;
+}
+
+.story-poster-name span,
+.story-posted-day span {
+  font-weight: normal;
+}
+
+.story-post-comment-body {
+  background-image: url(https://previews.123rf.com/images/iimages/iimages1410/iimages141000073/32133322-Illustration-of-children-playing-music-instrument-Stock-Vector-piano.jpg);
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset;
+  width: 100%;
+  height: 50rem;
+  margin: 0px -1px;
+  cursor: pointer;
+}
+
+.story-comments-content {
+  margin: 2rem;
+}
+
+.story-message-string,
+.story-no-of-likes-and-comments {
+  font-weight: normal;
+  margin: 2rem 0rem;
+}
+
+.story-no-of-likes-and-comments {
+  font-size: 11px;
+}
+
+.story-likes-and-comments .btn:hover,
+.story-likes-and-comments .btn {
+  background-color: white;
+  border: 1px solid rgb(218, 218, 218);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset
+}
+
+.story-likes-and-comments .btn:active,
+.story-likes-and-comments .btn:focus,
+.story-likes-and-comments .btn-default:active,
+.story-likes-and-comments .btn-default:focus {
+  background-color: #d4d4d4 !important;
+  border-color: #8c8c8c !important;
+  outline: none;
+}
+
+
+.story-no-of-likes-and-comments .fa {
+  color: rgb(140, 140, 140);
+}
+
+.story-delete-post-cancel-btn {
+  border: none;
+  background: transparent;
+  color: rgb(51, 190, 242);
+  font-weight: 600;
+}
+
+.story-delete-post-btn {
+  border-radius: 5rem;
+  padding: 1rem 2rem;
+}
+
+#story-delete-post-modal .modal-body {
+  font-weight: normal;
+}
+
+.story-no-of-likes-and-comments,
+.story-no-of-likes-and-comments hr,
+.story-no-of-likes-and-comments .story-no-of-likes,
+.story-no-of-likes-and-comments .story-no-of-comments {
+  display: none;
+}
+
+.story-comments-posting {
+  border-top: 1px solid rgb(218, 218, 218);
+  padding: 1rem;
+  display: none;
+}
+
+.story-comment-input,
+.story-comments-posting .story-poster-name {
+  padding: 1rem;
+}
+
+/*Comment posted - END*/
+
+/*Edit story view - modal - START*/
+.story-edit-post-message-content {
+  background-color: white; 
+  border: 1px solid rgb(0, 174, 239);
+  padding: 2rem 3rem !important;
+}
+
+#story-add-profile-button-in-edit-post {
+	color: rgb(0, 174, 239);
+    height: 2rem;
+}
+
+#story-add-profile-button-in-edit-post .story-add-photo-btn {
+  display: none;
+}
+
+.story-add-photo-btn {
+  background-color: white; 
+  cursor: pointer;
+}
+/*Edit story view - modal - END*/
+
+/*Delete story view - modal - START*/
+.delete-post-cancel-btn {
+  border: none;
+  background: transparent;
+  color: rgb(51, 190, 242);
+  font-weight: 600;
+}
+
+.delete-post-btn {
+  border-radius: 5rem;
+  padding: 1rem 2rem;
+}
+
+#delete-post-modal .modal-body {
+  font-weight: normal;
+}
+/*Delete story view - modal - END*/
+
+/*Group class modal - START*/
+.group-class-modal-body,
+.edit-class-group-modal-body {
+	background-color: rgb(250, 250, 250);,
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 30rem;
+}
+/*Group class modal - END*/
+
+.selection_outdoor_layer {
+    position: absolute; 
+    top: -2rem; 
+    right: -2rem; 
+    padding: 0px; 
+    margin: 0px; 
+    border: 0px; 
+    text-align: right;
+}
+
+.selection_inner_layer {
+    display: inline-block; 
+    border: 3px solid white; 
+    border-radius: 20rem; 
+    color: white; 
+    text-align: center; 
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 3px 0px; 
+    font-weight: 600; 
+    font-size: 2rem; 
+    background-color: rgb(218, 218, 218);
+}
+
+.selection_inner_layer>img {
+    display: block;
+    height: 28px;
+    width: 28px;
+}
+
+.remove-staff-btn,
+.save-class-btn,
+.add-post-class-btn {
+    border: 1px solid rgb(218, 218, 218);
+    background-color: rgb(218, 218, 218);
+    color: white;
+    border-radius: 200px;
+    outline: none;
+    padding: 0.9rem 3.2rem;
+    font-weight: 600;
+    font-size: 1.6rem;
+}
+
+.remove-staff-btn:hover,
+.save-class-btn:hover,
+.add-post-class-btn:hover {
+	color: white;
+}
+
+.class-block-close-btn,
+.class-block-close-btn:hover {
+	background-color: white;
+	outline: none;
+	color: rgb(51, 190, 242);
+	font-weight: 600;
+}
+
+.fa-exclamation-triangle {
+	color: rgba(218, 8, 8, 0.84) !important;
+}
+
+.warning-message-footer .btn {
+	padding: 2px 6px !important;
+}
+
+/*Add post - CLASS - START*/
+.add-post-class-message-content {
+	background-color: white;
+    border: 1px solid rgb(0, 174, 239);
+    padding: 2rem 3rem !important;
+}
+
+#adding-image-content {
+	display: none;
+}
+
+#adding-class-profile-btns {
+	color: rgb(0, 174, 239);
+    height: 2rem;
+}
+
+.add-class-photo-btn {
+	background-color: white;
+    cursor: pointer;
+}
+
+.add-class-post-btn {
+	background-color: rgb(0, 174, 239) !important;
+    border-color: rgb(0, 174, 239) !important;
+    border-radius: 5rem;
+    padding: 5px 23px;
+    color: white;
+    font-weight: 600;
+}
+/*Add post - CLASS - END*/
+
+/*Group class modal - START*/
+.group-class-block {
+	display: inline-block;
+}
+
+.group-class-block a {
+    background-color: white; 
+    border-radius: 5px; 
+    display: inline-block; 
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px; 
+    user-select: none; 
+    cursor: pointer; 
+    text-align: center; 
+    font-size: 1.2rem; 
+    position: relative; 
+    height: 8rem; 
+    width: 15rem; 
+    margin: 1rem 1.5rem;
+}
+
+.group-class-block a > img {
+    position: absolute; 
+    height: 5rem; 
+    top: 0.5rem; 
+    left: 0px; 
+    margin: 1rem;
+}
+
+.group-class-block a #group-class-name {
+    position: absolute; 
+    width: 7.5rem; 
+    height: 0rem; 
+    top: 0px; 
+    right: 0px; 
+    margin: 3rem 0rem; 
+    font-size: 1.8rem; 
+    text-align: left;
+}
+
+.add-group-class-post-btn,
+.add-staff-post-btn {
+	background-color: rgb(51, 190, 242);
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.class-group-name {
+	text-align: center;
+	padding: 2rem;
+}
+/*Group class modal - END*/
+
+/*Sweet alert - btns */
+.sa-button-container .btn {
+	padding: 4px 20px !important;
+    font-size: 15px !important;
+}
+
+.sweet-alert h2 {
+	font-size: 15px !important;
+}
+
+/*staff view block - START*/
+.staff-view-block {
+	vertical-align: top; 
+	display: inline-block; 
+}
+
+.staff-view-block a {
+    background-color: white; 
+    border-radius: 5px; 
+    display: inline-block; 
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px; 
+    user-select: none; 
+    cursor: pointer; 
+    text-align: center; 
+    font-size: 1.2rem; 
+    position: relative; 
+    height: 8rem; 
+    width: 15rem; 
+    margin: 1rem 1.5rem;
+}
+
+.staff-view-block a > img {
+    position: absolute; 
+    height: 5rem; 
+    top: 0.5rem; 
+    left: 0px; 
+    margin: 1rem;
+}
+
+.staff-view-block a #student-name {
+    position: absolute; 
+    width: 7.5rem; 
+    top: 0px; 
+    right: 0px; 
+    margin: 2rem; 
+    font-size: 1.8rem; 
+}
+
+/*Staff view block - END*/
+
+/*Edit staff block - START*/
+.edit-staff-block {
+	vertical-align: top; 
+	display: inline-block; 
+}
+
+.edit-staff-block a {
+    background-color: white; 
+    border-radius: 5px; 
+    display: inline-block; 
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px; 
+    user-select: none; 
+    cursor: pointer; 
+    text-align: center; 
+    font-size: 1.2rem; 
+    position: relative; 
+    height: 8rem; 
+    width: 15rem; 
+    margin: 1rem;
+}
+
+.edit-staff-block a > img {
+    position: absolute; 
+    height: 5rem; 
+    top: 0.5rem; 
+    left: 0px; 
+    margin: 1rem;
+}
+
+.edit-staff-block a #student-name {
+    position: absolute; 
+    width: 7.5rem; 
+    top: 0px; 
+    right: 0px; 
+    margin: 2rem; 
+    font-size: 1.8rem; 
+}
+
+/*Edit staff block - END*/
+
+/*Staff profile block - START*/
+.staff-image-block {
+	text-align: right;
+}
+
+.staff-image-block > img {
+	width: 30%;
+}
+
+.staff-prof-block {
+	padding: 2rem;
+}
+
+.classes-taken {
+	padding: 2rem;
+	font-size: 1.5rem;
+	font-weight: 600;
+	float: left;
+}
+
+.assign-new-class {
+	float: right;
+  margin: 20px;
+}
+
+.staff-class {
+	padding: 10px;
+    background-color: #e1f9f9;
+    display: table;
+    border-radius: 5px;
+    margin: 0rem 1rem 1rem 0rem;
+    width: 30%;
+    cursor: pointer;
+}
+
+#staff-class-img > img {
+    vertical-align: middle;
+    display: table-cell;
+    /*margin-right: 1em;*/
+    width: 30px;
+    height: 30px;
+}
+
+.staff-class #class-name {
+    vertical-align: middle;
+    display: table-cell;
+    overflow: hidden;
+    white-space: nowrap;
+  	text-overflow: ellipsis;
+  	max-width: 150px;
+}
+
+.class-list-view {
+	padding: 0rem 2rem;
+}
+
+.class-list-view .row li {
+  list-style: none;
+}
+
+.select2-container {
+  width: 25rem !important;
+}
+
+.staff-info-modal-body {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 30rem;
+}
+
+.class_selection_outdoor_layer {
+    position: absolute; 
+    top: 0rem; 
+    right: 0rem; 
+    padding: 0px; 
+    margin: 0px; 
+    border: 0px; 
+    text-align: right;
+}
+
+.class_selection_inner_layer {
+    display: inline-block; 
+    border: white; 
+    border-radius: 20rem; 
+    color: white; 
+    text-align: center; 
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 3px 0px; 
+    font-weight: 600; 
+    font-size: 2rem; 
+    background-color: rgb(218, 218, 218);
+}
+
+.class_selection_inner_layer>img {
+    display: block;
+    height: 20px;
+    width: 20px;
+}
+
+.staff-class-block-layer #class-name {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: absolute;
+    width: 9rem;
+    top: 0px;
+    left: 4em;
+    margin: 2rem 0rem;
+    color: black;
+}
+
+.selected-class-list .row #class-list {
+  list-style: none;
+}
+
+.class-filter-button {
+  margin: 1rem 0rem;
+}
+/*Staff profile block - END*/
+
+.profile-background .change-btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: transparent;
+  color: white;
+  color: #e4e0e0;
+  padding: 0px 5px !important;
+  border: none;
+  margin: 1rem;
+}
+
+/*Group view - modal - START*/
+.group-view-modal-body,
+.create-new-group-modal-body {
+  padding: 2rem 1rem;
+  background-color: rgb(245, 245, 243);
+}
+
+.group-view-modal-body .group-view-modal-container,
+.create-new-group-modal-body .create-new-group-modal-container {
+  margin: 0px;
+}
+
+.group-view-modal-body .group-view-modal-container .row a,
+.create-new-group-modal-body .create-new-group-modal-container .row a {
+  background-color: white;
+  border-radius: 5px;
+  display: inline-block;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px;
+  user-select: none;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  height: 7rem;
+  width: 12rem;
+  margin: 1rem -1rem;
+}
+
+.group-view-modal-body .group-view-modal-container .row a > img,
+.create-new-group-modal-body .create-new-group-modal-container .row a > img {
+  position: absolute;
+    height: 4rem;
+    top: 0.5rem;
+    left: 0px;
+    margin: 1rem;
+}
+
+.group-view-modal-body .group-view-modal-container .row a > #group-view-modal-student-name,
+.create-new-group-modal-body .create-new-group-modal-container .row a > #create-group-modal-student-name {
+  position: absolute;
+    width: 6.5rem;
+    height: 5rem;
+    top: 25px;
+    right: 0px;
+    font-size: 12px;
+    overflow: hidden;
+}
+
+.award-group-btn {
+  background-color: rgb(51, 190, 242);
+  color: white;
+  text-align: center;
+    padding: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.group-name-content {
+  background-color: white;
+}
+
+.group-name-content .form-inline .form-group {
+  padding: 2rem;
+}
+
+.group-name-content .form-inline .form-group label {
+  font-weight: normal;
+}
+
+.create-group-modal-cancel-btn {
+  background-color: white; 
+  border: none; 
+  color: rgb(51, 190, 242);
+  font-weight: 600;
+}
+
+#create-group-btn {
+  border-radius: 5rem; 
+  color: white;
+  font-weight: 600;
+  padding: 1rem 2rem;
+}
+
+.student-select-outer-layer {
+    position: absolute; 
+    top: -2rem; 
+    right: -2rem; 
+    padding: 0px; 
+    margin: 0px; 
+    border: 0px; 
+    text-align: right;
+}
+
+.student-select-inner-layer {
+    display: inline-block; 
+    border: 3px solid white; 
+    border-radius: 20rem; 
+    color: white; 
+    text-align: center; 
+    padding: 0.5rem; 
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 3px 0px; 
+    font-weight: 600; 
+    min-width: 4rem; 
+    font-size: 2rem; 
+    background-color: rgb(218, 218, 218);
+}
+
+.student-select-inner-layer > img {
+    display: block;
+    height: 24px;
+    width: 23px;
+}
+/*Group view -  modal - END*/
+.add-new-staff-block {
+  background-color: white;
+    border-radius: 5px;
+    display: inline-block;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px;
+    user-select: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.2rem;
+    position: relative;
+    height: 10rem;
+    width: 20rem;
+    margin: 1rem 1.5rem;
+}
+
+.add-new-staff-block #add-new > img {
+  margin: 0rem auto;
+  display: block;
+  margin-top: 2rem;
+  height: 6rem;
+}
+.bgexmple{
+ background-image:url(../images/bg.png);
+}

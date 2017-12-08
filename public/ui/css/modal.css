@@ -1,0 +1,966 @@
+/*Teacher modal - START*/
+.refer-teacher-body-content .gift-icon {
+	padding: 3rem;
+}
+
+.refer-teacher-body-content .gift-icon > img {
+	display: block; 
+	margin: 0 auto;
+}
+
+.refer-teacher-body-content .gift-text {
+	font-size: 20px; 
+	font-weight: 700; 
+	text-align: center; 
+	padding: 1rem;
+}
+
+.refer-teacher-body-content .referral-link {
+	text-align: center; 
+	font-size: 12px;
+}
+
+.refer-teacher-body-content .link {
+	text-align: center;
+}
+
+.refer-teacher-body-content .link > a {
+	color: rgb(0, 174, 239); 
+	text-decoration: none;
+}
+
+.address-input {
+	padding: 2rem 0rem;
+}
+
+.address-input .input-group input {
+	box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 3px 0px inset;
+}
+
+.address-input .input-group span {
+	background-color: rgb(51, 190, 242); 
+	border-color: rgb(51, 190, 242); 
+	color: white;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.public-share {
+	text-align: center;
+}
+
+.public-share .btn {
+	border-radius: 5rem; 
+	border: 1px solid rgb(0, 174, 239); 
+	background-color: rgb(0, 174, 239); 
+	padding: 10px 26px;
+	color: white;
+	font-weight: 600;
+}
+/*Teacher modal - END*/
+
+/*My Institue modal - START*/
+.institute-header {
+	padding: 3rem 5rem 0px 5rem;
+}
+
+#myEditModalTab > li {
+	width: 130px; 
+	text-align: center;
+}
+
+#myEditModalTab > li.active > a{
+    border-color: white white rgb(51, 190, 242) white; 
+    border-bottom: 2px solid rgb(51, 190, 242);
+    color: rgb(51, 190, 242);
+    font-weight: 600;
+}
+
+.institute-body {
+	margin-top: 0px !important; 
+	overflow-y: auto; 
+	height: 45rem;
+}
+
+#add-new-student {
+	user-select: none; 
+	cursor: pointer; 
+	font-weight: 600; 
+	display: inline-block; 
+	outline: none; 
+	border: none rgb(0, 174, 239); 
+	color: rgb(0, 174, 239); 
+	text-align: center;
+	text-decoration: none;
+}
+
+#add-new-student span {
+	padding-left: 17px;
+}
+
+.myInstitute-parent-content {
+	background-color: rgb(230, 246, 253); 
+	border: 1px solid rgb(0, 174, 239); 
+	height: 21.9rem; 
+	padding: 14px 2rem; 
+	border-radius: 5px; 
+	margin-top: 20px;
+	text-align: center;
+}
+
+.parent-invite-btn {
+	width: 302px; 
+	margin: 20px 19px; 
+	padding: 14px; 
+	background-color: rgb(51, 190, 242) !important; 
+	border-color: rgb(51, 190, 242) !important;
+}
+
+.parent-invite-btn > img {
+	margin-right: 10px; 
+	width: 16px;
+}
+
+.parent-invite-btn span {
+	color: white;
+}
+
+.parents-connected {
+	text-align: center;
+	padding-top: 12px;
+}
+
+$bg: teal;
+$meter-size: 2rem;
+.connection-chart-layer {
+  width: 90%;
+  height: 90vh;
+  margin: 5vh auto 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circular-progress {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  overflow: hidden;
+  // background-color: $bg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.circular-progress .meter {
+    width: 9rem;
+    height: 9rem;
+    display: flex;
+    padding: 5rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.connection-percent {
+    font-size: 2rem; 
+    color: rgb(0, 174, 239);
+}
+
+.connection-text {
+    font-size: 1rem; 
+    color: rgb(140, 140, 140);
+}
+
+#student-list,
+#add-student-list {
+    border: 1px solid rgb(218, 218, 218);
+    border-radius: 5px 5px 0px 0px; 
+    margin-top: 20px; 
+    background-color: #eee; 
+    margin-bottom: 20px;
+}
+
+#add-student-list > a {
+	text-decoration: none;
+	list-style-type: none;
+}
+
+#add-student-list > a > li {
+	padding: 1rem; 
+	border-bottom: 1px solid rgb(218, 218, 218);
+}
+
+#student-list .student-list-content {
+    padding: 1rem; 
+    border-bottom: 1px solid rgb(218, 218, 218);
+}
+
+#student-list .student-list-content > span,
+#add-student-list > a > li > span {
+    padding-left: 20px;
+}
+
+#student-list .student-list-content > a {
+    float: right;
+    text-decoration: none;
+    font-weight: 600;
+    color: rgb(0, 174, 239);
+}
+
+#collapseTwo .panel-body .row .student-portfolio,
+#student-edit-profile .panel-body .row .student-portfolio,
+#student-account-tab .panel-body .row .student-portfolio,
+#student-accounts .student-portfolio {
+    background-color: rgb(230, 246, 253); 
+    border: 1px solid rgb(0, 174, 239); 
+    padding: 14px 2rem; 
+    border-radius: 5px; 
+}
+
+#collapseTwo .panel-body .row .jumbotron > a,
+#student-edit-profile .panel-body .row .jumbotron > a,
+#student-account-tab .panel-body .row .jumbotron > a {
+    user-select: none; 
+    cursor: pointer; 
+    font-weight: 600; 
+    display: inline-block; 
+    outline: none; 
+    border: none rgb(0, 174, 239); 
+    font-family: ProximaNova, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; 
+    color: rgb(0, 174, 239);
+}
+
+#collapseTwo .panel-body .row .student-portfolio .btn,
+#student-edit-profile .panel-body .row .student-portfolio .btn,
+#student-account-tab .panel-body .row .student-portfolio .btn {
+    width: 302px; 
+    margin: 20px 0px; 
+    padding: 14px;
+}
+
+#collapseTwo .panel-body .row .student-log,
+#student-edit-profile .panel-body .row .student-log,
+#student-account-tab .panel-body .row .student-log {
+    background-color: rgb(230, 246, 253); 
+    border: 1px solid rgb(0, 174, 239); 
+    padding: 14px 2rem; 
+    border-radius: 5px; 
+}
+
+#collapseTwo .panel-body .row .add-student-1 {
+    border: 2px solid rgb(218, 218, 218); 
+    height: 45px; 
+    padding: 14px 2rem; 
+    border-radius: 5px;
+}
+
+#collapseTwo .panel-body .row .add-student-2 {
+    border: 2px solid rgb(218, 218, 218); 
+    height: 45px; 
+    padding: 14px 2rem; 
+    border-radius: 5px; 
+    margin-top: -32px; 
+    margin-bottom: 10px;
+}
+
+#collapseTwo .panel-body .row .add-student-1 > img,
+#collapseTwo .panel-body .row .add-student-2 > img {
+    height: 2rem; 
+    width: 2rem; 
+    margin-top: -8px;
+}
+
+#collapseTwo .panel-body .row .add-student-1 > span,
+#collapseTwo .panel-body .row .add-student-2 > span {
+    margin-left: 10px;
+}
+
+.student-task, .positive-tab-add-skills, .need-work-add-skills {
+    position: relative;
+    width: 12rem;
+    height: 12rem;
+    cursor: pointer;
+    background-color: rgb(250, 250, 250);
+    box-shadow: rgb(218, 218, 218) 0px 0px 0px 1px inset;
+    border-radius: 5px;
+    text-align: center;
+    padding: 1rem;
+    margin: 0.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.student-task>img, .positive-tab-add-skills>img, .need-work-add-skills>img {
+    width: 4rem;
+    height: 4rem;
+    margin-top: 23px;
+}
+
+.student-task .task-points {
+	position: absolute; 
+	top: 0.8rem; 
+	right: 1rem;
+}
+
+.student-task .task-name,
+.positive-tab-add-skills .task-name,
+.need-work-add-skills .task-name {
+	height: 4.5rem; 
+	padding-top: 1rem; 
+	color: black;
+}
+
+.student-task:hover,
+.positive-tab-add-skills:hover,
+.need-work-add-skills:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+/*.helping-task-text {
+    max-height: 3.3rem;
+    overflow: hidden;
+}*/
+
+.selected-btn {
+    display: inline-block;
+    border: 3px solid white;
+    border-radius: 20rem;
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 3px 0px;
+    min-width: 3.5rem;
+    font-size: 1.4rem;
+    background-color: rgb(147, 213, 83);
+}
+
+#dropdown-image-add-class,
+#dropdown-image-edit-skill,
+#dropdown-image-add-skill {
+	overflow-y: auto;
+    overflow-x: hidden;
+    border-radius: 5px;
+    z-index: 120;
+    max-height: 23.88rem;
+    width: 40rem;
+	left: -12rem !important;
+}
+
+#dropdown-image-add-class > li .row .class-icons > a > img,
+#dropdown-image-edit-skill > li .row .skill-icons > a > img,
+#dropdown-image-add-skill > li .row .skill-icons > a > img {
+	width: 5.6rem; 
+	height: 5.6rem;
+}
+
+.class-icons {
+	padding: 6px 12px;
+}
+
+.class-icon-selection-dropdown,
+.skill-icon-selection-dropdown /*Edit skill modal*/ {
+	padding-top: 5rem;
+}
+
+.class-icon-selection-dropdown .btn span {
+	bottom: 0.3rem;
+    right: 4.1rem;
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-width: 0.4rem;
+    border-style: solid;
+    border-color: rgb(140, 140, 140) transparent transparent;
+    border-image: initial;
+}
+
+#add_class_details {
+	width: 60%; 
+	margin-top: 2rem;
+}
+
+.skill-points-btn {
+	text-align: center;
+}
+
+.skill-points-btn .btn {
+	width: 15rem;
+}
+
+.skill-points-btn #positive-desktop-btn {
+	background-color: rgb(0, 174, 239); 
+	border-color: rgb(0, 174, 239); 
+	color: white;
+}
+
+.skill-points-btn #needs-desktop-work-btn {
+	margin-left: -9px; 
+	border-color: rgb(0, 174, 239); 
+	background-color: white; 
+	color: rgb(0, 174, 239);
+}
+
+.positive-desktop-container,
+.need-work-containter {
+	width: 64%;
+}
+
+.positive-desktop-container .row,
+.need-work-containter .row {
+	margin-top: 13px; 
+	width: 100%;
+}
+
+.parents-like-points {
+	border: 1px solid rgb(218, 218, 218); 
+	height: 10.9rem; 
+	padding: 14px 2rem; 
+	border-radius: 5px; 
+	margin-top: 4rem;
+	text-align: center;
+}
+
+.selecteable-radio-points {
+	margin-top: 13px;
+}
+
+#teacher-edit-modal .row .input-group {
+	margin-top: 10px;
+}
+
+#teacher-edit-modal .row .input-group input {
+	height: 33px;
+}
+
+.share-class-details {
+	border: 1px solid rgb(218, 218, 218); 
+	height: 20.9rem; 
+	padding: 14px 2rem; 
+	border-radius: 5px;
+}
+
+.share-class-details-content,
+.share-class-details-link {
+	padding-top: 10px;
+}
+
+.share-class-details-link > a {
+	user-select: none; 
+	cursor: pointer; 
+	font-weight: 600; 
+	display: inline-block;
+	outline: none; 
+	border: none rgb(0, 174, 239); 
+	color: rgb(0, 174, 239); 
+}
+/*My Institute modal - END*/
+
+/*Edit skill modal - START*/
+.edit-skill-modal-body,
+.add-skill-modal-body {
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: 30rem;
+	padding: 1rem;
+}
+
+.skill-icon-selection-dropdown .btn span {
+	bottom: 0px;
+    right: 5px;
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    border-width: 0.4rem;
+    border-style: solid;
+    border-color: rgb(140, 140, 140) transparent transparent;
+    border-image: initial;
+}
+
+#edit_skill_details,
+#add_skill_details {
+	width: 80%;
+	margin-top: 2rem;
+}
+
+#edit_skill_details .form-group label,
+#add_skill_details .form-group label {
+	text-align: right;
+}
+
+.edit-skill-modal-footer,
+.add-skill-modal-footer {
+	padding: 1rem 2rem;
+}
+
+#edit-skill-delete-btn {
+	float: left;
+}
+
+#edit-skill-save-btn,
+#add-skill-save-btn {
+	float: right;
+}
+
+#edit-skill-delete-btn > a {
+	color: rgb(245, 125, 118);
+	font-weight: 600;
+}
+
+#edit-skill-save-btn > a,
+#add-skill-save-btn > a {
+	color: rgb(0, 174, 239);
+	font-weight: 600;
+	margin: 3rem;
+}
+
+#edit-skill-save-btn .btn,
+#add-skill-save-btn .btn {
+	background-color: rgb(0, 174, 239);
+	border-color: rgb(0, 174, 239);
+	color: white;
+	font-weight: 600;
+	border-radius: 5rem;
+    padding: 7px 3rem;
+}
+
+/*Edit skill modal - END*/
+
+/*Account settings modal - START*/
+.account-settings-body {
+    height: 44rem; 
+    overflow-y: auto; 
+    padding: 0px !important;
+}
+
+#account-settings-sidebar {
+    border-right: 1px solid #e5e5e5; 
+    height: 100%; 
+    background-color: #e2f0ff; 
+    color: black;
+}
+
+#account-settings-sidebar .sidebar .nav-stacked > li > a {
+    margin: 0px -16px; 
+    border-bottom: 1px solid rgb(218, 218, 218);
+    color: black;
+    font-size: 11px;
+}
+
+#account-settings-sidebar .sidebar .nav-stacked > li.active > a {
+    color: rgb(0, 174, 239);
+    background-color: white;
+}
+
+.edit-profile-content {
+    border: 1px solid rgb(218, 218, 218);
+    margin-top: 2rem;
+    border-radius: 5px;
+}
+
+#account-settings-profile-icon {
+    padding: 20px 0px;
+    border-bottom: 1px solid rgb(218, 218, 218);
+}
+
+.account-settings-profile-icon {
+    position: relative; 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: 50% 50%; 
+    border-radius: 50%; 
+    background-color: rgb(204, 236, 205); 
+    width: 8rem; height: 8rem; 
+    background-image: url(https://teach-static.classdojo.com/e72625cc16fa8fd41db88b1fc66beed8.png);
+}
+
+#add-photo {
+    padding: 10px;
+}
+
+#add-photo > a {
+    text-decoration: none;
+    color: rgb(0, 174, 239);
+}
+
+#account-edit-profile-form {
+    padding: 2rem 7rem;
+    text-align: center;
+}
+
+.change-pwd-content {
+    margin-top: 4rem;
+    text-align: center;
+}
+
+#account-edit-profile-form label,
+.change-pwd-content label {
+    font-weight: 200;
+}
+
+.change-pwd-content .btn {
+    border-radius: 5rem;
+    color: white;
+    padding: 8px 3rem;
+}
+.change-pwd-content input {
+   box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 3px 0px;  
+}
+
+.form-check label {
+    font-size: 11px;
+    font-weight: 200;
+}
+
+.seven-cols .col-md-1,
+  .seven-cols .col-xs-1  {
+    width: 14.285714285714285714285714285714%;
+    *width: 14.285714285714285714285714285714%;
+  }
+
+.add-photo-modal-body {
+    height: 30rem; 
+    overflow-y: auto; 
+    padding: 0px !important;
+    background-color: #ecedec; 
+}
+
+#add-photo-modal-sidebar {
+    border-right: 2px solid rgb(218, 218, 218); 
+    height: 100%; 
+    color: black;
+}
+
+#add-photo-modal-sidebar .sidebar .nav-stacked > li > a {
+    margin: 0px -16px; 
+    border-bottom: 2px solid rgb(218, 218, 218);
+    color: black;
+}
+
+.drag-file-content {
+    border: 2px dashed rgb(218, 218, 218);
+    padding: 1rem;
+    border-radius: 5px;
+    text-align: center;
+}
+/*Account settings modal - END*/
+
+/*Reset bubbles - modal - START*/
+.student-group-btn #student-reset-bubbles-btn {
+    background-color: rgb(0, 174, 239); 
+    border-color: rgb(0, 174, 239); 
+    color: white; 
+    width: 10rem;
+}
+
+.student-group-btn #group-reset-bubbles-btn {
+    margin-left: -9px; 
+    border-color: rgb(0, 174, 239); 
+    background-color: white; 
+    color: rgb(0, 174, 239); 
+    width: 10rem;
+}
+
+.student-reset-bubble-container {
+    text-align: center;
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.student-reset-bubble-container .row a {
+    background-color: white; 
+    border-radius: 5px; 
+    display: inline-block; 
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px; 
+    user-select: none; 
+    cursor: pointer; 
+    text-align: center; 
+    font-size: 1.2rem; 
+    position: relative; 
+    height: 8rem; 
+    width: 16rem; 
+    margin: 1rem 1.5rem;
+}
+
+.student-reset-bubble-container .row .add-new-student {
+    background-color: rgba(255, 255, 255, 0.5); 
+    border-radius: 5px; 
+    display: inline-block; 
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px; 
+    user-select: none; 
+    cursor: pointer; 
+    text-align: center; 
+    font-size: 1.2rem; 
+    position: relative; 
+    height: 8rem; 
+    width: 16rem; 
+    margin: 1rem 1.5rem;
+}
+
+.student-reset-bubble-container .row a > img {
+    position: absolute; 
+    height: 5rem; 
+    top: 0.5rem; 
+    left: 0px; 
+    margin: 1rem;
+}
+
+#student-name {
+    position: absolute; 
+    width: 7.5rem; 
+    height: 6rem; 
+    top: 0px; 
+    right: 0px; 
+    margin: 2rem 0.5rem 2rem 2rem; 
+    font-size: 1.8rem; 
+    text-align: left;
+    overflow: hidden;
+}
+
+.student-select-outer-layer {
+    position: absolute; 
+    top: -2rem; 
+    right: -2rem; 
+    padding: 0px; 
+    margin: 0px; 
+    border: 0px; 
+    text-align: right;
+}
+
+.student-select-inner-layer {
+    display: inline-block; 
+    border: 3px solid white; 
+    border-radius: 20rem; 
+    color: white; 
+    text-align: center; 
+    padding: 0.5rem; 
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 3px 0px; 
+    font-weight: 600; 
+    min-width: 4rem; 
+    font-size: 2rem; 
+    background-color: rgb(218, 218, 218);
+}
+
+.reset-bubble-modal-body {
+    background-color: rgb(245, 245, 243);
+}
+
+.reset-bubble-modal-body .student-group-btn {
+    text-align: center; 
+    width: 100%;
+}
+
+.group-reset-bubble-container {
+    width: 100%; 
+}
+
+.group_block_layer > img {
+    position: absolute; 
+    height: 5rem; 
+    top: 2.5rem; 
+    left: 81px; 
+    margin: 1rem; 
+    padding: 11px;
+}
+
+.reset-bubble-text {
+    border: 1px solid rgb(218, 218, 218); 
+    padding: 14px 2rem; 
+    border-radius: 5px; 
+    margin: 4rem 20rem 0rem 20rem;
+    text-align: center;
+}
+
+.reset-bubble-footer-btn {
+    padding: 0rem 2rem;
+}
+
+.reset-bubble-footer-btn .select-all-stud {
+    float: left;
+    padding: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.reset-bubble-footer-btn .cancel-feedback-btn {
+    float: right;
+    margin-top: 10px;
+}
+
+.reset-bubble-footer-btn .cancel-feedback-btn .cancel-btn {
+    background: white !important; 
+    color: rgb(163, 163, 163); 
+    border: none; 
+    user-select: none;
+}
+
+.reset-bubble-footer-btn .cancel-feedback-btn .reset-bubble-btn {
+    color: white;
+    border-radius: 5px;
+}
+
+.group_block_layer > img {
+    position: absolute;
+    height: 5rem;
+    top: 0.5rem;
+    left: 70px;
+    margin: 1rem;
+}
+
+.group_block_layer {
+    background-color: white;
+    border-radius: 5px;
+    display: inline-block;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px;
+    user-select: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.2rem;
+    position: relative;
+    height: 13rem;
+    width: 23rem;
+    margin-top: 3rem;
+}
+
+.add-new-group {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    display: inline-block;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px;
+    user-select: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.2rem;
+    position: relative;
+    height: 13rem;
+    width: 23rem;
+    margin-top: 3rem;
+}
+
+.group-image {
+    position: absolute; 
+    width: 100%; 
+    text-align: center; 
+    top: 20px;
+}
+
+.group-student-image-outer {
+    height: 6rem; 
+    width: 5rem; 
+    display: inline-block; 
+    position: relative; 
+    margin: 0px 5px;
+}
+
+.group-student-image-background {
+    background-repeat: no-repeat; 
+    background-size: contain; 
+    background-position: center center; 
+    min-height: 100%; 
+    min-width: 100%;
+}
+
+.group-student-image-outer > img {
+    opacity: 0; 
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    top: 0px; 
+    left: 0px;
+}
+
+.group_title {
+    position: absolute;
+    height: 6rem;
+    top: 67px;
+    left: 50px;
+    right: 0px;
+    margin: 2rem 0.5rem 2rem 2rem;
+    font-size: 1.8rem;
+    text-align: left;
+}
+
+.group-select-outer-layer {
+    position: absolute; 
+    top: -2rem; 
+    right: -2rem; 
+    padding: 0px; 
+    margin: 0px; 
+    border: 0px; 
+    text-align: right;
+}
+
+.group-select-inner-layer {
+    display: inline-block; 
+    border: 3px solid white; 
+    border-radius: 20rem; 
+    color: white; 
+    text-align: center; 
+    padding: 0.5rem; 
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 3px 0px; 
+    font-weight: 600; 
+    min-width: 4rem; 
+    font-size: 2rem; 
+    background-color: rgb(218, 218, 218);
+}
+
+
+/*Reset bubbles - modal - END*/
+
+/*Give feedback modal - START*/
+.give-feedback-positive-negative-btn {
+    text-align: center;
+}
+
+.give-feedback-positive-negative-btn #positive-feedback-btn {
+    background-color: rgb(0, 174, 239); 
+    border-color: rgb(0, 174, 239); 
+    color: white; 
+    width: 25%;
+}
+
+.give-feedback-positive-negative-btn #needs-work-feedback-btn {
+    margin-left: -9px; 
+    border-color: rgb(0, 174, 239); 
+    background-color: white; 
+    color: rgb(0, 174, 239); 
+    width: 25%;
+}
+
+.positive-feedback-container,
+.need-work-feedback-container {
+    width: 100%;
+}
+
+.positive-feedback-container .row,
+.need-work-feedback-container .row {
+    margin-top: 13px;
+}
+
+.need-work-feedback-to-add-skills {
+    position: relative;
+    width: 12rem;
+    height: 12rem;
+    cursor: pointer;
+    background-color: rgb(250, 250, 250);
+    box-shadow: rgb(218, 218, 218) 0px 0px 0px 1px inset;
+    border-radius: 5px;
+    text-align: center;
+    padding: 1rem;
+    margin: 0.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.need-work-feedback-to-add-skills>img {
+    width: 4rem;
+    height: 4rem;
+    margin-top: 23px;
+}
+
+.need-work-feedback-to-add-skills .task-name {
+    height: 4.5rem; 
+    padding-top: 1rem; 
+    color: black;
+}
+/*Give feedback modal - END*/

@@ -1,0 +1,74 @@
+/*student-account-content - START*/
+.student-account-content {
+  background-color: rgb(229, 246, 253); 
+  border: 1px solid rgba(0, 174, 239, 0.35); 
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px; 
+  border-radius: 5px;
+  /*text-align: center;*/
+  padding: 2rem;
+}
+
+.customize-students {
+  margin-top: 8px;
+}
+
+.points-to-student-account {
+  margin-top: 8px;
+}
+
+.student-account-content > img {
+  padding: 2rem 0rem; 
+  width: 100%;
+}
+
+.poster-btn {
+  text-align: center; 
+  padding: 1rem;
+}
+
+.poster-btn .btn {
+  width: 100%;
+  border: 1px solid rgb(51, 190, 242);
+  background-color: rgb(51, 190, 242);
+}
+
+.poster-btn > img {
+  margin-right: 10px; 
+  width: 16px;
+}
+
+.invite-codes {
+  text-align: center;
+}
+
+.invite-codes > a {
+  color: rgb(51, 190, 242);
+  text-decoration: none;
+}
+
+.student-portfolio {
+  background-color: rgb(229, 246, 253); 
+  border: 1px solid rgba(0, 174, 239, 0.35); 
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px; 
+  border-radius: 5px; 
+  text-align: center;
+  padding: 1rem !important;
+}
+
+.student-portfolio > a {
+  text-decoration: none;
+}
+
+.poster-btn .btn span {
+  color: white;
+  font-weight: 600;
+  padding-left: 10px;
+}
+/*student-account-content - END*/
+
+
+.student-account-body-content {
+  max-height: 60rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+}

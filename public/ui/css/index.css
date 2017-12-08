@@ -1,0 +1,301 @@
+body {
+	background-color: #01aef0;
+}
+
+.container-text h1,
+.container-text .h1 {
+	color: white !important;
+	/*margin-top: -76px !important;*/
+}
+
+#section2 .content-wrapper h3,
+#section2 .content-wrapper .h3 {
+	color: #f840b9;
+}
+
+.navbar {
+	border-radius: 0px;
+	min-height: 65px;
+	margin-bottom: 0px !important;
+}
+
+.navbar-top {
+	top: 45px !important;
+}
+
+.navbar-brand {
+  padding: 0px;
+}
+
+.navbar-brand>img {
+  height: 100%;
+  padding: 2px;
+  width: auto;
+}
+
+.navbar-nav {
+	margin: 3px !important;
+}
+
+.navbar-default {
+	border: 0px !important;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #00BFFF;
+}
+
+.navbar-right {
+    margin-right: 158px !important;
+}
+
+.btn-primary {
+	background-color: #69b803 !important;
+	border-color: #69b803 !important;
+}
+
+.btn-sm {
+	border-radius: 60px !important;
+	padding: 7px 19px !important;
+}
+
+.container-text {
+	padding-top: 150px;
+}
+
+.app-launch-img{
+	width: 1059px;
+	height: 400px;
+	margin-top: 50px;
+}
+
+.content-text {
+	background-color: #ebebeb;
+	margin-bottom:-77px;
+	height:175px;
+	position: relative;
+}
+
+#section1 {
+	padding-top:92px;
+	
+	background-color: white;
+}
+
+#section2 {
+	padding-top:9px;
+	
+	background-color: #F5DEB3;
+}
+
+#section3 {
+	padding-top:50px;
+	
+	background-color: white;
+}
+
+#section4 {
+	padding-top:50px;
+	
+	background-color: #424242;
+	color: white;
+}
+
+#section2 .content-wrapper {
+	margin-top: 45px;
+}
+
+#section3 .content-wrapper {
+	margin-top: 14px;
+}
+
+.content-wrapper .btn-sm {
+	font-size: 16px;
+}
+
+.img-wrapper {
+	margin-top :20px;
+	width: 300px;
+	height: 300px;
+}
+
+input {
+	background-color: #181818;
+	border: #181818;
+	border-radius: 4px;
+	padding: 7px;
+}
+
+#section4 a {
+	color: white !important;
+}
+
+/*.modal-content .modal-header {
+    height: auto;
+    padding-top: 30px;
+    padding-bottom: 0;
+    text-align: center;
+    border: 0;
+}*/
+
+.modal-content .logo-sm {
+	width: 60px;
+	height: auto;
+	margin-left: 240px;
+}
+
+.badge-and-selector {
+	margin: 4px;
+	display: block;
+}
+
+.badge-and-selector  p {
+	margin-top: 11px !important;
+}
+
+/*.modal-header {
+	border-bottom: 0px !important;
+}*/
+
+.modal-body {
+	padding: 33px !important;
+	margin-top: -49px !important;
+}
+
+.modal-footer {
+	text-align: center !important;
+	
+}
+
+.dont-have-row {
+	background-color: #eee;
+	color: #000;
+}
+
+.modal-title {
+	text-align: center;
+	padding: 28px;
+}
+
+.modal-body h3,
+.modal-body .h3 {
+	font-weight: 600 !important;
+}
+
+.gray-border {
+	border: 1px solid #DADADA;
+}
+
+.btn-signup {
+	width: 100%;
+    padding: 20px 5px;
+    margin: 0;
+    color: #000;
+    background-color: rgba(239,239,239,.3);
+    border-radius: 5px;
+}
+
+.modal-header-school-leader-signup,
+.modal-header-teacher-signup {
+	background-color: #f4f4f4;
+}
+
+.btn-block {
+	width: 100%;
+}
+
+.btn-login {
+    border: 2px solid #00aeef;
+    color: #00aeef;
+    background-color: #fff;
+}
+
+.modal-footer .btn {
+    border-radius: 30px;
+}
+
+.btn-wide.btn {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.btn {
+	white-space: initial;
+}
+
+.student-signin-page {
+	width: 43rem; 
+	margin: 0px auto 2rem; 
+	border: 1px solid rgb(218, 218, 218); 
+	box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px; 
+	border-radius: 4px; 
+	background-color: white; 
+	position: relative;
+}
+
+.student-signin-page h3,
+.student-signin-page .h3 {
+	text-align: center; 
+	font-size: 2.4rem; 
+	font-weight: normal; 
+	margin: 0px 0px 2rem;
+}
+
+.student-signin-page input {
+	width: 100%; 
+	font-family: ProximaNova, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; 
+	font-size: 1.6rem; 
+	font-weight: normal; 
+	line-height: 2.2rem; 
+	padding: 1.2rem; 
+	border-radius: 0.5rem; 
+	box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 3px 0px inset; 
+	border: 1px solid rgb(218, 218, 218); 
+	outline: none; 
+	height: 4.8rem;
+	background-color: white;
+}
+
+.student-signin-page a {
+	user-select: none; 
+	cursor: pointer; 
+	font-weight: 600; 
+	display: inline-block; 
+	outline: none; border: none rgb(0, 174, 239); 
+	font-family: ProximaNova, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; 
+	color: rgb(0, 174, 239);
+}
+
+/*.header-content {
+	padding: 0px; 
+	border-radius: 0px; 
+	text-shadow: rgba(255, 255, 255, 0.5) 0px 1px; 
+	font-weight: bold; 
+	border: none; 
+	background-color: rgb(216, 242, 252); 
+	color: rgb(54, 54, 54); 
+	height: 4rem;
+}
+
+.header-text {
+	text-align: center;
+	padding: 0.8rem 0.8rem;
+}
+
+.navbar-fixed {
+	background-color: rgb(87, 91, 125);
+}*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+

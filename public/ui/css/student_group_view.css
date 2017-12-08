@@ -1,0 +1,296 @@
+body {
+	background-color: rgb(245, 245, 243);
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+    }
+}
+
+/*Student - Group - button - studentview - START*/
+.student-view-btn-group #student-btn {
+    background-color: rgb(0, 174, 239); 
+    border: 1px solid rgb(0, 174, 239); /* Green border */
+    color: white; /* White text */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+.student-view-btn-group #group-btn,
+.student-view-btn-group #view-report-button {
+    border-color: rgb(0, 174, 239); 
+    background-color: white; 
+    color: rgb(0, 174, 239); 
+    float: left;
+}
+
+#student-btn,
+#group-btn,
+#view-report-button {
+    width: 16rem;
+    height: 4rem;
+}
+
+.student-view-btn-group #student-btn > img {
+	width: 25px;
+}
+
+.student-view-btn-group #group-btn > img {
+	width: 30px;
+}
+/*Student - Group - button - studentview - END*/
+
+/*Students - view - container - START*/
+.student-view-container {
+	margin-top: 10rem; 
+	margin-bottom: 90px; 
+	text-align: center;
+}
+
+.student-view-container .row a {
+    background-color: white; 
+    border-radius: 5px; 
+    display: inline-block; 
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px; 
+    user-select: none; 
+    cursor: pointer; 
+    text-align: center; 
+    font-size: 1.2rem; 
+    position: relative; 
+    height: 8rem; 
+    width: 16rem; 
+    margin: 1rem 1.5rem;
+}
+
+.student-view-container .row .add-new-student {
+    background-color: rgba(255, 255, 255, 0.5); 
+    border-radius: 5px; 
+    display: inline-block; 
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px; 
+    user-select: none; 
+    cursor: pointer; 
+    text-align: center; 
+    font-size: 1.2rem; 
+    position: relative; 
+    height: 8rem; 
+    width: 16rem; 
+    margin: 1rem 1.5rem;
+}
+
+.student-view-container .row a > img {
+    position: absolute; 
+    height: 5rem; 
+    top: 0.5rem; 
+    left: 0px; 
+    margin: 1rem;
+}
+
+#student-name {
+    position: absolute; 
+    width: 7.5rem; 
+    height: 6rem; 
+    top: 0px; 
+    right: 0px; 
+    margin: 2rem 0.5rem 2rem 2rem; 
+    font-size: 1.8rem; 
+    text-align: left;
+    overflow: hidden;
+}
+
+.student-select-outer-layer {
+    position: absolute; 
+    top: -2rem; 
+    right: -2rem; 
+    padding: 0px; 
+    margin: 0px; 
+    border: 0px; 
+    text-align: right;
+}
+
+.student-select-inner-layer {
+    display: inline-block; 
+    border: 3px solid white; 
+    border-radius: 20rem; 
+    color: white; 
+    text-align: center; 
+    padding: 0.5rem; 
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 3px 0px; 
+    font-weight: 600; 
+    min-width: 4rem; 
+    font-size: 2rem; 
+    background-color: rgb(218, 218, 218);
+}
+/*Students - view - container - END*/
+
+/*Student-attendance-footer - START*/
+.student-attendance-footer {
+	background-color: white;
+}
+
+#student-attendance-footer-navbar-collapse > ul > li > a > img {
+	margin-right: 1rem;
+}
+/*Student-attendance-footer - END*/
+
+/*Student - Group - button - groupview - START*/
+.group-view-btn-group #group-btn {
+    background-color: rgb(0, 174, 239); 
+    border: 1px solid rgb(0, 174, 239); /* Green border */
+    color: white; /* White text */
+    cursor: pointer; /* Pointer/hand icon */
+    float: left; /* Float the buttons side by side */
+}
+
+.group-view-btn-group #student-btn,
+.group-view-btn-group #view-report-button {
+    border-color: rgb(0, 174, 239); 
+    background-color: white; 
+    color: rgb(0, 174, 239); 
+    float: left;
+}
+
+#student-btn,
+#group-btn,
+#view-report-button {
+    width: 16rem;
+    height: 4rem;
+}
+
+.group-view-btn-group #student-btn > img {
+	width: 25px;
+}
+
+.group-view-btn-group #group-btn > img {
+	width: 30px;
+}
+/*Student - Group - button - groupview - END*/
+
+/*Group - view - container - START*/
+.group-view-container {
+	margin: 7rem 0rem; 
+	text-align: center;
+}
+
+.group_block_layer > img {
+    position: absolute;
+    height: 5rem;
+    top: 0.5rem;
+    left: 70px;
+    margin: 1rem;
+}
+
+.group_block_layer {
+    background-color: white;
+    border-radius: 5px;
+    display: inline-block;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px;
+    user-select: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.2rem;
+    position: relative;
+    height: 13rem;
+    width: 23rem;
+    margin-top: 3rem;
+}
+
+.add-new-group {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    display: inline-block;
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px;
+    user-select: none;
+    cursor: pointer;
+    text-align: center;
+    font-size: 1.2rem;
+    position: relative;
+    height: 13rem;
+    width: 23rem;
+    margin-top: 3rem;
+}
+
+.group-image {
+    position: absolute; 
+    width: 100%; 
+    text-align: center; 
+    top: 20px;
+}
+
+.group-student-image-outer {
+    height: 6rem; 
+    width: 5rem; 
+    display: inline-block; 
+    position: relative; 
+    margin: 0px 5px;
+}
+
+.group-student-image-background {
+    background-repeat: no-repeat; 
+    background-size: contain; 
+    background-position: center center; 
+    min-height: 100%; 
+    min-width: 100%;
+}
+
+.group-student-image-outer > img {
+    opacity: 0; 
+    position: absolute; 
+    width: 100%; 
+    height: 100%; 
+    top: 0px; 
+    left: 0px;
+}
+
+.group_title {
+    position: absolute;
+    height: 6rem;
+    top: 67px;
+    left: 50px;
+    right: 0px;
+    margin: 2rem 0.5rem 2rem 2rem;
+    font-size: 1.8rem;
+    text-align: left;
+}
+
+.group-select-outer-layer {
+    position: absolute; 
+    top: -2rem; 
+    right: -2rem; 
+    padding: 0px; 
+    margin: 0px; 
+    border: 0px; 
+    text-align: right;
+}
+
+.group-select-inner-layer {
+    display: inline-block; 
+    border: 3px solid white; 
+    border-radius: 20rem; 
+    color: white; 
+    text-align: center; 
+    padding: 0.5rem; 
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 3px 0px; 
+    font-weight: 600; 
+    min-width: 4rem; 
+    font-size: 2rem; 
+    background-color: rgb(218, 218, 218);
+}
+
+.add-new-group-block > a > img {
+    position: absolute; 
+    height: 5rem; 
+    top: 2.5rem; 
+    left: 81px; 
+    margin: 1rem; 
+}
+
+.add-new-student-block > a > img {
+    position: absolute; 
+    height: 5rem; 
+    top: 0.5rem; 
+    left: 37px !important; 
+    margin: 1rem; 
+}
+/*Group - view - container - END*/

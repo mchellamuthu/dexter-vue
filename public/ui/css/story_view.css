@@ -1,0 +1,265 @@
+body {
+  background-color: rgb(245, 245, 243);
+}
+
+.story-icon-btn {
+    background-color: rgb(230, 246, 253) !important;
+    border: 1px solid rgb(0, 174, 239);
+    height: 5rem;
+    border-radius: 5px;
+    width: 100%;
+    padding: 1px 10rem 1px 2px;
+}
+
+.student-stories {
+    margin-top: 3rem;
+}
+
+.student-list-for-stories {
+    background-color: white; 
+    border: 1px solid rgb(218, 218, 218); 
+    height: 35.9rem; 
+    overflow-y: auto; 
+    border-radius: 5px; 
+    margin-top: 1rem;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li a {
+  color: #93a3b5;
+  font-size: 14px;
+  font-weight: 400;
+  padding-left: 20px;
+}
+
+.profile-usermenu ul li a > img {
+  width: 30px; 
+  height: 30px;
+}
+
+.profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul li.active > a { 
+    background-color: rgb(230, 246, 253) !important;
+    border: 1px solid rgb(0, 174, 239);
+}
+
+.welcome-class-story {
+    background-color: white; 
+    border: 1px solid rgb(218, 218, 218); 
+    padding: 3rem !important;
+}
+
+#welcome-class-image-content > img {
+  width: 10rem; 
+  height: 10rem;
+}
+
+.welcome-class-story .welcome-class-story-header {
+  font-size: 1.6rem; 
+  font-weight: 600; 
+  margin-bottom: 1rem;
+}
+
+.welcome-class-story p {
+  font-size: 1.4rem; 
+  font-weight: 200;
+}
+
+.welcome-class-story .btn {
+  background-color: rgb(0, 174, 239) !important; 
+  border-color: rgb(0, 174, 239) !important;
+}
+
+#uploading-image-content {
+  display: none;
+}
+
+.post-message-content {
+  background-color: white; 
+  border: 1px solid rgb(0, 174, 239);
+  padding: 1rem 1rem !important;
+}
+
+.uploaded-doc {
+    border: 1px solid rgb(218, 218, 218);
+    padding: 1rem;
+    border-radius: 1rem;
+    display: none;
+}
+
+#add-profile-buttons,
+#add-profile-button-in-edit-post {
+  color: rgb(0, 174, 239);
+  height: 2rem;
+}
+
+.add-photo-btn, .add-file-btn, .add-card-btn {
+  background-color: white; 
+  cursor: pointer;
+}
+
+.post-btn {
+  background-color: rgb(0, 174, 239) !important; 
+  border-color: rgb(0, 174, 239) !important; 
+  border-radius: 1rem; 
+  border-radius: 35rem; 
+  padding: 5px 23px;
+}
+
+.post-message-content textarea::-webkit-input-placeholder {
+color: rgb(0, 174, 239) !important;
+}
+ 
+.post-message-content textarea:-moz-placeholder { /* Firefox 18- */
+color: rgb(0, 174, 239) !important;  
+}
+ 
+.post-message-content textarea::-moz-placeholder {  /* Firefox 19+ */
+color: rgb(0, 174, 239) !important;  
+}
+ 
+.post-message-content textarea:-ms-input-placeholder {  
+color: rgb(0, 174, 239) !important;  
+}
+
+.profile-icon-post {
+  position: relative; 
+  background-size: cover; 
+  background-repeat: no-repeat; 
+  background-position: 50% 50%; 
+  border-radius: 50%; 
+  background-color: rgb(204, 236, 205); 
+  width: 5rem; height: 5rem; 
+  background-image: url(https://teach-static.classdojo.com/e72625cc16fa8fd41db88b1fc66beed8.png);
+}
+
+
+/*Comment posted - START*/
+.post-comment-content {
+  background-color: white;
+  border: 1px solid rgb(218, 218, 218);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 3px 0px;
+  border-radius: 5px;
+}
+
+.post-comment-header {
+  border-bottom: 1px solid rgb(218, 218, 218);
+}
+
+.post-comment-footer {
+  border-top: 1px solid rgb(218, 218, 218);
+}
+
+.post-comment-header .profile-icon-post {
+  margin: 1rem;
+}
+
+.poster-name,
+.posted-day {
+  padding: 2rem;
+}
+
+.poster-name .glyphicon {
+  font-size: 9px;
+}
+
+.poster-name span,
+.posted-day span {
+  font-weight: normal;
+}
+
+.post-comment-body {
+  background-image: url(https://images.classdojo.com/dojofilepicker/97576b51-471b-440d-9c97-3e11c9000274/0OhDfNURRetW5L9KiaXu_cdojoimage1.png);
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  position: relative;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset;
+  width: 100%;
+  height: 50rem;
+  margin: 0px -1px;
+  cursor: pointer;
+}
+
+.comments-content {
+  margin: 2rem;
+}
+
+.message-string,
+.no-of-likes-and-comments {
+  font-weight: normal;
+  margin: 2rem 0rem;
+}
+
+.no-of-likes-and-comments {
+  font-size: 11px;
+}
+
+.likes-and-comments .btn:hover,
+.likes-and-comments .btn {
+  background-color: white;
+  border: 1px solid rgb(218, 218, 218);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px inset
+}
+
+.likes-and-comments .btn:active,
+.likes-and-comments .btn:focus,
+.likes-and-comments .btn-default:active,
+.likes-and-comments .btn-default:focus {
+  background-color: #d4d4d4 !important;
+  border-color: #8c8c8c !important;
+  outline: none;
+}
+
+
+.no-of-likes-and-comments .fa {
+  color: rgb(140, 140, 140);
+}
+
+.delete-post-cancel-btn {
+  border: none;
+  background: transparent;
+  color: rgb(51, 190, 242);
+  font-weight: 600;
+}
+
+.delete-post-btn {
+  border-radius: 5rem;
+  padding: 1rem 2rem;
+}
+
+#delete-post-modal .modal-body {
+  font-weight: normal;
+}
+
+
+#add-profile-button-in-edit-post .add-photo-btn {
+  display: none;
+}
+
+.no-of-likes-and-comments,
+.no-of-likes-and-comments hr,
+.no-of-likes-and-comments .no-of-likes,
+.no-of-likes-and-comments .no-of-comments {
+  display: none;
+}
+
+.comments-posting {
+  border-top: 1px solid rgb(218, 218, 218);
+  padding: 1rem;
+  display: none;
+}
+
+.comment-input,
+.comments-posting .poster-name {
+  padding: 1rem;
+}
+
+/*Comment posted - END*/

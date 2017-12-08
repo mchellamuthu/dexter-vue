@@ -1,0 +1,297 @@
+body {
+	background-color: rgb(245, 245, 243);
+}
+
+#message-content {
+	background-color: white;
+	border: 1px solid rgb(218, 218, 218);
+	border-radius: 1rem;
+	margin: 1rem 0rem;
+}
+
+.message-header-block {
+	padding: 0px;
+}
+
+.message-title,
+.message-main-content-title {
+	font-size: 14px;
+    font-weight: 600;
+    padding: 12px;
+    border-bottom: 1px solid rgb(218, 218, 218);
+    display: block;
+}
+
+#parent-name, #parent-to-invite {
+	font-size: 10px;
+	padding-bottom: 0.4rem; 
+	overflow: hidden; 
+	white-space: nowrap; 
+	text-overflow: ellipsis;
+}
+
+#all-parent-connect {
+	font-size: 10px;
+    font-weight: bold;
+}
+
+#parent-to-invite {
+	color: rgb(0, 174, 239);
+}
+
+.message-main-content {
+	border-left: 1px solid rgb(218, 218, 218);
+	padding: 0px;
+}
+
+.chatting-message-block {
+	height: 35rem;
+	overflow-y: auto;
+	overflow-x: hidden;
+	margin: 1rem 0rem;
+}
+
+/**/
+.vertical-menu {
+	overflow-y: auto;
+	overflow-x: hidden;
+	height: 40rem;
+}
+
+.vertical-menu > li {
+	list-style-type: none;
+}
+
+.vertical-menu > li a {
+    color: black;
+    display: block;
+    padding: 12px;
+    text-decoration: none;
+}
+
+.vertical-menu li.active > a {
+    background-color: rgb(217, 245, 255);
+	font-weight: 600; 
+}
+
+.view-message {
+	margin-top: 6rem;
+}
+
+.chat-block-image > img {
+	width: 15rem;
+}
+
+.comment-hint {
+	position: relative; 
+	text-align: left; 
+	width: 20rem; 
+	background-color: rgb(245, 245, 245); 
+	border-radius: 1rem; 
+	padding: 1.5rem;
+	margin-top: 5rem;
+}
+
+.comment-hint-text {
+	width: 0px; 
+	height: 0px; 
+	border-top: 1rem solid transparent; 
+	border-right: 2rem solid rgb(245, 245, 245); 
+	border-bottom: 1rem solid transparent; 
+	position: absolute; 
+	left: -1.5rem; 
+	top: calc(50% - 1rem);
+}
+
+.parents-seen {
+	text-align: left; 
+	padding: 1rem; 
+	color: rgb(0, 174, 239);
+}
+
+.start-to-message-text {
+	font-size: 12px;
+    padding: 1rem 6rem;
+}
+
+.get-invites-to-message {
+	font-weight: 600;
+	background-color: rgb(0, 174, 239);
+	border: 1px solid rgb(0, 174, 239);
+	border-radius: 5px;
+}
+
+.get-invites-to-message:hover {
+	background-color: rgb(51, 190, 242);
+	border: 1px solid rgb(51, 190, 242);
+}
+
+.message-main-content .navbar {
+	margin: 0px;
+	padding: 1rem 2rem;
+}
+
+#popover-content {
+	display: none;
+}
+
+.popover-content {
+	width: 22rem !important;
+}
+
+.popover {
+	left: -10rem !important;
+}
+
+.popover > .arrow {
+	left: 15rem !important;
+}
+
+#date-picker-input {
+	width: 10rem !important;
+}
+
+#time-picker-input {
+	width: 9rem !important;
+}
+
+#choose-date-and-time {
+	margin: 1rem 0rem;
+}
+
+#message-send-btn,
+#message-caret-btn {
+	background-color: rgb(218, 218, 218);
+    border: 1px solid rgb(218, 218, 218);
+    color: white;
+}
+
+/*Chat conversation - START*/
+
+.chat {
+	padding: 2rem;
+}
+
+.conversation-start {
+    position: relative;
+    width: 100%;
+    margin-bottom: 27px;
+    text-align: center;
+}
+
+.conversation-start span {
+	font-size: 14px;
+    display: inline-block;
+    color: gray;
+}
+
+.conversation-start span:after {
+	right: 0;
+}
+
+.conversation-start span:before {
+	left: 0;
+}
+
+.conversation-start span:after,
+.conversation-start span:before {
+	position: absolute;
+    top: 10px;
+    display: inline-block;
+    width: 40%;
+    height: 1px;
+    content: '';
+    background-color: lightgray;
+}
+
+.bubble {
+    font-size: 12px;
+    position: relative;
+    display: inline-block;
+    clear: both;
+    margin-bottom: 8px;
+    padding: 5px 14px;
+    vertical-align: top;
+    border-radius: 5px;
+}
+
+.bubble:before {
+	position: absolute;
+    display: block;
+    width: 8px;
+    height: 6px;
+    content: '\00a0';
+    transform: rotate(29deg) skew(-35deg);
+}
+
+.bubble-you {
+	float: left;
+    color: white;
+    background-color: rgb(0, 174, 239);
+    align-self: flex-start;
+    @include animation-name(slideFromLeft);
+}
+
+.bubble-you:before {
+	left: -3px;
+    background-color: rgb(0, 174, 239);
+}
+
+.bubble-me {
+	float: right;
+    color: dark;
+    background-color: #eceff1;
+    align-self: flex-end;
+    @include animation-name(slideFromRight);
+}
+
+.bubble-me:before {
+	right: -3px;
+    background-color: #eceff1;
+}
+/*Chat conversation - END*/
+
+/*Scheduled messages - START*/
+.scheduled-messages {
+	background-color: rgb(250, 250, 249);
+	padding: 1rem 2rem;
+	border-bottom: 1px solid rgb(218, 218, 218);
+}
+
+.no-of-scheduled-messages {
+	padding: 1rem 0rem;
+	color: #717474;
+}
+
+.no-of-scheduled-messages > a {
+	color: rgb(0, 174, 239);
+	text-decoration: none;
+	cursor: pointer;
+	outline: none;
+	font-weight: 400;
+	float: right;
+}
+
+#scheduled-message-list,
+.scheduled-messages {
+	display: none;
+}
+
+#scheduled-message-list li {
+	list-style-type: none;
+	padding: 1rem 0rem;
+	border-top: 1px solid rgb(218, 218, 218)
+}
+
+#scheduled-message-list li .scheduled-list-content .scheduled-date {
+	font-weight: 600;
+}
+
+.scheduled-list-content-close-btn {
+	float: right;
+	margin-top: -3rem;
+	cursor: pointer;
+	font-size: 2rem;
+	color: #b6b8b8;
+}
+/*Scheduled messages - END*/

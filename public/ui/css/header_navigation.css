@@ -1,0 +1,142 @@
+/*Updating email - Start*/
+.dojo-header-content {
+    padding: 0px;
+    border-radius: 0px;
+    text-shadow: rgba(255, 255, 255, 0.5) 0px 1px;
+    font-weight: bold;
+    border: none;
+    background-color: rgb(216, 242, 252);
+    color: rgb(54, 54, 54);
+}
+
+.dojo-header-text {
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.dojo-header-text a {
+	text-decoration: none;
+	color: rgb(0, 174, 239);
+}
+
+/*Updating email - End*/
+
+/*navigation bar - user - start*/
+.navbar-settings {
+    background-color: rgb(87, 91, 125);
+    border-color: rgb(87, 91, 125);
+    margin-bottom: 0px;
+}
+
+.withImageAndIcon {
+    font-weight: bold;
+}
+
+.withImageAndIcon > div {
+    vertical-align: middle;
+    display:inline-block;
+    margin-right: 1.2em;
+}
+
+.profile-icon,
+.updated-profile-icon {
+    position: relative; 
+    background-size: cover; 
+    background-repeat: no-repeat; 
+    background-position: 50% 50%; 
+    border-radius: 50%; 
+    background-color: rgb(204, 236, 205); 
+    width: 3rem; height: 3rem; 
+    background-image: url(https://teach-static.classdojo.com/e72625cc16fa8fd41db88b1fc66beed8.png);
+}
+
+#bs-example-navbar-collapse-1 .dropdown-toggle {
+    background-color: rgb(87, 91, 125);
+    border: rgb(87, 91, 125);
+    color: white;
+}
+
+#bs-example-navbar-collapse-1 .nav > li > ul > li > a > img {
+    display: inline-block; 
+    width: 2rem; 
+    height: 2rem;
+}
+
+#bs-example-navbar-collapse-1 .nav > li > a {
+    color: white;
+}
+/*navigation bar - user - end*/
+
+/*Dropdown menu - START*/
+.dropdown-menu {
+    padding: 0px;
+}
+
+.dropdown-menu > li > a {
+    padding: 8px 20px;
+}
+
+.dropdown-menu > li:not(:last-child) {
+    border-bottom: 1px solid rgb(218, 218, 218);
+}
+/*Dropdown menu - END*/
+
+#bs-example-navbar-collapse-1 .nav > li > a .updated-profile-icon {
+    display: none;
+}
+
+a {
+    outline: none !important;
+    text-decoration: none !important;
+}
+
+@media (min-width: 768px) {
+  .navbar-nav.navbar-center {
+    position: absolute;
+    left: 50%;
+    transform: translatex(-50%);
+  }
+}
+
+.class-name {
+    margin-top: 2rem;
+    color: white;
+    font-weight: 600;
+}
+
+/*student-group-selection-btn - START*/
+.main_navigation {
+    background-color: white;
+    border-bottom: 1px solid rgb(218, 218, 218);
+}
+
+.main_navigation .your-class-back-btn {
+    background-color: white;
+    border: white;
+    color: black;
+    font-size: 14px;
+    padding: 0px;
+}
+
+.custom_menu li {
+    font-size: 14px;
+}
+
+.custom_menu li.active > a {
+    color: rgb(0, 174, 239) !important;
+    box-shadow: rgb(0, 174, 239) 0px -2px 0px 0px inset;
+    background-color: white !important;
+}
+
+.settings-dropdown > li > a > img {
+    padding-right: 7px;
+}
+
+.settings-dropdown > .open > a {
+    background-color: white !important; 
+    border: 0px; 
+    color: black !important; 
+    font-size: 1.4rem; 
+    font-weight: 500;
+}
+/*student-group-selection-btn - END*/
