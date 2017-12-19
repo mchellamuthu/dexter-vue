@@ -1,48 +1,26 @@
 <?php
-
 use Illuminate\Http\Request;
-use App\User;
-use App\Institute;
-use App\ClassRoom;
-/*
-|--------------------------------------------------------------------------
-| API Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register API routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| is assigned the "api" middleware group. Enjoy building your API!
-|
-*/
 
-// Route::middleware('auth:api')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
+Route::post('/institute/search','API\InstituteController@search');
+Route::post('/institute/create','API\InstituteController@create');
+Route::post('/institute/{id}/info','API\InstituteController@info');
+Route::post('/institute/{id}/request','API\InstituteController@sendRequest');
 
-Route::get('/users', function()
-{
-    return User::all();
-});
-Route::post('/user', function(Request $request)
-{
-    $userid = $request->userid;
-    return User::find($userid);
-});
-Route::get('/institutes', function()
-{
-    return Institute::all();
-});
-Route::post('/institute', function(Request $request)
-{
-    $instituteId = $request->instituteId;
-    return Institute::find($instituteId);
-});
-Route::post('/classrooms', function(Request $request)
-{
-    $instituteId = $request->instituteId;
-    return ClassRoom::where('institute_id',$instituteId)->get();
-});
-Route::post('/classid', function(Request $request)
-{
-  return $request->all();
-});
+// Staffs Routes
+Route::post('/institute/{id}/staffs/import','API\StaffController@importStaffs');
+Route::delete('/institute/{id}/staff/{staff}','API\StaffController@StaffDelete');
+Route::get('/institute/{id}/staffs/groups','API\StaffController@getStaffGroups');
+
+// Staff Groups routes
+Route::post('/staff/groups','API\StaffController@createGroup');
+Route::put('/staff/groups','API\StaffController@updateGroup');
+Route::delete('/staff/groups/','API\StaffController@removeGroup');
+Route::post('/staff/allGroups','API\StaffController@getAllGroups');
+Route::post('/staff/all','API\StaffController@getAll');
+Route::post('/staff/groups/members','API\StaffController@getGroupMembers');
+
+
+// Classroom routes
+Route::apiResource('classrooms', 'API\ClassroomController');
+// ClassGroups routes
+Route::apiResource('classgroups', 'API\ClassGroupController');

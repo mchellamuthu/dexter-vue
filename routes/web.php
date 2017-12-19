@@ -10,15 +10,13 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-$domain = 'dextervue.dev';
-Route::group(['domain'=>$domain], function(){
+
       Route::get('/', function()
       {
         return view('welcome');
       });
-});
-Route::group(['domain'=>'teach.'.$domain], function()
-{
-    Route::get('/', 'HomeController@index');
-
-});
+// Route::group(['domain'=>'teach.'.$domain], function()
+// {
+//     Route::get('/', 'HomeController@index');
+//
+// });

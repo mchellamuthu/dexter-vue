@@ -10,4 +10,26 @@ class Institute extends Model
   public $incrementing = false;
 
   protected $fillable = ['name', 'address', 'state', 'country', 'type', 'userId', 'avatar'];
+
+  public function scopeSearchByKeyword($query, $keyword)
+  {
+      if ($keyword!='') {
+          $query->where(function ($query) use ($keyword) {
+              $query->where("name", "LIKE", "%$keyword%")
+                  ->orWhere("city", "LIKE", "%$keyword%")
+                  ->orWhere("state", "LIKE", "%$keyword%")
+                  ->orWhere("country", "LIKE", "%$keyword%");
+          });
+      }
+      return $query;
+  }
+
+  public function groups()
+  {
+    return $this->hasMany('App\TeacherGroup')->withTimestamps();
+  }
+  public function staffs()
+  {
+    return $this->hasMany('App\Teacher')->withTimestamps();
+  }
 }
