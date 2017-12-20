@@ -61,9 +61,9 @@ class StaffController extends Controller
     public function createGroup(Request $request)
     {
         $validator = Validator::make($request->all(), [
-          // 'institute_id'=>'required|exists:institutes,id',
-          // 'userId'=>'required|exists:users,id',
-          // 'staff.*'=>'required|exists:teachers,id',
+          'institute_id'=>'required|exists:institutes,id',
+          'userId'=>'required|exists:users,id',
+          'staff.*'=>'required|exists:teachers,id',
           'group_name'=>'required|string|max:255',
       ]);
         if ($validator->fails()) {

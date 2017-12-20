@@ -1,15 +1,18 @@
 <?php
 use Illuminate\Http\Request;
 
+// Avatars Routes
+Route::post('/avatars','API\AvatarController@getall');
+
 Route::post('/institute/search','API\InstituteController@search');
 Route::post('/institute/create','API\InstituteController@create');
-Route::post('/institute/{id}/info','API\InstituteController@info');
-Route::post('/institute/{id}/request','API\InstituteController@sendRequest');
+Route::post('/institute/info','API\InstituteController@info');
+Route::post('/institute/join','API\InstituteController@sendRequest');
 
 // Staffs Routes
-Route::post('/institute/{id}/staffs/import','API\StaffController@importStaffs');
-Route::delete('/institute/{id}/staff/{staff}','API\StaffController@StaffDelete');
-Route::get('/institute/{id}/staffs/groups','API\StaffController@getStaffGroups');
+Route::post('/staffs','API\StaffController@create');
+Route::delete('/staffs','API\StaffController@StaffDelete');
+Route::get('/staffs/groups','API\StaffController@getStaffGroups');
 
 // Staff Groups routes
 Route::post('/staff/groups','API\StaffController@createGroup');
@@ -21,6 +24,4 @@ Route::post('/staff/groups/members','API\StaffController@getGroupMembers');
 
 
 // Classroom routes
-Route::apiResource('classrooms', 'API\ClassroomController');
-// ClassGroups routes
-Route::apiResource('classgroups', 'API\ClassGroupController');
+Route::post('/classroom/create','API\ClassroomController@store');
