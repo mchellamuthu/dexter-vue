@@ -170,4 +170,59 @@ class StaffController extends Controller
         });
         return  response()->json(['status'=>'OK','data'=>$group_members,'errors'=>'','institute'=>$institute_id], 200);
     }
+
+    public function removeStaff(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+      'userId'=>'required|exists:users,id',
+      'institute_id'=>'required|exists:institutes,id',
+      'staff'=>'required|exists:teachers,id',
+      ]);
+        if ($validator->fails()) {
+            return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+        }
+        $user_id = $request->userId;
+        $institute_id = $request->institute_id;
+        $staff_id = $request->staff;
+        $institute = Institute::where(['id'=>$institute_id,'userId'=>$user_id])->firstOrFail();
+        $staff = Teacher::where('id', $staff_id)->firstOrFail();
+        $staff->groups()->detach();
+        $staff->delete();
+        return response()->json(['status'=>'success','msg'=>'Staff was removed successfully!']);
+    }
+    public function updateStaff(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+      'userId'=>'required|exists:users,id',
+      'institute_id'=>'required|exists:institutes,id',
+      'staff'=>'required|exists:teachers,id',
+      'staff_first_name'=>'required|string|max:255',
+      'staff_last_name'=>'required|string|max:255',
+      'staff_avatar'=>'required|exists:user_avatars,avatar',
+      'staff_title'=>'required|string|max:255',
+      ]);
+        if ($validator->fails()) {
+            return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+        }
+        $user_id = $request->userId;
+        $institute_id = $request->institute_id;
+        $staff_id = $request->staff;
+        $staff_first_name = $request->staff_first_name;
+        $staff_last_name = $request->staff_last_name;
+        $staff_avatar = $request->staff_avatar;
+        $staff_title = $request->staff_title;
+
+        $institute = Institute::where(['id'=>$institute_id,'userId'=>$user_id])->firstOrFail();
+        $staff = Teacher::where('id', $staff_id)->firstOrFail();
+        $user = User::where(['id'=>$staff->user_id])->firstOrFail();
+        $user->update([
+          'first_name' => $staff_first_name,
+          'last_name' => $staff_last_name,
+          'title' => $title,
+        ]);
+        $staff->update([
+          'avatar'=>$staff_avatar,
+        ]);
+        return response()->json(['status'=>'success','msg'=>'Staff was removed successfully!']);
+    }
 }

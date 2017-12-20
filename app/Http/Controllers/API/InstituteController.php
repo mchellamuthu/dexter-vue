@@ -47,7 +47,7 @@ class InstituteController extends Controller
         if ($validator->fails()) {
             return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
         }
-        $institute = Institute::insert([
+        $institute = Institute::create([
             'name'=>$request->name,
             'address'=>$request->address,
             'state'=>$request->state,
@@ -57,7 +57,7 @@ class InstituteController extends Controller
             'avatar'=>$request->avatar,
       ]);
         if ($institute) {
-            return response()->json(['status'=>'OK','data'=>'Success','errors'=>'']);
+            return response()->json(['status'=>'OK','data'=>$institute,'errors'=>'']);
         }
 
         return response()->json(['status'=>'failed','data'=>'','errors'=>'error occured try again later']);

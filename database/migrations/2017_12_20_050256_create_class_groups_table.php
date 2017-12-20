@@ -15,9 +15,10 @@ class CreateClassGroupsTable extends Migration
     {
         Schema::create('class_groups', function (Blueprint $table) {
             $table->uuid('id')->primary();
-            $table->uuid('class_room_id');
             $table->uuid('user_id');
+            $table->uuid('institute_id');
             $table->string('class_group_name');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

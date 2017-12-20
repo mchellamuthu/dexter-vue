@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateClassRoomGroupsTable extends Migration
+class AddSectionColumnToClassRoomsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,8 @@ class CreateClassRoomGroupsTable extends Migration
      */
     public function up()
     {
-        Schema::create('class_room_groups', function (Blueprint $table) {
-            $table->uuid('class_room_id');
-            $table->uuid('class_group_id');
-            $table->softDeletes();
-            $table->timestamps();
+        Schema::table('class_rooms', function (Blueprint $table) {
+            $table->string('section')->nullable();
         });
     }
 
@@ -28,6 +25,8 @@ class CreateClassRoomGroupsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('class_room_groups');
+        Schema::table('class_rooms', function (Blueprint $table) {
+            $table->dropColumn('section');
+        });
     }
 }

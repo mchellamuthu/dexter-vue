@@ -17,10 +17,10 @@ class CreateClassRoomsTable extends Migration
             $table->uuid('id')->primary();
             $table->string('class_name');
             $table->string('avatar')->nullable();
-            $table->integer('institute_id')->nullable()->default(0)->unsigned();
-            $table->integer('class_teacher')->default(0)->unsigned();
-            $table->integer('status')->default(0)->unsigned();
-            $table->integer('user_id')->default(0)->unsigned();
+            $table->uuid('institute_id')->nullable();
+            $table->uuid('class_teacher')->nullable();
+            $table->boolean('status')->default(true);
+            $table->uuid('user_id');
             $table->softDeletes();
             $table->timestamps();
         });

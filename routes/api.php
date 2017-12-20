@@ -11,7 +11,8 @@ Route::post('/institute/join','API\InstituteController@sendRequest');
 
 // Staffs Routes
 Route::post('/staffs','API\StaffController@create');
-Route::delete('/staffs','API\StaffController@StaffDelete');
+Route::delete('/staffs','API\StaffController@removeStaff');
+Route::put('/staffs','API\StaffController@updateStaff');
 Route::get('/staffs/groups','API\StaffController@getStaffGroups');
 
 // Staff Groups routes
@@ -25,3 +26,9 @@ Route::post('/staff/groups/members','API\StaffController@getGroupMembers');
 
 // Classroom routes
 Route::post('/classroom/create','API\ClassroomController@store');
+
+
+// ClassGroup routes
+Route::post('/classgroup/create','API\ClassGroupController@store');
+Route::post('/classgroup/getMembers','API\ClassGroupController@show');
+Route::post('/classgroup/allGroups','API\ClassGroupController@index');

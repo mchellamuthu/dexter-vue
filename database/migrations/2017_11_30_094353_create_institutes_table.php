@@ -18,6 +18,7 @@ class CreateInstitutesTable extends Migration
             $table->string('name');
             $table->string('address')->nullable();
             $table->string('state');
+            $table->string('city');
             $table->string('country');
             $table->enum('type', ['School', 'College', 'University', 'Others']);
             $table->string('userId');

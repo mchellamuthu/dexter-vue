@@ -14,4 +14,12 @@ class ClassRoom extends Model
     public $incrementing = false;
 
     protected $fillable = ['class_name', 'avatar', 'institute_id', 'class_teacher', 'status', 'user_id'];
+
+    public function groups()
+    {
+        return $this->belongsToMany('App\ClassGroup', 'class_room_groups')->withTimestamps();
+    }
+    public function classroom_groups(){
+      return $this->hasMany('App\ClassRoomGroups');
+    }
 }

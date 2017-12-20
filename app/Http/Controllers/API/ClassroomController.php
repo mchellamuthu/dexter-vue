@@ -42,23 +42,27 @@ class ClassroomController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
+        $validator = Validator::make($request->all(), [
         'userId'=>'required|exists:users,id',
         'institute_id'=>'required|exists:institutes,id',
           'class_name'=>'required|max:255',
           'avatar'=>'required|exists:class_avatars,avatar',
           'grade'=>'required|in:Pre-School,Kindergarten,1st Grade,2nd Grade,3rd Grade,4th Grade,5th Grade,6th Grade,7th Grade,8th Grade,9th Grade,10th Grade,11th Grade,12th Grade,Other,First Year,Second Year,Third Year,Fourth Year,Fifth Year',
-          ]);
+      ]);
+        if ($validator->fails()) {
+            return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+        }
         $user_id = $request->userId;
-        $institute = Institute::where(['id'=>$id,'user_id'=>$user_id])->firstOrFail();
+        $institute = Institute::where(['id'=>$request->institute_id,'userId'=>$user_id])->firstOrFail();
         $avatar_img = $request->avatar;
         $classroom = ClassRoom::create([
           'class_name'=>$request->class_name,
           'avatar'=>$avatar_img,
+          'section'=>$request->grade,
           'institute_id'=>$request->institute_id,
           'user_id'=>$user_id
       ]);
-      response()->json(['status'=>'OK','data'=>$classroom,'errors'=>'','institute'=>$institute_id], 200);
+        return  response()->json(['status'=>'OK','data'=>$classroom,'errors'=>'','institute'=>$request->institute_id], 200);
     }
 
     /**
@@ -90,9 +94,31 @@ class ClassroomController extends Controller
      * @param  \App\ClassRoom  $classRoom
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ClassRoom $classRoom)
+    public function update(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+          'userId'=>'required|exists:users,id',
+          'institute_id'=>'required|exists:institutes,id',
+          'classroom'=>'required|exists:class_rooms,id',
+          'class_name'=>'required|max:255',
+          'avatar'=>'required|exists:class_avatars,avatar',
+          'grade'=>'required|in:Pre-School,Kindergarten,1st Grade,2nd Grade,3rd Grade,4th Grade,5th Grade,6th Grade,7th Grade,8th Grade,9th Grade,10th Grade,11th Grade,12th Grade,Other,First Year,Second Year,Third Year,Fourth Year,Fifth Year',
+      ]);
+        if ($validator->fails()) {
+            return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+        }
+        $user_id = $request->userId;
+        $institute_id = $request->institute_id;
+        $institute = Institute::where(['id'=>$institute_id,'userId'=>$user_id])->firstOrFail();
+        $ClassRoom = ClassRoom::where('id', $request->classroom)->firstOrFail();
+        $avatar_img = $request->avatar;
+        $classroom_up = $ClassRoom->update([
+        'class_name'=>$request->class_name,
+        'avatar'=>$avatar_img,
+        'section'=>$request->grade,
+        'user_id'=>$user_id
+    ]);
+        return  response()->json(['status'=>'OK','data'=>$classroom_up,'errors'=>'','institute'=>$request->institute_id], 200);
     }
 
     /**
