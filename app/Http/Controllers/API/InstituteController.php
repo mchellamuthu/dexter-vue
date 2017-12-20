@@ -70,9 +70,18 @@ class InstituteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function info($id,Request $request)
+    public function info(Request $request)
     {
-      $institute  = Institute::where('id',$id)->firstOrFail();
+      $validator = Validator::make($request->all(), [
+      'userId'=>'required|exists:users,id',
+      'institute_id'=>'required|exists:institutes,id',
+        ]);
+      if ($validator->fails()) {
+          return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+      }
+      $user_id = $request->userId;
+      $institute_id = $request->institute_id;
+      $institute = Institute::where(['id'=>$institute_id,'userId'=>$user_id])->firstOrFail();
       return response()->json(['status'=>'OK','data'=>$institute],200);
     }
     /**

@@ -45,7 +45,7 @@ class StaffController extends Controller
                     $user = User::insert(['id'=>Uuid::generate()->strting,'first_name'=>$first_name,'last_name'=>$last_name,'email'=>$email,'activation_token'=>'']);
                 }
                 if (Teacher::where(['user_id'=>$user->id,'institute_id'=>$institute_id])->count()===0) {
-                    $data_set[] = ['id'=>Uuid::generate()->strting,'user_id'=>$user->id,'avatar'=>$avatar,'institute_id'=>$id];
+                    $data_set[] = ['id'=>Uuid::generate()->strting,'user_id'=>$user->id,'avatar'=>$avatar,'institute_id'=>$institute_id];
                 }
             }
             if (!empty($data_set)) {
