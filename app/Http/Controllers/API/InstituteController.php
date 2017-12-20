@@ -81,7 +81,7 @@ class InstituteController extends Controller
       }
       $user_id = $request->userId;
       $institute_id = $request->institute_id;
-      $institute = Institute::where(['id'=>$institute_id,'userId'=>$user_id])->firstOrFail();
+      $institute = Institute::where(['id'=>$institute_id])->firstOrFail();
       return response()->json(['status'=>'OK','data'=>$institute],200);
     }
     /**
