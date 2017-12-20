@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('username')->nullable()->unique();
             $table->enum('role',['Student','Parent','Teacher','Leader'])->default('Teacher');
-            $table->string('password');
+            $table->string('password')->nullable();
             $table->string('api_token')->unique()->nullable();
             $table->boolean('active')->default(false);
             $table->string('avatar')->nullable();

@@ -26,6 +26,10 @@ Route::post('/staff/groups/members','API\StaffController@getGroupMembers');
 
 // Classroom routes
 Route::post('/classroom/create','API\ClassroomController@store');
+Route::delete('/classroom/remove','API\ClassroomController@destroy');
+Route::put('/classroom/update','API\ClassroomController@update');
+Route::post('/classroom/restore','API\ClassroomController@restore');
+Route::post('/classroom/getArchieved','API\ClassroomController@archievedClassrooms');
 
 
 // ClassGroup routes

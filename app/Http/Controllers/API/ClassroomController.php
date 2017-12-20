@@ -124,11 +124,72 @@ class ClassroomController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\ClassRoom  $classRoom
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ClassRoom $classRoom)
+    public function destroy(Request $request)
     {
-        //
+        $validator = Validator::make($request->all(), [
+        'userId'=>'required|exists:users,id',
+        'institute_id'=>'required|exists:institutes,id',
+        'classroom'=>'required|exists:class_rooms,id',
+    ]);
+        if ($validator->fails()) {
+            return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+        }
+        $user_id = $request->userId;
+        $institute_id = $request->institute_id;
+        $institute = Institute::where(['id'=>$institute_id,'userId'=>$user_id])->firstOrFail();
+        $ClassRoom = ClassRoom::where('id', $request->classroom)->firstOrFail();
+        // $ClassRoom->groups()->detach();
+        $ClassRoom->delete();
+        return response()->json(['status'=>'success','msg'=>'Classroom was archieved successfully!']);
+    }
+
+    /**
+     * Restore the specified resource from storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function restore(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+        'userId'=>'required|exists:users,id',
+        'institute_id'=>'required|exists:institutes,id',
+         'classroom'=>'required|exists:class_rooms,id',
+        // 'classroom'=>'required|exists:class_rooms,id',
+    ]);
+        if ($validator->fails()) {
+            return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+        }
+        $user_id = $request->userId;
+        $institute_id = $request->institute_id;
+        $institute = Institute::where(['id'=>$institute_id,'userId'=>$user_id])->firstOrFail();
+        $ClassRoom = ClassRoom::onlyTrashed()->where('id', $request->classroom)->firstOrFail();
+        $ClassRoom->restore();
+        return response()->json(['status'=>'success','msg'=>'Classroom was restored successfully!']);
+    }
+
+    /**
+     * Get All archieved classrooms
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function archievedClassrooms(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+        'userId'=>'required|exists:users,id',
+        'institute_id'=>'required|exists:institutes,id',
+          ]);
+        if ($validator->fails()) {
+            return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+        }
+        $user_id = $request->userId;
+        $institute_id = $request->institute_id;
+        $institute = Institute::where(['id'=>$institute_id,'userId'=>$user_id])->firstOrFail();
+        $ClassRoom = ClassRoom::onlyTrashed()->where('institute_id', $request->institute_id)->get();
+        return response()->json(['status'=>'success','data'=>$ClassRoom,'msg'=>'Classroom was restored successfully!']);
     }
 }

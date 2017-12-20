@@ -12,7 +12,7 @@ use App\MyClassRoom;
 use App\TeacherGroup;
 use App\TeacherGroupMember;
 use Validator;
-
+use Webpatser\Uuid\Uuid;
 class StaffController extends Controller
 {
     public function __construct()
@@ -42,10 +42,10 @@ class StaffController extends Controller
                 if (User::where('email', $email)->count() > 0) {
                     $user = User::where('email', $email)->first();
                 } else {
-                    $user = User::insert(['first_name'=>$first_name,'last_name'=>$last_name,'email'=>$email,'active_token'=>'']);
+                    $user = User::insert(['id'=>Uuid::generate()->strting,'first_name'=>$first_name,'last_name'=>$last_name,'email'=>$email,'activation_token'=>'']);
                 }
                 if (Teacher::where(['user_id'=>$user->id,'institute_id'=>$institute_id])->count()===0) {
-                    $data_set[] = ['user_id'=>$user->id,'avatar'=>$avatar,'institute_id'=>$id];
+                    $data_set[] = ['id'=>Uuid::generate()->strting,'user_id'=>$user->id,'avatar'=>$avatar,'institute_id'=>$id];
                 }
             }
             if (!empty($data_set)) {
