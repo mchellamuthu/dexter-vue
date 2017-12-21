@@ -38,18 +38,15 @@ class StaffController extends Controller
                 $last_name = $request->input('lname')[$key];
                 $email = $request->input('email')[$key];
                 $avatar = $request->input('avatar')[$key];
-
-                if (User::where('email', $email)->count() > 0) {
-                    $user = User::where('email', $email)->first();
-                } else {
-                    $user = User::insert(['id'=>Uuid::generate()->strting,'first_name'=>$first_name,'last_name'=>$last_name,'email'=>$email,'activation_token'=>'']);
-                }
-                if (Teacher::where(['user_id'=>$user->id,'institute_id'=>$institute_id])->count()===0) {
-                    $data_set[] = ['id'=>Uuid::generate()->strting,'user_id'=>$user->id,'avatar'=>$avatar,'institute_id'=>$institute_id];
-                }
+                $user  = User::firstOrCreate(['email'=>$email],['first_name'=>$first_name,'last_name'=>$last_name]);
+                $teacher[]  = Teacher::firstOrCreate(['user_id'=>$user->id,'institute_id'=>$institute_id],['avatar'=>$avatar]);
+                // $data_set[] = ['id'=>Uuid::generate()->strting,'user_id'=>$user->id,'avatar'=>$avatar,'institute_id'=>$institute_id];
+                // // if (Teacher::where(['user_id'=>$user->id,'institute_id'=>$institute_id],[])->count()===0) {
+                // //     $data_set[] = ['id'=>Uuid::generate()->strting,'user_id'=>$user->id,'avatar'=>$avatar,'institute_id'=>$institute_id];
+                // // }
             }
-            if (!empty($data_set)) {
-                $Myclassroom = Teacher::insert($data_set);
+            if (!empty($teacher)) {
+                // $Myclassroom = Teacher::insert($data_set);
                 return response()->json(['status'=>'success','msg'=>'Teacher has been added']);
             } else {
                 return response()->json(['status'=>'failed','msg'=>'failed']);

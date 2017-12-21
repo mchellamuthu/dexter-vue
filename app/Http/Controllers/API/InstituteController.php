@@ -108,13 +108,27 @@ class InstituteController extends Controller
      */
     public function joinRequest(Request $request)
     {
-      $user = User::where('id',$request->user_id)->firstOrFail();
+      $validator = Validator::make($request->all(), [
+      'userId'=>'required|exists:users,id',
+      'institute_id'=>'required|exists:institutes,id',
+        ]);
+      if ($validator->fails()) {
+          return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+      }
+      $user_id = $request->userId;
+      $institute_id = $request->institute_id;
+      $user = User::where('id',$request->userId)->firstOrFail();
       $institute = Institute::where('id',$request->institute_id)->firstOrFail();
-      Institute::updateOrCreate(
-        ['user_id'=>$request->user_id],
-        ['institute_id'=>$request->institute_id]
+      if ($institute->userId===$request->user_id) {
+        $approved= true;
+      }else{
+        $approved= false;
+      }
+      $MyInstitute = \App\MyInstitute::firstOrCreate(
+        ['user_id'=>$request->user_id,'institute_id'=>$request->institute_id],
+        ['approved'=>$approved]
       );
-      return reponse()->json(['status'=>'OK','msg'=>'Request was send successfull!'],200);
+      return reponse()->json(['status'=>'OK','data'=>$data,'msg'=>'Request was send successfull!'],200);
     }
 
     /**
@@ -125,7 +139,7 @@ class InstituteController extends Controller
      */
     public function show(Request $request)
     {
-        
+
     }
 
     /**
