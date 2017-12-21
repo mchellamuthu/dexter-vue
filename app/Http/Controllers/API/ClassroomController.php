@@ -22,16 +22,18 @@ class ClassroomController extends Controller
      */
     public function index(Request $request)
     {
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        $validator = Validator::make($request->all(), [
+          'userId'=>'required|exists:users,id',
+          'institute_id'=>'required|exists:institutes,id',
+        ]);
+        if ($validator->fails()) {
+            return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+        }
+        $user_id = $request->userId;
+        $institute_id = $request->institute_id;
+        $institute =  Institute::where(['id'=>$institute_id,'userId'=>$user_id])->firstOrFail();
+        $classrooms = $institute->classrooms;
+        return response()->json(['status'=>'OK','data'=>$classrooms,'errors'=>''], 200);
     }
 
     /**
@@ -68,12 +70,24 @@ class ClassroomController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\ClassRoom  $classRoom
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function show(ClassRoom $classRoom)
     {
-        //
+      $validator = Validator::make($request->all(), [
+          'userId'=>'required|exists:users,id',
+          'institute_id'=>'required|exists:institutes,id',
+          'classroom'=>'required|exists:class_rooms,id',
+          ]);
+      if ($validator->fails()) {
+          return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+      }
+      $user_id = $request->userId;
+      $institute_id = $request->institute_id;
+      $institute =  Institute::where(['id'=>$institute_id,'userId'=>$user_id])->firstOrFail();
+      $classroom = ClassRoom::where(['id'=>$request->classroom,'userId'=>$user_id])->firstOrFail();
+      return response()->json(['status'=>'OK','data'=>$classroom,'errors'=>$validator->messages()], 200);
     }
 
     /**

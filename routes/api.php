@@ -3,6 +3,7 @@ use Illuminate\Http\Request;
 
 // Avatars Routes
 Route::post('/avatars','API\AvatarController@getall');
+Route::post('/UserInfo','API\UserController@getUserinfo');
 
 Route::post('/institute/search','API\InstituteController@search');
 Route::post('/institute/create','API\InstituteController@create');

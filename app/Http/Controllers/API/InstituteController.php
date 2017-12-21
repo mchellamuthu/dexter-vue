@@ -120,12 +120,12 @@ class InstituteController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Institute  $institute
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function show(Institute $institute)
+    public function show(Request $request)
     {
-        //
+        
     }
 
     /**

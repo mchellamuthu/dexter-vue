@@ -13,7 +13,6 @@ class JoinRquest extends Model
 
   public $incrementing = false;
   protected $fillable = ['user_id','institute_id'];
-
   public function institute()
   {
     return $this->belongsTo(Institute::class);
