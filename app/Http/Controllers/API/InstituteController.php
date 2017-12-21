@@ -40,7 +40,7 @@ class InstituteController extends Controller
         'state' => 'required|max:150',
         'country' => 'required|max:150',
         'type' => 'required|max:150',
-        'userId'=>'required|max:150',
+        'userId'=>'required|exists:users,id',
         'avatar'=>'required|max:30',
         ]);
 
@@ -57,6 +57,11 @@ class InstituteController extends Controller
             'userId'=>$request->userId,
             'avatar'=>$request->avatar,
       ]);
+
+        $MyInstitute = \App\MyInstitute::create(
+          ['user_id'=>$request->userId,
+          'approved'=>true,'institute_id'=>$institute->id]
+        );
         if ($institute) {
             return response()->json(['status'=>'OK','data'=>$institute,'errors'=>'']);
         }
@@ -93,7 +98,12 @@ class InstituteController extends Controller
     public function search(Request $request)
     {
         $keyword = $request->query;
-        $records  = Institute::SearchByKeyword($keyword)->get();
+        if (empty($keyword)) {
+            $records  = Institute::all();
+        }else{
+            $records  = Institute::SearchByKeyword($keyword)->get();
+        }
+
         if($records->count() > 0) {
             return response()->json(['status'=>'OK','data'=>$records,'msg'=>'success']);
         }
@@ -124,9 +134,9 @@ class InstituteController extends Controller
       }else{
         $approved= false;
       }
-      $MyInstitute = \App\MyInstitute::firstOrCreate(
-        ['user_id'=>$request->user_id,'institute_id'=>$request->institute_id],
-        ['approved'=>$approved]
+      $MyInstitute = \App\MyInstitute::updateOrCreate(
+        ['user_id'=>$request->userId],
+        ['approved'=>$approved,'institute_id'=>$request->institute_id]
       );
       return reponse()->json(['status'=>'OK','data'=>$data,'msg'=>'Request was send successfull!'],200);
     }

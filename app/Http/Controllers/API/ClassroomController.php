@@ -12,7 +12,7 @@ use App\MyClassRoom;
 use App\TeacherGroup;
 use App\TeacherGroupMember;
 use Validator;
-
+use App\MyInstitute;
 class ClassroomController extends Controller
 {
     /**
@@ -55,7 +55,7 @@ class ClassroomController extends Controller
             return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
         }
         $user_id = $request->userId;
-        $institute = Institute::where(['id'=>$request->institute_id,'userId'=>$user_id])->firstOrFail();
+        $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'userId'=>$user_id,'approved'=>true])->firstOrFail();
         $avatar_img = $request->avatar;
         $classroom = ClassRoom::create([
           'class_name'=>$request->class_name,

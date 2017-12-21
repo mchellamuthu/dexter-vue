@@ -14,19 +14,39 @@ use Validator;
 
 class UserController extends Controller
 {
+  /**
+   * get all info for authenticated user
+   * @Method POST
+   * @userId Send authenticated user's id
+   * @return \Illuminate\Http\Response JSON
+   */
     public function getUserinfo(Request $request)
     {
-      $validator = Validator::make($request->all(), [
+        $validator = Validator::make($request->all(), [
       'userId'=>'required|exists:users,id',
         ]);
-      if ($validator->fails()) {
-          return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
-      }
-      $user_id = $request->userId;
-      $user = User::where('id',$user_id)->firstOrFail();
-      $users = User::where('id',$user_id)->get();
-      $user_data = $users->map(function($item){
-          return [
+        if ($validator->fails()) {
+            return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+        }
+        $user_id = $request->userId;
+        $user = User::where('id', $user_id)->firstOrFail();
+        $users = User::where('id', $user_id)->get();
+        $user_data = $users->map(function ($item) {
+            if ($item->my_institute!==null) {
+                $institute_data = [
+            '_id'=> $item->my_institute->institute_id,
+            'approved'=> $item->my_institute->approved,
+            'institute_name'=> $item->my_institute->institute->name,
+            'institute_address'=> $item->my_institute->institute->address,
+            'institute_city'=> $item->my_institute->institute->city,
+            'institute_state'=> $item->my_institute->institute->state,
+            'institute_country'=> $item->my_institute->institute->country,
+            'institute_type'=> $item->my_institute->institute->type,
+            'institute_avatar'=> $item->my_institute->institute->avatar,];
+            } else {
+                $institute_data =null;
+            }
+            return [
             '_id'=>$item->id,
             'title'=>$item->title,
             'first_name'=>$item->first_name,
@@ -36,18 +56,10 @@ class UserController extends Controller
             'api_token'=>$item->api_token,
             'avatar'=>$item->avatar,
             'role'=>$item->role,
-            'institute'=> $item->my_institute->id,
-            'approved'=> $item->my_institute->approved,
-            'institute_name'=> $item->my_institute->institute->name,
-            'institute_address'=> $item->my_institute->institute->address,
-            'institute_city'=> $item->my_institute->institute->city,
-            'institute_state'=> $item->my_institute->institute->state,
-            'institute_country'=> $item->my_institute->institute->country,
-            'institute_type'=> $item->my_institute->institute->type,
-            'institute_avatar'=> $item->my_institute->institute->avatar,
+            'institute'=>$institute_data
 
         ];
-      });
-      return response()->json(['status'=>'OK','data'=>$user_data,'errors'=>''], 200);
+        });
+        return response()->json(['status'=>'OK','data'=>$user_data,'errors'=>''], 200);
     }
 }
