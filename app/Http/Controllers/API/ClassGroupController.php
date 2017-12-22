@@ -67,7 +67,7 @@ class ClassGroupController extends Controller
 
         // Add members to group table
         $teacher_group->classrooms()->sync($request->classroom);
-        return response()->json(['status'=>'success','msg'=>'Class group was created successfully!']);
+        return response()->json(['status'=>'success','data'=>$teacher_group,'msg'=>'Class group was created successfully!']);
     }
 
     /**
