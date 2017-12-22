@@ -13,6 +13,7 @@ use App\TeacherGroup;
 use App\TeacherGroupMember;
 use Validator;
 use Webpatser\Uuid\Uuid;
+
 class StaffController extends Controller
 {
     public function __construct()
@@ -32,14 +33,14 @@ class StaffController extends Controller
         if ($validation->passes()) {
             $user_id = $request->userId;
             $institute_id = $request->institute_id;
-            $institute = Institute::where(['id'=>$institute_id,'user_id'=>$user_id])->firstOrFail();
+            $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
             foreach ($request->input('fname') as $key => $name) {
                 $first_name = $request->input('fname')[$key];
                 $last_name = $request->input('lname')[$key];
                 $email = $request->input('email')[$key];
                 $avatar = $request->input('avatar')[$key];
-                $user  = User::firstOrCreate(['email'=>$email],['first_name'=>$first_name,'last_name'=>$last_name]);
-                $teacher[]  = Teacher::firstOrCreate(['user_id'=>$user->id,'institute_id'=>$institute_id],['avatar'=>$avatar]);
+                $user  = User::firstOrCreate(['email'=>$email], ['first_name'=>$first_name,'last_name'=>$last_name]);
+                $teacher[]  = Teacher::firstOrCreate(['user_id'=>$user->id,'institute_id'=>$institute_id], ['avatar'=>$avatar]);
                 // $data_set[] = ['id'=>Uuid::generate()->strting,'user_id'=>$user->id,'avatar'=>$avatar,'institute_id'=>$institute_id];
                 // // if (Teacher::where(['user_id'=>$user->id,'institute_id'=>$institute_id],[])->count()===0) {
                 // //     $data_set[] = ['id'=>Uuid::generate()->strting,'user_id'=>$user->id,'avatar'=>$avatar,'institute_id'=>$institute_id];
@@ -68,7 +69,7 @@ class StaffController extends Controller
         }
         $user_id = $request->userId;
         $institute_id = $request->institute_id;
-        $institute = Institute::where(['id'=>$institute_id,'userId'=>$user_id])->firstOrFail();
+        $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
         $teacher_group = TeacherGroup::firstOrCreate(['group_name'=>$request->group_name,'institute_id'=>$institute_id,'user_id'=>$user_id]);
         // Add members to group table
         $teacher_group->members()->sync($request->staff);
@@ -108,7 +109,7 @@ class StaffController extends Controller
         }
         $user_id = $request->userId;
         $institute_id = $request->institute_id;
-        $institute = Institute::where(['id'=>$institute_id,'userId'=>$user_id])->firstOrFail();
+        $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
         $group = TeacherGroup::where('id', $request->group)->firstOrFail();
         $group->members()->detach();
         $group->delete();
@@ -126,8 +127,8 @@ class StaffController extends Controller
         }
         $user_id = $request->userId;
         $institute_id = $request->institute_id;
-        $institute = Institute::where(['id'=>$institute_id,'userId'=>$user_id])->firstOrFail();
-        $groups = $institute->groups;
+        $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
+        $groups = $institute->institute->groups;
         return response()->json(['status'=>'OK','data'=>$groups,'errors'=>'','institute'=>$institute_id], 200);
     }
 
@@ -142,8 +143,8 @@ class StaffController extends Controller
         }
         $user_id = $request->userId;
         $institute_id = $request->institute_id;
-        $institute = Institute::where(['id'=>$institute_id,'userId'=>$user_id])->firstOrFail();
-        $staffs = $institute->staffs;
+        $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
+        $staffs = $institute->institute->staffs;
         return response()->json(['status'=>'OK','data'=>$staffs,'errors'=>'','institute'=>$institute_id], 200);
     }
     public function getGroupMembers(Request $request)
@@ -159,7 +160,7 @@ class StaffController extends Controller
         $user_id = $request->userId;
         $institute_id = $request->institute_id;
         $group_id = $request->group;
-        $institute = Institute::where(['id'=>$institute_id,'userId'=>$user_id])->firstOrFail();
+        $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
         $group = TeacherGroup::where('id', $group_id)->firstOrFail();
         // Get All group members with name
         $group_members = $group->group_members->map(function ($item) {
@@ -181,7 +182,7 @@ class StaffController extends Controller
         $user_id = $request->userId;
         $institute_id = $request->institute_id;
         $staff_id = $request->staff;
-        $institute = Institute::where(['id'=>$institute_id,'userId'=>$user_id])->firstOrFail();
+        $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
         $staff = Teacher::where('id', $staff_id)->firstOrFail();
         $staff->groups()->detach();
         $staff->delete();
@@ -209,7 +210,8 @@ class StaffController extends Controller
         $staff_avatar = $request->staff_avatar;
         $staff_title = $request->staff_title;
 
-        $institute = Institute::where(['id'=>$institute_id,'userId'=>$user_id])->firstOrFail();
+        $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
+
         $staff = Teacher::where('id', $staff_id)->firstOrFail();
         $user = User::where(['id'=>$staff->user_id])->firstOrFail();
         $user->update([

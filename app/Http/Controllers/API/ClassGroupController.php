@@ -24,19 +24,19 @@ class ClassGroupController extends Controller
      */
     public function index(Request $request)
     {
-      $validator = Validator::make($request->all(), [
+        $validator = Validator::make($request->all(), [
           'userId'=>'required|exists:users,id',
           'institute_id'=>'required|exists:institutes,id',
         ]);
-      if ($validator->fails()) {
-          return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
-      }
+        if ($validator->fails()) {
+            return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+        }
 
-      $user_id = $request->userId;
-      $institute_id = $request->institute_id;
-      $institute = Institute::where(['id'=>$institute_id,'userId'=>$user_id])->firstOrFail();
-      $classgroups = ClassGroup::where('institute_id',$institute_id)->get();
-      return response()->json(['status'=>'OK','data'=>$classgroups,'errors'=>''], 200);
+        $user_id = $request->userId;
+        $institute_id = $request->institute_id;
+        $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
+        $classgroups = ClassGroup::where('institute_id', $institute_id)->get();
+        return response()->json(['status'=>'OK','data'=>$classgroups,'errors'=>''], 200);
     }
 
 
@@ -61,7 +61,7 @@ class ClassGroupController extends Controller
 
         $user_id = $request->userId;
         $institute_id = $request->institute_id;
-        $institute = Institute::where(['id'=>$institute_id,'userId'=>$user_id])->firstOrFail();
+        $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
         $teacher_group = ClassGroup::firstOrCreate(['class_group_name'=>$request->group_name,'institute_id'=>$institute_id,'user_id'=>$user_id]);
 
         // Add members to group table
@@ -77,24 +77,24 @@ class ClassGroupController extends Controller
      */
     public function show(Request $request)
     {
-      $validator = Validator::make($request->all(), [
+        $validator = Validator::make($request->all(), [
           'userId'=>'required|exists:users,id',
           'institute_id'=>'required|exists:institutes,id',
           'group'=>'required|exists:class_groups,id',
         ]);
-      if ($validator->fails()) {
-          return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
-      }
+        if ($validator->fails()) {
+            return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+        }
 
-      $user_id = $request->userId;
-      $institute_id = $request->institute_id;
-      $institute = Institute::where(['id'=>$institute_id,'userId'=>$user_id])->firstOrFail();
-      $class_group = ClassGroup::where('id', $request->group)->where('institute_id',$institute_id)->firstOrFail();
-      // return $class_group->group_classrooms;
-      $group_members = $class_group->group_classrooms->map(function ($item) {
-          return ['_id'=>$item->class_room_id,'class_name'=>$item->classroom->class_name,'section'=>$item->classroom->section,'avatar'=>$item->classroom->avatar];
-      });
-      return  response()->json(['status'=>'OK','data'=>$group_members,'errors'=>'','institute'=>$institute_id], 200);
+        $user_id = $request->userId;
+        $institute_id = $request->institute_id;
+        $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
+        $class_group = ClassGroup::where('id', $request->group)->where('institute_id', $institute_id)->firstOrFail();
+        // return $class_group->group_classrooms;
+        $group_members = $class_group->group_classrooms->map(function ($item) {
+            return ['_id'=>$item->class_room_id,'class_name'=>$item->classroom->class_name,'section'=>$item->classroom->section,'avatar'=>$item->classroom->avatar];
+        });
+        return  response()->json(['status'=>'OK','data'=>$group_members,'errors'=>'','institute'=>$institute_id], 200);
     }
 
 
@@ -120,7 +120,7 @@ class ClassGroupController extends Controller
 
         $user_id = $request->userId;
         $institute_id = $request->institute_id;
-        $institute = Institute::where(['id'=>$institute_id,'userId'=>$user_id])->firstOrFail();
+        $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
         $class_group = ClassGroup::where('id', $request->group)->firstOrFail();
         $class_group->update(['class_group_name'=>$request->group_name]);
         // Add members to group table
@@ -147,7 +147,7 @@ class ClassGroupController extends Controller
 
         $user_id = $request->userId;
         $institute_id = $request->institute_id;
-        $institute = Institute::where(['id'=>$institute_id,'userId'=>$user_id])->firstOrFail();
+        $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
         $class_group = ClassGroup::where('id', $request->group)->firstOrFail();
         $class_group->classrooms()->detach();
         $class_group->delete();

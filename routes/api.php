@@ -60,3 +60,10 @@ Route::post('/classrooms','API\ClassroomController@index');
 Route::post('/classgroup/create','API\ClassGroupController@store');
 Route::post('/classgroup/getMembers','API\ClassGroupController@show');
 Route::post('/classgroup/allGroups','API\ClassGroupController@index');
+Route::put('/classgroup/update','API\ClassGroupController@update');
+Route::delete('/classgroup/delete','API\ClassGroupController@destroy');
+
+
+// Student ROUTES
+Route::post('/StudentsAdd','API\StudentController@store');
+Route::post('/StudentInfo','API\StudentController@show');

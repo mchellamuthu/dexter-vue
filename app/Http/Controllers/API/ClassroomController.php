@@ -31,8 +31,8 @@ class ClassroomController extends Controller
         }
         $user_id = $request->userId;
         $institute_id = $request->institute_id;
-        $institute =  Institute::where(['id'=>$institute_id,'userId'=>$user_id])->firstOrFail();
-        $classrooms = $institute->classrooms;
+        $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
+        $classrooms = $institute->institute->classrooms;
         return response()->json(['status'=>'OK','data'=>$classrooms,'errors'=>''], 200);
     }
 
@@ -55,7 +55,7 @@ class ClassroomController extends Controller
             return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
         }
         $user_id = $request->userId;
-        $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'userId'=>$user_id,'approved'=>true])->firstOrFail();
+        $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
         $avatar_img = $request->avatar;
         $classroom = ClassRoom::create([
           'class_name'=>$request->class_name,
@@ -85,7 +85,7 @@ class ClassroomController extends Controller
       }
       $user_id = $request->userId;
       $institute_id = $request->institute_id;
-      $institute =  Institute::where(['id'=>$institute_id,'userId'=>$user_id])->firstOrFail();
+      $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
       $classroom = ClassRoom::where(['id'=>$request->classroom,'userId'=>$user_id])->firstOrFail();
       return response()->json(['status'=>'OK','data'=>$classroom,'errors'=>$validator->messages()], 200);
     }
@@ -123,7 +123,7 @@ class ClassroomController extends Controller
         }
         $user_id = $request->userId;
         $institute_id = $request->institute_id;
-        $institute = Institute::where(['id'=>$institute_id,'userId'=>$user_id])->firstOrFail();
+        $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
         $ClassRoom = ClassRoom::where('id', $request->classroom)->firstOrFail();
         $avatar_img = $request->avatar;
         $classroom_up = $ClassRoom->update([
@@ -153,7 +153,7 @@ class ClassroomController extends Controller
         }
         $user_id = $request->userId;
         $institute_id = $request->institute_id;
-        $institute = Institute::where(['id'=>$institute_id,'userId'=>$user_id])->firstOrFail();
+        $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
         $ClassRoom = ClassRoom::where('id', $request->classroom)->firstOrFail();
         // $ClassRoom->groups()->detach();
         $ClassRoom->delete();
@@ -179,7 +179,7 @@ class ClassroomController extends Controller
         }
         $user_id = $request->userId;
         $institute_id = $request->institute_id;
-        $institute = Institute::where(['id'=>$institute_id,'userId'=>$user_id])->firstOrFail();
+        $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
         $ClassRoom = ClassRoom::onlyTrashed()->where('id', $request->classroom)->firstOrFail();
         $ClassRoom->restore();
         return response()->json(['status'=>'success','msg'=>'Classroom was restored successfully!']);
@@ -202,7 +202,7 @@ class ClassroomController extends Controller
         }
         $user_id = $request->userId;
         $institute_id = $request->institute_id;
-        $institute = Institute::where(['id'=>$institute_id,'userId'=>$user_id])->firstOrFail();
+        $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
         $ClassRoom = ClassRoom::onlyTrashed()->where('institute_id', $request->institute_id)->get();
         return response()->json(['status'=>'success','data'=>$ClassRoom,'msg'=>'Classroom was restored successfully!']);
     }
