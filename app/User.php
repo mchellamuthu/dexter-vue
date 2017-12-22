@@ -53,4 +53,8 @@ class User extends Authenticatable
     {
       return $this->hasOne('App\MyInstitute');
     }
+
+    public function classrooms(){
+      return $this->hasMany('App\MyClassRoom');
+    }
 }

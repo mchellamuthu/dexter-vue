@@ -54,6 +54,7 @@ Route::put('/classroom/update','API\ClassroomController@update');
 Route::post('/classroom/restore','API\ClassroomController@restore');
 Route::post('/classroom/getArchieved','API\ClassroomController@archievedClassrooms');
 Route::post('/classrooms','API\ClassroomController@index');
+Route::post('/classroom/info','API\ClassroomController@show');
 
 
 // ClassGroup routes

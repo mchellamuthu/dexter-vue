@@ -22,4 +22,7 @@ class ClassRoom extends Model
     public function classroom_groups(){
       return $this->hasMany('App\ClassRoomGroups');
     }
+    public function students(){
+      return $this->hasMany('App\Student');
+    }
 }

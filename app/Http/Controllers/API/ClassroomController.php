@@ -32,7 +32,28 @@ class ClassroomController extends Controller
         $user_id = $request->userId;
         $institute_id = $request->institute_id;
         $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
-        $classrooms = $institute->institute->classrooms;
+        $user = User::findOrFail($user_id);
+        $classrooms = $user->classrooms->map(function($item){
+          if ($item->user_id===$item->classroom->user_id) {
+            //check MyClassRoom is shared with others
+            $myclass = MyClassRoom::where('class_id',$item->classroom->id)->where('user_id','!=',$item->user_id)->where('role','Teacher')->get();
+            if ($myclass->count() > 0) {
+              $shared = true;
+            }else{
+              $shared = false;
+            }
+          }else{
+            $shared = true;
+          }
+          return [
+            '_id'=>$item->classroom->id,
+            'name'=>$item->classroom->class_name,
+            'avatar'=>$item->classroom->avatar,
+            'section'=>$item->classroom->section,
+            'shared'=>$shared,
+            'students'=>$item->classroom->students->count()
+            ];
+        });
         return response()->json(['status'=>'OK','data'=>$classrooms,'errors'=>''], 200);
     }
 
@@ -64,6 +85,13 @@ class ClassroomController extends Controller
           'institute_id'=>$request->institute_id,
           'user_id'=>$user_id
       ]);
+      $MyClassRoom = MyClassRoom::create(
+        ['user_id'=>$request->userId,
+        'approved'=>true,
+        'class_id'=>$classroom->id,
+        'role'=>'Teacher',
+        'institute_id'=>$request->institute_id]
+      );
         return  response()->json(['status'=>'OK','data'=>$classroom,'errors'=>'','institute'=>$request->institute_id], 200);
     }
 
@@ -73,7 +101,7 @@ class ClassroomController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function show(ClassRoom $classRoom)
+    public function show(Request $request)
     {
       $validator = Validator::make($request->all(), [
           'userId'=>'required|exists:users,id',
@@ -85,9 +113,33 @@ class ClassroomController extends Controller
       }
       $user_id = $request->userId;
       $institute_id = $request->institute_id;
+      // CHECK INSTITUTE
       $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
-      $classroom = ClassRoom::where(['id'=>$request->classroom,'userId'=>$user_id])->firstOrFail();
-      return response()->json(['status'=>'OK','data'=>$classroom,'errors'=>$validator->messages()], 200);
+      // CHECK MY CLASSROOM
+      $classroom = MyClassRoom::where(['class_id'=>$request->classroom,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
+      // GET ALL STUDENTS FROM CLASSROOM
+      $students = $classroom->classroom->students->map(function($item){
+        return [
+          '_id'=>$item->id,
+          'first_name'=>$item->user->first_name,
+          'last_name'=>$item->user->last_name,
+          'title'=>$item->user->title,
+          'email'=>$item->user->email,
+          'roll_no'=>$item->rollno,
+          'avatar'=>$item->avatar,
+        ];
+      });
+      //RESPONSE  DATA
+      $classroom_data = [
+        'class_room'=> [
+          '_id'=>$classroom->classroom->id,
+          'class_name'=>$classroom->classroom->class_name,
+          'avatar'=>$classroom->avatar,
+          'section'=>$classroom->section,
+        ],
+        'students'=>$students,
+      ];
+      return response()->json(['status'=>'OK','data'=>$classroom->classroom,'errors'=>$validator->messages()], 200);
     }
 
     /**
@@ -124,14 +176,14 @@ class ClassroomController extends Controller
         $user_id = $request->userId;
         $institute_id = $request->institute_id;
         $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
+        $myclassroom = MyClassRoom::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'class_id'=>$request->classroom,'approved'=>true])->firstOrFail();
         $ClassRoom = ClassRoom::where('id', $request->classroom)->firstOrFail();
         $avatar_img = $request->avatar;
         $classroom_up = $ClassRoom->update([
         'class_name'=>$request->class_name,
         'avatar'=>$avatar_img,
         'section'=>$request->grade,
-        'user_id'=>$user_id
-    ]);
+        ]);
         return  response()->json(['status'=>'OK','data'=>$classroom_up,'errors'=>'','institute'=>$request->institute_id], 200);
     }
 
@@ -154,8 +206,7 @@ class ClassroomController extends Controller
         $user_id = $request->userId;
         $institute_id = $request->institute_id;
         $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
-        $ClassRoom = ClassRoom::where('id', $request->classroom)->firstOrFail();
-        // $ClassRoom->groups()->detach();
+        $ClassRoom = ClassRoom::where('id', $request->classroom)->where('user_id',$user_id)->firstOrFail();
         $ClassRoom->delete();
         return response()->json(['status'=>'success','msg'=>'Classroom was archieved successfully!']);
     }
