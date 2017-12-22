@@ -49,6 +49,7 @@ class StudentController extends Controller
       $validation = Validator::make($request->all(),[
           'fname.*'=>'required|string|max:255',
           'lname.*'=>'required|string|max:255',
+          'rollno.*'=>'required|string|max:255',
           'email.*' => 'required|string|email|max:255',
           'avatar.*'=>'required|exists:user_avatars,avatar',
           'userId'=>'required|exists:users,id',
@@ -72,8 +73,8 @@ class StudentController extends Controller
               $email = $request->input('email')[$key];
               $avatar = $request->input('avatar')[$key];
               $mobileno = $request->input('mobile')[$key];
-              $user  = User::firstOrCreate(['email'=>$email,'rollno'=>$roll_no],['first_name'=>$first_name,'last_name'=>$last_name]);
-              $student = Student::firstOrCreate(['user_id'=>$user->id,'institute_id'=>$institute_id,'class_room_id'=>$request->classroom],['avatar'=>$avatar]);
+              $user  = User::firstOrCreate(['email'=>$email],['first_name'=>$first_name,'last_name'=>$last_name]);
+              $student = Student::firstOrCreate(['user_id'=>$user->id,'rollno'=>$roll_no,'institute_id'=>$institute_id,'class_room_id'=>$request->classroom],['avatar'=>$avatar]);
           }
           if (!empty($student)) {
               return response()->json(['status'=>'success','msg'=>'Students has been added']);
@@ -128,7 +129,26 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        //
+      $validator = Validator::make($request->all(), [
+        'fname'=>'required|string|max:255',
+        'lname'=>'required|string|max:255',
+        'rollno'=>'required|string|max:255',
+        'avatar'=>'required|exists:user_avatars,avatar',
+        'userId'=>'required|exists:users,id',
+        'institute_id'=>'required|exists:institutes,id',
+        'classroom'=>'required|exists:class_rooms,id',
+        'student'=>'required|exists:students,id',
+      ]);
+      if ($validator->fails()) {
+          return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+      }
+      $user_id = $request->userId;
+      $institute_id = $request->institute_id;
+      $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
+      $classroom =  ClassRoom::where(['id'=>$request->classroom,'institute_id'=>$institute_id])->firstOrFail();
+      $student   =  Student::where(['id'=>$request->student,'class_room_id'=>$request->classroom,'institute_id'=>$institute_id])->firstOrFail();
+      $user = $student->user;
+      return response()->json(['status'=>'OK','data'=>$student,'errors'=>''], 200);
     }
 
     /**
