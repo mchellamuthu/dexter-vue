@@ -13,7 +13,7 @@ class ClassGroup extends Model
 
   public $incrementing = false;
 
-  protected $fillable = ['class_room_id', 'class_group_name', 'institute_id',  'user_id'];
+  protected $fillable = ['class_room_id', 'class_group_name', 'institute_id',  'user_id','avatar'];
 
   public function classrooms()
   {

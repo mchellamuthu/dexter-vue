@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\API;
+use Illuminate\Support\Facades\DB;
 
 use App\ClassGroup;
 use Illuminate\Http\Request;
@@ -62,8 +63,10 @@ class ClassGroupController extends Controller
 
         $user_id = $request->userId;
         $institute_id = $request->institute_id;
+        $avatar = DB::table('class_avatars')->orderBy(DB::raw('RAND()'))->first();
+
         $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
-        $teacher_group = ClassGroup::firstOrCreate(['class_group_name'=>$request->group_name,'institute_id'=>$institute_id,'user_id'=>$user_id]);
+        $teacher_group = ClassGroup::firstOrCreate(['class_group_name'=>$request->group_name,'institute_id'=>$institute_id,'user_id'=>$user_id,'avatar'=>$avatar->avatar]);
 
         // Add members to group table
         $teacher_group->classrooms()->sync($request->classroom);
