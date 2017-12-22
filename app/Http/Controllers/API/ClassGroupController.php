@@ -13,6 +13,7 @@ use App\MyClassRoom;
 use App\TeacherGroup;
 use App\TeacherGroupMember;
 use Validator;
+use App\MyInstitute;
 use Webpatser\Uuid\Uuid;
 
 class ClassGroupController extends Controller

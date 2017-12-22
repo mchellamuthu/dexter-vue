@@ -9,6 +9,8 @@ use Validator;
 use App\User;
 use App\JoinRquest;
 use Webpatser\Uuid\Uuid;
+use App\MyInstitute;
+
 // use Auth;
 class InstituteController extends Controller
 {
