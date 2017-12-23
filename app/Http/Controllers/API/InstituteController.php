@@ -99,7 +99,7 @@ class InstituteController extends Controller
      */
     public function search(Request $request)
     {
-        $keyword = $request->query;
+        $keyword = $request->q;
         if (empty($keyword)) {
             $records  = Institute::all();
         }else{
@@ -140,7 +140,7 @@ class InstituteController extends Controller
         ['user_id'=>$request->userId],
         ['approved'=>$approved,'institute_id'=>$request->institute_id]
       );
-      return reponse()->json(['status'=>'OK','data'=>$data,'msg'=>'Request was send successfull!'],200);
+      return response()->json(['status'=>'OK','data'=>$MyInstitute,'msg'=>'Request was send successfull!'],200);
     }
 
     /**

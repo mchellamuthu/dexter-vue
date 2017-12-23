@@ -26,7 +26,7 @@ class Institute extends Model
 
   public function groups()
   {
-    return $this->hasMany('App\TeacherGroup')->withTimestamps();
+    return $this->hasMany('App\TeacherGroup');
   }
   public function classrooms()
   {
@@ -34,10 +34,10 @@ class Institute extends Model
   }
   public function shared()
   {
-    return $this->hasMany('App\MyInstitute')->withTimestamps();
+    return $this->hasMany('App\MyInstitute');
   }
   public function staffs()
   {
-    return $this->hasMany('App\Teacher')->withTimestamps();
+    return $this->hasMany('App\Teacher');
   }
 }

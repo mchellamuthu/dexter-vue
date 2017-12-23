@@ -24,7 +24,7 @@ class AvatarController extends Controller
         }
         if ($request->type=="Classroom" or $request->type=="Institute") {
             $data = DB::table('class_avatars')->get();
-        } elseif ($request->type=="Student") {
+        } elseif ($request->type=="Students") {
             $data = DB::table('user_avatars')->get();
         } elseif ($request->type=="Skills") {
             $data = DB::table('skill_icons')->get();

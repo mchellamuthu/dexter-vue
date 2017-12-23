@@ -104,7 +104,7 @@ class StudentController extends Controller
         $user_id = $request->userId;
         $institute_id = $request->institute_id;
         $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
-        $classroom =  ClassRoom::where(['id'=>$request->classroom,'institute_id'=>$institute_id])->firstOrFail();
+        $classroom =  MyClassRoom::where(['class_id'=>$request->classroom,'institute_id'=>$institute_id,'approved'=>true])->firstOrFail();
         $student   =  Student::where(['id'=>$request->student,'class_room_id'=>$request->classroom,'institute_id'=>$institute_id])->firstOrFail();
         $user = $student->user;
         return response()->json(['status'=>'OK','data'=>$student,'errors'=>''], 200);
@@ -158,8 +158,23 @@ class StudentController extends Controller
      * @param  \App\Student  $student
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Student $student)
+    public function destroy(Request $request)
     {
-        //
+      $validator = Validator::make($request->all(), [
+      'userId'=>'required|exists:users,id',
+      'institute_id'=>'required|exists:institutes,id',
+      'classroom'=>'required|exists:class_rooms,id',
+      'student'=>'required|exists:students,id',
+    ]);
+      if ($validator->fails()) {
+          return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+      }
+      $user_id = $request->userId;
+      $institute_id = $request->institute_id;
+      $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
+      $classroom =  MyClassRoom::where(['class_id'=>$request->classroom,'institute_id'=>$institute_id,'approved'=>true])->firstOrFail();
+      $student   =  Student::where(['id'=>$request->student,'class_room_id'=>$request->classroom,'institute_id'=>$institute_id])->firstOrFail();
+      $student->delete();
+      return response()->json(['status'=>'OK','msg'=>'Staff removed successfully!','errors'=>''], 200);
     }
 }

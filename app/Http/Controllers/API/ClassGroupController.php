@@ -51,23 +51,20 @@ class ClassGroupController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-        'userId'=>'required|exists:users,id',
-        'institute_id'=>'required|exists:institutes,id',
-        'group_name'=>'required|max:255',
-        'classroom.*'=>'required|exists:class_rooms,id|max:36',
-
-      ]);
+          'userId'=>'required|exists:users,id',
+          'institute_id'=>'required|exists:institutes,id',
+          'group_name'=>'required|max:255',
+          'classroom.*'=>'required|exists:class_rooms,id|max:36',
+        ]);
         if ($validator->fails()) {
             return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
         }
-
         $user_id = $request->userId;
         $institute_id = $request->institute_id;
+        // get random avatars for group icon
         $avatar = DB::table('class_avatars')->orderBy(DB::raw('RAND()'))->first();
-
         $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
         $teacher_group = ClassGroup::firstOrCreate(['class_group_name'=>$request->group_name,'institute_id'=>$institute_id,'user_id'=>$user_id,'avatar'=>$avatar->avatar]);
-
         // Add members to group table
         $teacher_group->classrooms()->sync($request->classroom);
         return response()->json(['status'=>'success','data'=>$teacher_group,'msg'=>'Class group was created successfully!']);

@@ -14,10 +14,8 @@ class CreateStudentGroupMembersTable extends Migration
     public function up()
     {
         Schema::create('student_group_members', function (Blueprint $table) {
-          $table->uuid('user_id');
           $table->uuid('student_id');
           $table->uuid('student_group_id');
-          $table->uuid('class_room_id');
           $table->timestamps();
         });
     }

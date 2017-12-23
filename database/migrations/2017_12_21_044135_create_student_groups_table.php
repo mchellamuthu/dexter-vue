@@ -15,10 +15,11 @@ class CreateStudentGroupsTable extends Migration
     {
         Schema::create('student_groups', function (Blueprint $table) {
             $table->uuid('id')->primary();
+            $table->string('group_name');
             $table->uuid('user_id');
             $table->uuid('institute_id');
             $table->uuid('class_room_id');
-            $table->string('avatar');
+            $table->string('avatar')->nullable();
             $table->softDeletes();
             $table->timestamps();
         });

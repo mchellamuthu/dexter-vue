@@ -30,7 +30,6 @@ class StaffController extends Controller
             'userId'=>'required|exists:users,id',
             'avatar.*'=>'required|exists:user_avatars,avatar',
         ]);
-        // print_r($request->all());
         if ($validation->passes()) {
             $user_id = $request->userId;
             $institute_id = $request->institute_id;
@@ -42,10 +41,6 @@ class StaffController extends Controller
                 $avatar = $request->input('avatar')[$key];
                 $user  = User::firstOrCreate(['email'=>$email], ['first_name'=>$first_name,'last_name'=>$last_name]);
                 $teacher[]  = Teacher::firstOrCreate(['user_id'=>$user->id,'institute_id'=>$institute_id], ['avatar'=>$avatar]);
-                // $data_set[] = ['id'=>Uuid::generate()->strting,'user_id'=>$user->id,'avatar'=>$avatar,'institute_id'=>$institute_id];
-                // // if (Teacher::where(['user_id'=>$user->id,'institute_id'=>$institute_id],[])->count()===0) {
-                // //     $data_set[] = ['id'=>Uuid::generate()->strting,'user_id'=>$user->id,'avatar'=>$avatar,'institute_id'=>$institute_id];
-                // // }
             }
             if (!empty($teacher)) {
                 // $Myclassroom = Teacher::insert($data_set);
@@ -132,13 +127,12 @@ class StaffController extends Controller
         $groups = $institute->institute->groups;
         return response()->json(['status'=>'OK','data'=>$groups,'errors'=>'','institute'=>$institute_id], 200);
     }
-
     public function getAll(Request $request)
     {
         $validator = Validator::make($request->all(), [
-        'userId'=>'required|exists:users,id',
-        'institute_id'=>'required|exists:institutes,id',
-        ]);
+      'userId'=>'required|exists:users,id',
+      'institute_id'=>'required|exists:institutes,id',
+      ]);
         if ($validator->fails()) {
             return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
         }
@@ -146,8 +140,20 @@ class StaffController extends Controller
         $institute_id = $request->institute_id;
         $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
         $staffs = $institute->institute->staffs;
-        return response()->json(['status'=>'OK','data'=>$staffs,'errors'=>'','institute'=>$institute_id], 200);
+        $staff_data  = $staffs->map(function ($item) {
+            return [
+              '_id'=>$item->id,
+              'first_name'=>$item->user->first_name,
+              'last_name'=>$item->user->last_name,
+              'full_name'=>$item->user->full_name,
+              'email'=>$item->user->email,
+              'user'=>$item->user->id,
+              'avatar'=>$item->avatar,
+              ];
+        });
+        return response()->json(['status'=>'OK','data'=>$staff_data,'errors'=>'','institute'=>$institute_id], 200);
     }
+
     public function getGroupMembers(Request $request)
     {
         $validator = Validator::make($request->all(), [
@@ -173,10 +179,10 @@ class StaffController extends Controller
     public function removeStaff(Request $request)
     {
         $validator = Validator::make($request->all(), [
-      'userId'=>'required|exists:users,id',
-      'institute_id'=>'required|exists:institutes,id',
-      'staff'=>'required|exists:teachers,id',
-      ]);
+            'userId'=>'required|exists:users,id',
+            'institute_id'=>'required|exists:institutes,id',
+            'staff'=>'required|exists:teachers,id',
+        ]);
         if ($validator->fails()) {
             return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
         }
@@ -192,14 +198,14 @@ class StaffController extends Controller
     public function updateStaff(Request $request)
     {
         $validator = Validator::make($request->all(), [
-      'userId'=>'required|exists:users,id',
-      'institute_id'=>'required|exists:institutes,id',
-      'staff'=>'required|exists:teachers,id',
-      'staff_first_name'=>'required|string|max:255',
-      'staff_last_name'=>'required|string|max:255',
-      'staff_avatar'=>'required|exists:user_avatars,avatar',
-      'staff_title'=>'required|string|max:255',
-      ]);
+          'userId'=>'required|exists:users,id',
+          'institute_id'=>'required|exists:institutes,id',
+          'staff'=>'required|exists:teachers,id',
+          'staff_first_name'=>'required|string|max:255',
+          'staff_last_name'=>'required|string|max:255',
+          'staff_avatar'=>'required|exists:user_avatars,avatar',
+          'staff_title'=>'required|string|max:255',
+        ]);
         if ($validator->fails()) {
             return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
         }
