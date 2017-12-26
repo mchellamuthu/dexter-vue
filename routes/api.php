@@ -91,6 +91,6 @@ Route::post('/skillInfo','API\SkillsController@show');
 Route::post('/AddPoints','API\PointsController@store');
 
 // STUDENT ATTENDANCE
-Route::post('/attendance','API\AttendanceController@create');
-Route::put('/attendanceUpdate','API\AttendanceController@update');
+Route::post('/attendance','API\AttendanceController@store');
+// Route::put('/attendanceUpdate','API\AttendanceController@update');
 Route::post('/getAttendance','API\AttendanceController@index');

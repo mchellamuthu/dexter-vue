@@ -33,8 +33,12 @@ class Student extends Model
     {
         return $this->hasMany('App\Point', 'student_id', 'id');
     }
+    public function attendances()
+    {
+      return $this->belongsToMany('Attendance','users_attendance')->withTimestamps();
+    }
 
     protected $hidden = [
-        'points',
+        'points','attendances'
     ];
 }

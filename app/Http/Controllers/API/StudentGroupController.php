@@ -39,12 +39,13 @@ class StudentGroupController extends Controller
       $studentGroups  = StudentGroup::where('class_room_id',$request->classroom)->where('user_id',$user_id)->get();
       $groups = $studentGroups->map(function ($row){
         $students = $row->students;
-        $avatars = $students->maps(function ($item){
+        $avatars = $students->map(function ($item){
           return [$item->avatar];
         });
+
         return ['_id'=>$row->id,'group_name'=>$row->group_name,'avatars'=>$avatars];
       });
-      return response()->json(['status'=>'OK','data'=>$studentGroups,'errors'=>''], 200);
+      return response()->json(['status'=>'OK','data'=>$groups,'errors'=>''], 200);
     }
 
 
@@ -169,7 +170,6 @@ class StudentGroupController extends Controller
       });
       return response()->json(['status'=>'success','data'=>$studentGroup,'students'=>$students,'msg'=>'Class group was created successfully!']);
     }
-
     /**
      * Remove the specified resource from storage.
      *
