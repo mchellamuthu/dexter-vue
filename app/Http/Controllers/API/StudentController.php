@@ -35,8 +35,11 @@ class StudentController extends Controller
         $institute_id = $request->institute_id;
         $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
         $classroom =  ClassRoom::where(['id'=>$request->classroom,'institute_id'=>$institute_id])->firstOrFail();
-        $students = $classroom->students;
-        return response()->json(['status'=>'OK','data'=>$classroom,'errors'=>''], 200);
+        // $students = $classroom->students;
+        $students = $classroom->students->map(function($row){
+            return ['_id'=>$row->id,'avatar'=>$row->avatar,'first_name'=>$row->user->first_name,'last_name'=>$row->user->last_name,'user_id'=>$row->user_id];
+        });
+        return response()->json(['status'=>'OK','data'=>$classroom,'students'=>$students,'errors'=>''], 200);
     }
 
 

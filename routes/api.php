@@ -65,7 +65,7 @@ Route::post('/classgroup/update','API\ClassGroupController@update');
 Route::post('/classgroup/delete','API\ClassGroupController@destroy');
 
 // Student ROUTES
-Route::post('/Studentsall','API\StudentController@index');
+Route::post('/StudentsAll','API\StudentController@index');
 Route::post('/StudentsAdd','API\StudentController@store');
 Route::post('/StudentInfo','API\StudentController@show');
 Route::post('/StudentDelete','API\StudentController@destroy');
