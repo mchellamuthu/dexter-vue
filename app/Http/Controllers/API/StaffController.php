@@ -44,7 +44,7 @@ class StaffController extends Controller
             }
             if (!empty($teacher)) {
                 // $Myclassroom = Teacher::insert($data_set);
-                return response()->json(['status'=>'success','msg'=>'Teacher has been added']);
+                return response()->json(['status'=>'success','data'=>$teacher,'msg'=>'Teacher has been added']);
             } else {
                 return response()->json(['status'=>'failed','msg'=>'failed']);
             }
@@ -69,14 +69,14 @@ class StaffController extends Controller
         $teacher_group = TeacherGroup::firstOrCreate(['group_name'=>$request->group_name,'institute_id'=>$institute_id,'user_id'=>$user_id]);
         // Add members to group table
         $teacher_group->members()->sync($request->staff);
-        return response()->json(['status'=>'success','msg'=>'Staff group was created successfully!']);
+        return response()->json(['status'=>'success','data'=>$teacher_group,'msg'=>'Staff group was created successfully!']);
     }
 
     public function updateGroup(Request $request)
     {
         $validator = Validator::make($request->all(), [
           'userId'=>'required|exists:users,id',
-          'staff.*'=>'required|exists:users,id',
+          'staff.*'=>'required|exists:teachers,id',
           'group_name'=>'required|string|max:255',
           'group'=>'required|exists:teacher_groups,id',
       ]);
@@ -88,7 +88,7 @@ class StaffController extends Controller
         $teacher_group->update(['group_name'=>$request->group_name]);
         // Add members to group table
         $teacher_group->members()->sync($request->staff);
-        return response()->json(['status'=>'success','msg'=>'Staff group was updated successfully!']);
+        return response()->json(['status'=>'success','data'=>$teacher_group,'msg'=>'Staff group was updated successfully!']);
     }
 
 

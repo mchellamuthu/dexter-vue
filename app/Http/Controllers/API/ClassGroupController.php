@@ -126,7 +126,7 @@ class ClassGroupController extends Controller
         $class_group->update(['class_group_name'=>$request->group_name]);
         // Add members to group table
         $class_group->classrooms()->sync($request->classroom);
-        return response()->json(['status'=>'success','msg'=>'Class group was updated successfully!']);
+        return response()->json(['status'=>'success','data'=>$class_group,'msg'=>'Class group was updated successfully!']);
     }
 
     /**

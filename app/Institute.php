@@ -9,7 +9,7 @@ class Institute extends Model
   use Uuids;
   public $incrementing = false;
 
-  protected $fillable = ['name', 'address', 'state', 'country', 'type', 'userId', 'avatar'];
+  protected $fillable = ['name', 'address', 'state', 'country','city', 'type', 'userId', 'avatar'];
 
   public function scopeSearchByKeyword($query, $keyword)
   {

@@ -33,15 +33,15 @@ Route::post('/institute/info','API\InstituteController@info');
 Route::post('/institute/join','API\InstituteController@joinRequest');
 
 // Staffs Routes
-Route::post('/staffs','API\StaffController@create');
-Route::post('/staffs','API\StaffController@removeStaff');
-Route::post('/staffs','API\StaffController@updateStaff');
+Route::post('/staffs/create','API\StaffController@create');
+Route::post('/staffs/delete','API\StaffController@removeStaff');
+Route::post('/staffs/update','API\StaffController@updateStaff');
 Route::get('/staffs/groups','API\StaffController@getStaffGroups');
 
 // Staff Groups routes
 Route::post('/staff/groups','API\StaffController@createGroup');
-Route::post('/staff/groups','API\StaffController@updateGroup');
-Route::post('/staff/groups/','API\StaffController@removeGroup');
+Route::put('/staff/groups','API\StaffController@updateGroup');
+Route::post('/staff/groups/delete','API\StaffController@removeGroup');
 Route::post('/staff/allGroups','API\StaffController@getAllGroups');
 Route::post('/staff/all','API\StaffController@getAll');
 Route::post('/staff/groups/members','API\StaffController@getGroupMembers');
@@ -50,7 +50,7 @@ Route::post('/staff/groups/members','API\StaffController@getGroupMembers');
 // Classroom routes
 Route::post('/classroom/create','API\ClassroomController@store');
 Route::post('/classroom/remove','API\ClassroomController@destroy');
-Route::post('/classroom/update','API\ClassroomController@update');
+Route::put('/classroom/update','API\ClassroomController@update');
 Route::post('/classroom/restore','API\ClassroomController@restore');
 Route::post('/classroom/getArchieved','API\ClassroomController@archievedClassrooms');
 Route::post('/classrooms','API\ClassroomController@index');
@@ -65,22 +65,27 @@ Route::post('/classgroup/update','API\ClassGroupController@update');
 Route::post('/classgroup/delete','API\ClassGroupController@destroy');
 
 // Student ROUTES
+Route::post('/Studentsall','API\StudentController@index');
 Route::post('/StudentsAdd','API\StudentController@store');
 Route::post('/StudentInfo','API\StudentController@show');
 Route::post('/StudentDelete','API\StudentController@destroy');
 Route::post('/StudentUpdate','API\StudentController@update');
 
+
+
+
 // STUDENT GROUPS
 Route::post('/CreateStudentGroup','API\StudentGroupController@store');
 Route::post('/StudentGroupInfo','API\StudentGroupController@info');
-Route::delete('/StudentGroup/{group}/delete','API\StudentGroupController@destroy');
-Route::put('/StudentGroup/{group}/update','API\StudentGroupController@update');
+Route::delete('/StudentGroup/{id}/delete','API\StudentGroupController@destroy');
+Route::put('/StudentGroup/{id}/update','API\StudentGroupController@update');
 
 // STUDENT POINTS
-Route::post('/skills/{classroom}/create','API\SkillsController@create');
-Route::delete('/skills/{classroom}/delete','API\SkillsController@destroy');
-Route::put('/skills/{classroom}/update','API\SkillsController@update');
-Route::get('/skills/{classroom}','API\SkillsController@index');
+Route::post('/skills/create','API\SkillsController@create');
+Route::post('/skills/delete','API\SkillsController@destroy');
+Route::put('/skills/update','API\SkillsController@update');
+Route::post('/skills','API\SkillsController@index');
+Route::post('/skillInfo','API\SkillsController@show');
 
 // STUDENT ATTENDANCE
 Route::post('/attendance','API\AttendanceController@create');

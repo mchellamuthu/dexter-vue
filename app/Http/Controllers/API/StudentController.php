@@ -35,7 +35,8 @@ class StudentController extends Controller
         $institute_id = $request->institute_id;
         $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
         $classroom =  ClassRoom::where(['id'=>$request->classroom,'institute_id'=>$institute_id])->firstOrFail();
-        return response()->json(['status'=>'OK','data'=>'','errors'=>''], 200);
+        $students = $classroom->students;
+        return response()->json(['status'=>'OK','data'=>$classroom,'errors'=>''], 200);
     }
 
 
@@ -47,7 +48,7 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        $validation = Validator::make($request->all(), [
+        $validator = Validator::make($request->all(), [
           'fname.*'=>'required|string|max:255',
           'lname.*'=>'required|string|max:255',
           'rollno.*'=>'required|string|max:255',
@@ -75,10 +76,10 @@ class StudentController extends Controller
             $avatar = $request->input('avatar')[$key];
             $mobileno = $request->input('mobile')[$key];
             $user  = User::firstOrCreate(['email'=>$email], ['first_name'=>$first_name,'last_name'=>$last_name]);
-            $student = Student::firstOrCreate(['user_id'=>$user->id,'rollno'=>$roll_no,'institute_id'=>$institute_id,'class_room_id'=>$request->classroom], ['avatar'=>$avatar]);
+            $student[] = Student::firstOrCreate(['user_id'=>$user->id,'rollno'=>$roll_no,'institute_id'=>$institute_id,'class_room_id'=>$request->classroom], ['avatar'=>$avatar]);
         }
         if (!empty($student)) {
-            return response()->json(['status'=>'success','msg'=>'Students has been added']);
+            return response()->json(['status'=>'success','data'=>$student,'msg'=>'Students has been added']);
         } else {
             return response()->json(['status'=>'failed','msg'=>'failed']);
         }
@@ -175,6 +176,6 @@ class StudentController extends Controller
       $classroom =  MyClassRoom::where(['class_id'=>$request->classroom,'institute_id'=>$institute_id,'approved'=>true])->firstOrFail();
       $student   =  Student::where(['id'=>$request->student,'class_room_id'=>$request->classroom,'institute_id'=>$institute_id])->firstOrFail();
       $student->delete();
-      return response()->json(['status'=>'OK','msg'=>'Staff removed successfully!','errors'=>''], 200);
+      return response()->json(['status'=>'OK','msg'=>'Student removed successfully!','errors'=>''], 200);
     }
 }

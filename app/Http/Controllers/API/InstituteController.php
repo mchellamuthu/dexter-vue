@@ -42,6 +42,7 @@ class InstituteController extends Controller
         'state' => 'required|max:150',
         'country' => 'required|max:150',
         'type' => 'required|max:150',
+        'city' => 'required|max:150',
         'userId'=>'required|exists:users,id',
         'avatar'=>'required|max:30',
         ]);
@@ -56,13 +57,13 @@ class InstituteController extends Controller
             'state'=>$request->state,
             'country'=>$request->country,
             'type'=>$request->type,
+            'city'=>$request->city,
             'userId'=>$request->userId,
             'avatar'=>$request->avatar,
       ]);
 
         $MyInstitute = \App\MyInstitute::create(
-          ['user_id'=>$request->userId,
-          'approved'=>true,'institute_id'=>$institute->id]
+          ['user_id'=>$request->userId,'approved'=>true,'institute_id'=>$institute->id]
         );
         if ($institute) {
             return response()->json(['status'=>'OK','data'=>$institute,'errors'=>'']);

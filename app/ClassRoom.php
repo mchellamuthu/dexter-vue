@@ -25,4 +25,10 @@ class ClassRoom extends Model
     public function students(){
       return $this->hasMany('App\Student');
     }
+
+    public function skills()
+    {
+      return $this->hasMany('App\Skill','class_room_id','id');
+    }
+      protected $hidden = ['skills'];
 }

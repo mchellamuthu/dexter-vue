@@ -90,6 +90,7 @@ class ClassroomController extends Controller
         'approved'=>true,
         'class_id'=>$classroom->id,
         'role'=>'Teacher',
+        'approved'=>true,
         'institute_id'=>$request->institute_id]
       );
         return  response()->json(['status'=>'OK','data'=>$classroom,'errors'=>'','institute'=>$request->institute_id], 200);
@@ -139,7 +140,7 @@ class ClassroomController extends Controller
         ],
         'students'=>$students,
       ];
-      return response()->json(['status'=>'OK','data'=>$classroom->classroom,'errors'=>$validator->messages()], 200);
+      return response()->json(['status'=>'OK','data'=>$classroom_data,'errors'=>$validator->messages()], 200);
     }
 
     /**
@@ -233,7 +234,7 @@ class ClassroomController extends Controller
         $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
         $ClassRoom = ClassRoom::onlyTrashed()->where('id', $request->classroom)->firstOrFail();
         $ClassRoom->restore();
-        return response()->json(['status'=>'success','msg'=>'Classroom was restored successfully!']);
+        return response()->json(['status'=>'success','data'=>$ClassRoom,'msg'=>'Classroom was restored successfully!']);
     }
 
     /**
