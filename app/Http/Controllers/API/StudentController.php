@@ -70,7 +70,7 @@ class StudentController extends Controller
         $institute_id = $request->institute_id;
         $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
         $classroom = ClassRoom::where(['id'=>$request->classroom,'user_id'=>$user_id])->firstOrFail();
-
+        $student = array();
         foreach ($request->input('fname') as $key => $name) {
             $first_name = $request->input('fname')[$key];
             $last_name = $request->input('lname')[$key];
@@ -82,9 +82,10 @@ class StudentController extends Controller
             $student[] = Student::firstOrCreate(['user_id'=>$user->id,'rollno'=>$roll_no,'institute_id'=>$institute_id,'class_room_id'=>$request->classroom], ['avatar'=>$avatar]);
         }
         if (!empty($student)) {
+              $student = collect($student);
               $students = $student->map(function ($row)
               {
-                return ['_id'=>$row->id,'avatar'=>$row->avatar,'first_name'=>$row->user->first_name,'last_name'=>$row->last_name];
+                return ['_id'=>$row->id,'user'=>$row->user->id,'avatar'=>$row->avatar,'first_name'=>$row->user->first_name,'last_name'=>$row->user->last_name,'points'=>$row->points->sum('point')];
               });
             return response()->json(['status'=>'success','data'=>$students,'msg'=>'Students has been added']);
         } else {

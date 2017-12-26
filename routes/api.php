@@ -74,6 +74,7 @@ Route::post('/StudentUpdate','API\StudentController@update');
 
 
 
+
 // STUDENT GROUPS
 Route::post('/CreateStudentGroup','API\StudentGroupController@store');
 Route::post('/StudentGroupInfo','API\StudentGroupController@info');
@@ -86,6 +87,7 @@ Route::post('/skills/delete','API\SkillsController@destroy');
 Route::put('/skills/update','API\SkillsController@update');
 Route::post('/skills','API\SkillsController@index');
 Route::post('/skillInfo','API\SkillsController@show');
+Route::post('/AddPoints','API\PointsController@store');
 
 // STUDENT ATTENDANCE
 Route::post('/attendance','API\AttendanceController@create');
