@@ -33,4 +33,8 @@ class Student extends Model
     {
         return $this->hasMany('App\Point', 'student_id', 'id');
     }
+
+    protected $hidden = [
+        'points',
+    ];
 }

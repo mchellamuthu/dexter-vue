@@ -82,7 +82,11 @@ class StudentController extends Controller
             $student[] = Student::firstOrCreate(['user_id'=>$user->id,'rollno'=>$roll_no,'institute_id'=>$institute_id,'class_room_id'=>$request->classroom], ['avatar'=>$avatar]);
         }
         if (!empty($student)) {
-            return response()->json(['status'=>'success','data'=>$student,'msg'=>'Students has been added']);
+              $students = $student->map(function ($row)
+              {
+                return ['_id'=>$row->id,'avatar'=>$row->avatar,'first_name'=>$row->user->first_name,'last_name'=>$row->last_name];
+              });
+            return response()->json(['status'=>'success','data'=>$students,'msg'=>'Students has been added']);
         } else {
             return response()->json(['status'=>'failed','msg'=>'failed']);
         }
@@ -111,7 +115,8 @@ class StudentController extends Controller
         $classroom =  MyClassRoom::where(['class_id'=>$request->classroom,'institute_id'=>$institute_id,'approved'=>true])->firstOrFail();
         $student   =  Student::where(['id'=>$request->student,'class_room_id'=>$request->classroom,'institute_id'=>$institute_id])->firstOrFail();
         $user = $student->user;
-        return response()->json(['status'=>'OK','data'=>$student,'errors'=>''], 200);
+        $points = ['positive'=>$student->points->where('type','Positive')->sum('point'),'negative'=>$student->points->where('type','Negative')->sum('point')];
+        return response()->json(['status'=>'OK','data'=>$student,'points'=>$points,'errors'=>''], 200);
     }
 
     /**

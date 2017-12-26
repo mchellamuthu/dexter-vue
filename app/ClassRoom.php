@@ -30,5 +30,5 @@ class ClassRoom extends Model
     {
       return $this->hasMany('App\Skill','class_room_id','id');
     }
-      protected $hidden = ['skills'];
+      protected $hidden = ['skills','students'];
 }
