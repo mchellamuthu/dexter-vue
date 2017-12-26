@@ -77,8 +77,9 @@ Route::post('/StudentUpdate','API\StudentController@update');
 
 // STUDENT GROUPS
 Route::post('/CreateStudentGroup','API\StudentGroupController@store');
+Route::post('/StudentGroups','API\StudentGroupController@index');
 Route::post('/StudentGroupInfo','API\StudentGroupController@info');
-Route::delete('/StudentGroup/{id}/delete','API\StudentGroupController@destroy');
+Route::post('/StudentGroup//delete','API\StudentGroupController@destroy');
 Route::put('/StudentGroup/{id}/update','API\StudentGroupController@update');
 
 // STUDENT POINTS
