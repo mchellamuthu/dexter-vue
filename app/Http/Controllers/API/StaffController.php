@@ -43,8 +43,11 @@ class StaffController extends Controller
                 $teacher[]  = Teacher::firstOrCreate(['user_id'=>$user->id,'institute_id'=>$institute_id], ['avatar'=>$avatar]);
             }
             if (!empty($teacher)) {
-                // $Myclassroom = Teacher::insert($data_set);
-                return response()->json(['status'=>'success','data'=>$teacher,'msg'=>'Teacher has been added']);
+                $teacher = collect($teacher);
+                $teachers = $teacher->map(function ($row) {
+                    return ['_id'=>$row->id,'user'=>$row->user->id,'avatar'=>$row->avatar,'first_name'=>$row->user->first_name,'last_name'=>$row->user->last_name];
+                });
+                return response()->json(['status'=>'success','data'=>$teachers,'msg'=>'Teacher has been added']);
             } else {
                 return response()->json(['status'=>'failed','msg'=>'failed']);
             }
