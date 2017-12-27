@@ -88,7 +88,8 @@ Route::post('/skills/delete','API\SkillsController@destroy');
 Route::put('/skills/update','API\SkillsController@update');
 Route::post('/skills','API\SkillsController@index');
 Route::post('/skillInfo','API\SkillsController@show');
-Route::post('/AddPoints','API\PointsController@store');
+
+Route::post('/studentPoints','API\PointsController@store');
 Route::post('/groupPoints','API\PointsController@groupPoints');
 // STUDENT ATTENDANCE
 Route::post('/attendance','API\AttendanceController@store');

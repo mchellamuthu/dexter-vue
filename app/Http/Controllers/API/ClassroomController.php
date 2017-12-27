@@ -87,7 +87,6 @@ class ClassroomController extends Controller
       ]);
       $MyClassRoom = MyClassRoom::create(
         ['user_id'=>$request->userId,
-        'approved'=>true,
         'class_id'=>$classroom->id,
         'role'=>'Teacher',
         'approved'=>true,
