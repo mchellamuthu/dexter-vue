@@ -43,7 +43,7 @@ class StudentGroupController extends Controller
           return [$item->avatar];
         });
 
-        return ['_id'=>$row->id,'group_name'=>$row->group_name,'avatars'=>$avatars];
+        return ['_id'=>$row->id,'group_name'=>$row->group_name,'points'=>$row->points->sum('point'),'avatars'=>$avatars];
       });
       return response()->json(['status'=>'OK','data'=>$groups,'errors'=>''], 200);
     }
@@ -107,18 +107,22 @@ class StudentGroupController extends Controller
       $institute_id = $request->institute_id;
       $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
       $myclassroom = MyClassRoom::where(['class_id'=>$request->classroom,'institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true]);
-      $studentGroup = StudentGroup::create([
-        'group_name'=>$request->group_name,
+      $studentGroup = StudentGroup::where([
+        'id'=>$request->group_name,
         'institute_id'=>$request->institute_id,
-        'user_id'=>$request->userId,
         'class_room_id'=>$request->classroom,
-      ]);
-        // Add members to group table
-      $studentGroup->students()->sync($request->students);
+      ])->firstOrFail();
       $students = $studentGroup->students->map(function($item){
-        return ['avatar'=>$item->avatar];
+        return [
+          'avatar'=>$item->avatar,
+          '_id'=>$item->id,
+          'user'=>$item->user->id,
+          'first_name'=>$item->user->first_name,
+          'last_name'=>$item->user->last_name,
+          'points'=>$item->points->sum('point')
+        ];
       });
-      return response()->json(['status'=>'success','data'=>$studentGroup,'students'=>$students,'msg'=>'Class group was created successfully!']);
+      return response()->json(['status'=>'success','data'=>$studentGroup,'points'=>$studentGroup->points->sum('point'),'students'=>$students,'msg'=>'Class group was created successfully!']);
     }
 
     /**

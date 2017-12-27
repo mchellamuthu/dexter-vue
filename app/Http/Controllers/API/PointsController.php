@@ -14,7 +14,8 @@ use App\ClassRoom;
 use App\MyClassRoom;
 use Validator;
 use App\MyInstitute;
-
+use App\StudentGroup;
+use App\GroupPoint;
 class PointsController extends Controller
 {
     /**
@@ -64,14 +65,52 @@ class PointsController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Group Points
      *
-     * @param  \App\Point  $point
-     * @return \Illuminate\Http\Response
+     * @param \Illuminate\Http\Request
      */
-    public function show(Point $point)
+    public function groupPoints(Request $request)
     {
-        //
+      $validator = Validator::make($request->all(), [
+      // 'userId'=>'required|exists:users,id',
+      // 'institute_id'=>'required|exists:institutes,id',
+      // 'classroom'=>'required|exists:class_rooms,id',
+      // 'students.*'=>'required|exists:students,id',
+      // 'skill'=>'required|exists:skills,id',
+      'group'=>'required|exists:student_groups,id',
+    ]);
+      if ($validator->fails()) {
+          return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+      }
+      $user_id = $request->userId;
+      $institute_id = $request->institute_id;
+      $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
+      $myclassroom = MyClassRoom::where(['class_id'=>$request->classroom,'institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true]);
+      $studentGroups  = StudentGroup::where('class_room_id',$request->classroom)->where('id',$request->group)->firstOrFail();
+      return $studentGroups->students;
+      // $group_points = GroupPoint::create([
+      //   'skill_name'=>$Skill->skill_name,
+      //   'point'=>$Skill->point_weight,
+      //   'class_room_id'=>$request->classroom,
+      //   'institute_id'=>$request->institute_id,
+      //   'user_id'=>$request->userId,
+      //   'student_id'=>$request->student,
+      //   'type'=>$Skill->type,
+      // ]);
+      // foreach ($request->students as $student) {
+      //   $Skill = Skill::where(['id'=>$request->skill,'class_room_id'=>$request->classroom])->firstOrFail();
+      //
+      //   $points = Point::create([
+      //     'skill_name'=>$Skill->skill_name,
+      //     'point'=>$Skill->point_weight,
+      //     'class_room_id'=>$request->classroom,
+      //     'institute_id'=>$request->institute_id,
+      //     'user_id'=>$request->userId,
+      //     'student_id'=>$request->student,
+      //     'type'=>$Skill->type,
+      //   ]);
+      // }
+
     }
 
     /**
