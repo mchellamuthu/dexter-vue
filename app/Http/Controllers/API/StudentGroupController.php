@@ -98,7 +98,7 @@ class StudentGroupController extends Controller
         'institute_id'=>'required|exists:institutes,id',
         'group_name'=>'required|max:255',
         'classroom'=>'required|exists:class_rooms,id|max:36',
-        'students.*'=>'required|exists:students,id|max:36',
+        // 'students.*'=>'required|exists:students,id|max:36',
       ]);
       if ($validator->fails()) {
           return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
