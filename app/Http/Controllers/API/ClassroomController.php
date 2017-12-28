@@ -206,7 +206,7 @@ class ClassroomController extends Controller
         $user_id = $request->userId;
         $institute_id = $request->institute_id;
         $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
-        $ClassRoom = ClassRoom::where('id', $request->classroom)->where('user_id',$user_id)->firstOrFail();
+        $ClassRoom = MyClassRoom::where('class_id', $request->classroom)->where('user_id',$user_id)->where('approved',true)->firstOrFail();
         $ClassRoom->delete();
         return response()->json(['status'=>'success','msg'=>'Classroom was archieved successfully!']);
     }
@@ -231,7 +231,7 @@ class ClassroomController extends Controller
         $user_id = $request->userId;
         $institute_id = $request->institute_id;
         $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
-        $ClassRoom = ClassRoom::onlyTrashed()->where('id', $request->classroom)->firstOrFail();
+        $ClassRoom = MyClassRoom::onlyTrashed()->where('class_id', $request->classroom)->firstOrFail();
         $ClassRoom->restore();
         return response()->json(['status'=>'success','data'=>$ClassRoom,'msg'=>'Classroom was restored successfully!']);
     }
