@@ -254,7 +254,10 @@ class ClassroomController extends Controller
         $user_id = $request->userId;
         $institute_id = $request->institute_id;
         $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
-        $ClassRoom = ClassRoom::onlyTrashed()->where('institute_id', $request->institute_id)->get();
-        return response()->json(['status'=>'success','data'=>$ClassRoom,'msg'=>'Classroom was restored successfully!']);
+        $ClassRoom = MyClassRoom::onlyTrashed()->where('user_id', $request->userId)->get();
+        $classrooms = $ClassRoom->map(function($row){
+            return ['_id'=>$row->class_id,'name'=>$row->classroom->class_name,'avatar'=>$row->classroom->avatar];
+        });
+        return response()->json(['status'=>'success','data'=>$classrooms,'msg'=>'Classroom was restored successfully!']);
     }
 }
