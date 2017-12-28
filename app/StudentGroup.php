@@ -27,6 +27,6 @@ class StudentGroup extends Model
     }
     public function points()
     {
-        return $this->hasMany('App\Point', 'student_group_id', 'id');
+        return $this->hasMany('App\GroupPoitnt', 'student_group_id', 'id');
     }
 }
