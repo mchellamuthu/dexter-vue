@@ -29,4 +29,8 @@ class StudentGroup extends Model
     {
         return $this->hasMany('App\GroupPoint', 'student_group_id', 'id');
     }
+    public function stories()
+    {
+        return $this->hasMany('App\Story', 'student_group_id', 'id');
+    }
 }

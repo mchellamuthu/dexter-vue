@@ -64,6 +64,43 @@ class PointsController extends Controller
       return response()->json(['status'=>'OK','data'=>$student,'points'=>$points,'errors'=>''], 200);
     }
 
+    public function ClassRoomPoints(Request $request)
+    {
+      $validator = Validator::make($request->all(), [
+      'userId'=>'required|exists:users,id',
+      'institute_id'=>'required|exists:institutes,id',
+      'classroom'=>'required|exists:class_rooms,id',
+      'students.*'=>'required|exists:students,id',
+      'skill'=>'required|exists:skills,id',
+    ]);
+      if ($validator->fails()) {
+          return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+      }
+      $user_id = $request->userId;
+      $institute_id = $request->institute_id;
+      $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
+      $myclassroom =  MyClassRoom::where(['class_id'=>$request->classroom,'institute_id'=>$institute_id,'approved'=>true])->firstOrFail();
+      $classroom =  ClassRoom::where(['id'=>$request->classroom,'institute_id'=>$institute_id])->firstOrFail();
+      $Skill = Skill::where(['id'=>$request->skill,'class_room_id'=>$request->classroom])->firstOrFail();
+      foreach ($request->students as $student) {
+        $points = Point::create([
+          'skill_name'=>$Skill->skill_name,
+          'point'=>$Skill->point_weight,
+          'class_room_id'=>$request->classroom,
+          'institute_id'=>$request->institute_id,
+          'user_id'=>$request->userId,
+          'student_id'=>$student,
+          'type'=>$Skill->type,
+        ]);
+      }
+      $students = $classroom->students->map(function($row){
+          return ['_id'=>$row->id,'avatar'=>$row->avatar,'first_name'=>$row->user->first_name,'last_name'=>$row->user->last_name,'user_id'=>$row->user_id,'points'=>$row->points->sum('point')];
+      });
+      return response()->json(['status'=>'OK','data'=>$students,'errors'=>''], 200);
+    }
+
+    // $student   =  Student::where(['id'=>$request->student,'class_room_id'=>$request->classroom,'institute_id'=>$institute_id])->firstOrFail();
+
     /**
      * Group Points
      *
@@ -128,6 +165,8 @@ class PointsController extends Controller
       'institute_id'=>'required|exists:institutes,id',
       'classroom'=>'required|exists:class_rooms,id',
       'student'=>'required|exists:students,id',
+      'start_date'=>'required|date',
+      'end_date'=>'required|date',
     ]);
     if ($validator->fails()) {
         return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
@@ -136,7 +175,16 @@ class PointsController extends Controller
       $institute_id = $request->institute_id;
       $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
       $classroom =  MyClassRoom::where(['class_id'=>$request->classroom,'institute_id'=>$institute_id,'approved'=>true])->firstOrFail();
-     
+      $student   =  Student::where(['id'=>$request->student,'class_room_id'=>$request->classroom,'institute_id'=>$institute_id])->firstOrFail();
+      $positive = $student->points->whereBetween('date',[$request->start_date,$request->end_date])->where('type','Positive')->sum('point');
+      $negative = $student->points->whereBetween('date',[$request->start_date,$request->end_date])->where('type','Negative')->sum('point');
+      $total_points = $student->points->whereBetween('date',[$request->start_date,$request->end_date])->sum('point');
+      $points = [
+        'Positive'=>$positive,
+        'Negative'=>$negative,
+        'total_points'=>$total_points
+      ];
+      return response()->json(['status'=>'OK','data'=>$points,'errors'=>'']);
 
     }
 

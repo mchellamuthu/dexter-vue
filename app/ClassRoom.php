@@ -14,6 +14,7 @@ class ClassRoom extends Model
     public $incrementing = false;
 
     protected $fillable = ['class_name', 'avatar', 'institute_id', 'class_teacher', 'status', 'user_id'];
+    protected $hidden = ['skills','students','stories'];
 
     public function groups()
     {
@@ -30,5 +31,8 @@ class ClassRoom extends Model
     {
       return $this->hasMany('App\Skill','class_room_id','id');
     }
-      protected $hidden = ['skills','students'];
+    public function stories()
+    {
+       return $this->hasMany('App\Story','class_room_id','id')->whereDeletedAt(null);
+    }
 }

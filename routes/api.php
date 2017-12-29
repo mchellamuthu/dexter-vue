@@ -72,9 +72,6 @@ Route::post('/StudentDelete','API\StudentController@destroy');
 Route::post('/StudentUpdate','API\StudentController@update');
 
 
-
-
-
 // STUDENT GROUPS
 Route::post('/CreateStudentGroup','API\StudentGroupController@store');
 Route::post('/StudentGroups','API\StudentGroupController@index');
@@ -90,8 +87,17 @@ Route::get('/skills','API\SkillController@index');
 Route::get('/skillInfo','API\SkillController@show');
 
 Route::post('/studentPoints','API\PointsController@store');
+Route::post('/classroomPoints','API\PointsController@ClassRoomPoints');
 Route::post('/groupPoints','API\PointsController@groupPoints');
 // STUDENT ATTENDANCE
 Route::post('/attendance','API\AttendanceController@store');
-// Route::put('/attendanceUpdate','API\AttendanceController@update');
 Route::get('/getAttendance','API\AttendanceController@GetAttendance');
+Route::get('/attendance','API\AttendanceController@AttendanceByDates');
+
+//Class Stories
+Route::get('/stories','API\StoriesController@index');
+Route::post('/stories/create','API\StoriesController@create');
+Route::get('/stories/info','API\StoriesController@show');
+Route::post('/stories/update','API\StoriesController@update');
+Route::post('/stories/delete','API\StoriesController@destroy');
+Route::get('/GroupStories','API\StoriesController@GroupStories');
