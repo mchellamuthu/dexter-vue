@@ -41,7 +41,15 @@ class Student extends Model
     {
         return $this->hasMany('App\StudentStory', 'student_id', 'id');
     }
+    public function students()
+    {
+      return $this->belongsToMany('Student','parent_students')->withTimestamps();
+    }
+    public function parents()
+    {
+      return $this->belongsToMany('Parents','parent_students')->withTimestamps();
+    }
     protected $hidden = [
-        'points','attendances','stories'
+        'points','attendances','stories','parents'
     ];
 }
