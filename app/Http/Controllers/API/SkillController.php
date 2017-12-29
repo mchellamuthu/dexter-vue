@@ -20,7 +20,7 @@ class SkillController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
       $validator = Validator::make($request->all(), [
         'institute_id'=>'required|exists:institutes,id',

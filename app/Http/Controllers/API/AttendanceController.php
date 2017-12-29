@@ -60,6 +60,48 @@ class AttendanceController extends Controller
     $user_id = $request->userId;
     $institute_id = $request->institute_id;
     $myclassroom = MyClassRoom::where(['class_id'=>$request->classroom,'institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true]);
-    $attendance = Attendance::where(['date'=>date('Y-m-d'),'class_room_id'=>$request->classroom,'institute_id'=>$request->institute_id])->firstOrFail();
+    $attendance = Attendance::where(['date'=>'2017-12-26','class_room_id'=>$request->classroom,'institute_id'=>$request->institute_id])->firstOrFail();
+    $records =  $attendance->students_list->map(function($row){
+        return [
+          '_id'=>$row->student_id,
+          'user'=>$row->student->user->id,
+          'first_name'=>$row->student->user->first_name,
+          'last_name'=>$row->student->user->last_name,
+          'status'=>$row->status,
+          'avatar'=>$row->student->avatar,
+        ];
+    });
+    return response()->json(['status'=>'OK','data'=>$records,'errors'=>''], 200);
+
+  }
+  public function AttendanceByDates(Request $request)
+  {
+    // dd($request->student['id'  ]);
+    $validator = Validator::make($request->all(), [
+      'institute_id'=>'required|exists:institutes,id',
+      'userId'=>'required|exists:users,id',
+      'classroom'=>'required|exists:class_rooms,id',
+      'start_date'=>'required|date',
+      'end_date'=>'required|date',
+  ]);
+    if ($validator->fails()) {
+        return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+    }
+    $user_id = $request->userId;
+    $institute_id = $request->institute_id;
+    $myclassroom = MyClassRoom::where(['class_id'=>$request->classroom,'institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true]);
+    $attendance = Attendance::where(['class_room_id'=>$request->classroom,'institute_id'=>$request->institute_id])->whereBetween('date',[$request->start_date,$request->end_date])->firstOrFail();
+    $records =  $attendance->students_list->map(function($row){
+        return [
+          '_id'=>$row->student_id,
+          'user'=>$row->student->user->id,
+          'first_name'=>$row->student->user->first_name,
+          'last_name'=>$row->student->user->last_name,
+          'status'=>$row->status,
+          'avatar'=>$row->student->avatar,
+        ];
+    });
+    return response()->json(['status'=>'OK','data'=>$records,'errors'=>''], 200);
+
   }
 }

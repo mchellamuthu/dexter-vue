@@ -185,7 +185,7 @@ class StudentGroupController extends Controller
       $validator = Validator::make($request->all(), [
         'userId'=>'required|exists:users,id',
         'institute_id'=>'required|exists:institutes,id',
-        'group'=>'required|exists:student_groups',
+        'group'=>'required|exists:student_groups,id',
         'classroom'=>'required|exists:class_rooms,id|max:36',
       ]);
       if ($validator->fails()) {

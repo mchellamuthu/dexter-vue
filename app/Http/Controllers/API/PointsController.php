@@ -118,12 +118,26 @@ class PointsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Point  $point
+     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function edit(Point $point)
+    public function getPointsByDate(Request $request)
     {
-        //
+      $validator = Validator::make($request->all(), [
+      'userId'=>'required|exists:users,id',
+      'institute_id'=>'required|exists:institutes,id',
+      'classroom'=>'required|exists:class_rooms,id',
+      'student'=>'required|exists:students,id',
+    ]);
+    if ($validator->fails()) {
+        return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+    }
+      $user_id = $request->userId;
+      $institute_id = $request->institute_id;
+      $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
+      $classroom =  MyClassRoom::where(['class_id'=>$request->classroom,'institute_id'=>$institute_id,'approved'=>true])->firstOrFail();
+     
+
     }
 
     /**

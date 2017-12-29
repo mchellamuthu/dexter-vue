@@ -233,7 +233,7 @@ class ClassroomController extends Controller
         $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
         $ClassRoom = MyClassRoom::onlyTrashed()->where('class_id', $request->classroom)->firstOrFail();
         $ClassRoom->restore();
-        return response()->json(['status'=>'success','data'=>$ClassRoom,'msg'=>'Classroom was restored successfully!']);
+        return response()->json(['status'=>'success','data'=>$ClassRoom->classroom,'msg'=>'Classroom was restored successfully!']);
     }
 
     /**
