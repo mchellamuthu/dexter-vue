@@ -17,7 +17,7 @@ class CreateUsersAttendanceTable extends Migration
           $table->date('date');
           $table->uuid('student_id');
           $table->uuid('attendance_id');
-          $table->enum('status',['Present','Absent','Late','Leave Early'])->default('present');
+          $table->enum('status',['Present','Absent','Late','Leave_Early'])->default('present');
           $table->timestamps();
         });
     }

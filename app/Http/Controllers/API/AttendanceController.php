@@ -24,7 +24,7 @@ class AttendanceController extends Controller
       'userId'=>'required|exists:users,id',
       'classroom'=>'required|exists:class_rooms,id',
       'student[id].*'=>'required|exists:students,id',
-      'student[status].*'=>'required|in:Absent,Present,Late,Leave Early'
+      'student[status].*'=>'required|in:Absent,Present,Late,Leave_Early'
   ]);
     if ($validator->fails()) {
         return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
@@ -60,7 +60,10 @@ class AttendanceController extends Controller
     $user_id = $request->userId;
     $institute_id = $request->institute_id;
     $myclassroom = MyClassRoom::where(['class_id'=>$request->classroom,'institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true]);
-    $attendance = Attendance::where(['date'=>$request->date,'class_room_id'=>$request->classroom,'institute_id'=>$request->institute_id])->firstOrFail();
+    $attendance = Attendance::where(['date'=>$request->date,'class_room_id'=>$request->classroom,'institute_id'=>$request->institute_id])->first();
+    if (empty($attendance)) {
+      return response()->json(['status'=>'OK','data'=>'0','errors'=>''], 200);
+    }
     $records =  $attendance->students_list->map(function($row){
         return [
           '_id'=>$row->student_id,
@@ -90,7 +93,10 @@ class AttendanceController extends Controller
     $user_id = $request->userId;
     $institute_id = $request->institute_id;
     $myclassroom = MyClassRoom::where(['class_id'=>$request->classroom,'institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true]);
-    $attendance = Attendance::where(['class_room_id'=>$request->classroom,'institute_id'=>$request->institute_id])->whereBetween('date',[$request->start_date,$request->end_date])->firstOrFail();
+    $attendance = Attendance::where(['class_room_id'=>$request->classroom,'institute_id'=>$request->institute_id])->whereBetween('date',[$request->start_date,$request->end_date])->first();
+    if (empty($attendance)) {
+      return response()->json(['status'=>'OK','data'=>'0','errors'=>''], 200);
+    }
     $records =  $attendance->students_list->map(function($row){
         return [
           '_id'=>$row->student_id,

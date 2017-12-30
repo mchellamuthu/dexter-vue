@@ -14,7 +14,7 @@ class CreateParentStudentsTable extends Migration
     public function up()
     {
         Schema::create('parent_students', function (Blueprint $table) {
-            $table->uuid('parent_id');
+            $table->uuid('parents_id');
             $table->uuid('student_id');
             $table->enum('status',['Connected','Invite_Send','Blocked']);
             $table->timestamps();
