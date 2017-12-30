@@ -52,7 +52,7 @@ class AttendanceController extends Controller
       'institute_id'=>'required|exists:institutes,id',
       'userId'=>'required|exists:users,id',
       'classroom'=>'required|exists:class_rooms,id',
-
+      'date'=>'required|date',
   ]);
     if ($validator->fails()) {
         return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
@@ -60,7 +60,7 @@ class AttendanceController extends Controller
     $user_id = $request->userId;
     $institute_id = $request->institute_id;
     $myclassroom = MyClassRoom::where(['class_id'=>$request->classroom,'institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true]);
-    $attendance = Attendance::where(['date'=>'2017-12-26','class_room_id'=>$request->classroom,'institute_id'=>$request->institute_id])->firstOrFail();
+    $attendance = Attendance::where(['date'=>$request->date,'class_room_id'=>$request->classroom,'institute_id'=>$request->institute_id])->firstOrFail();
     $records =  $attendance->students_list->map(function($row){
         return [
           '_id'=>$row->student_id,
