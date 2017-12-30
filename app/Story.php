@@ -37,6 +37,14 @@ class Story extends Model
         return $this->belongsTo('App\StudentGroup');
 
     }
+    public function comments()
+    {
+      return $this->hasMany('App\Comment');
+    }
+    public function likes()
+    {
+      return $this->hasMany('App\Likes');
+    }
 
 
 

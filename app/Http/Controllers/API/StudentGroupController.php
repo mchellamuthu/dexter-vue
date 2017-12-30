@@ -96,9 +96,8 @@ class StudentGroupController extends Controller
       $validator = Validator::make($request->all(), [
         'userId'=>'required|exists:users,id',
         'institute_id'=>'required|exists:institutes,id',
-        'group_name'=>'required|max:255',
+        'group'=>'required|exists:student_groups,id|max:36',
         'classroom'=>'required|exists:class_rooms,id|max:36',
-        // 'students.*'=>'required|exists:students,id|max:36',
       ]);
       if ($validator->fails()) {
           return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
@@ -108,7 +107,7 @@ class StudentGroupController extends Controller
       $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
       $myclassroom = MyClassRoom::where(['class_id'=>$request->classroom,'institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true]);
       $studentGroup = StudentGroup::where([
-        'id'=>$request->group_name,
+        'id'=>$request->group,
         'institute_id'=>$request->institute_id,
         'class_room_id'=>$request->classroom,
       ])->firstOrFail();

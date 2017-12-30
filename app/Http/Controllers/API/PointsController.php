@@ -112,7 +112,6 @@ class PointsController extends Controller
       'userId'=>'required|exists:users,id',
       'institute_id'=>'required|exists:institutes,id',
       'classroom'=>'required|exists:class_rooms,id',
-      'students.*'=>'required|exists:students,id',
       'skill'=>'required|exists:skills,id',
       'group'=>'required|exists:student_groups,id',
     ]);
@@ -131,17 +130,17 @@ class PointsController extends Controller
         'class_room_id'=>$request->classroom,
         'institute_id'=>$request->institute_id,
         'user_id'=>$request->userId,
-        'student_id'=>$request->student,
+        'student_group_id'=>$request->group,
         'type'=>$Skill->type,
       ]);
-      foreach ($request->students as $student) {
+      foreach ($studentGroups->students as $student) {
         $points = Point::create([
           'skill_name'=>$Skill->skill_name,
           'point'=>$Skill->point_weight,
           'class_room_id'=>$request->classroom,
           'institute_id'=>$request->institute_id,
           'user_id'=>$request->userId,
-          'student_id'=>$student,
+          'student_id'=>$student->id,
           'type'=>$Skill->type,
         ]);
       }

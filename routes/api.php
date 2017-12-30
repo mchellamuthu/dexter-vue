@@ -100,6 +100,8 @@ Route::post('/stories/create','API\StoriesController@create');
 Route::get('/stories/info','API\StoriesController@show');
 Route::post('/stories/update','API\StoriesController@update');
 Route::post('/stories/delete','API\StoriesController@destroy');
+Route::post('/likeStory','API\StoriesController@likeStory');
+Route::post('/commentStory','API\StoriesController@commentStory');
 Route::get('/GroupStories','API\StoriesController@GroupStories');
 
 
