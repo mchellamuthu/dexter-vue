@@ -80,7 +80,7 @@ Route::post('/StudentGroup/delete','API\StudentGroupController@destroy');
 Route::put('/StudentGroup/update','API\StudentGroupController@update');
 
 // STUDENT POINTS
-Route::post('/skills/create','API\SkillController@create');
+Route::post('/skills/create','API\SkillController@store');
 Route::post('/skills/delete','API\SkillController@destroy');
 Route::put('/skills/update','API\SkillController@update');
 Route::get('/skills','API\SkillController@index');
@@ -92,7 +92,7 @@ Route::post('/groupPoints','API\PointsController@groupPoints');
 // STUDENT ATTENDANCE
 Route::post('/attendance','API\AttendanceController@store');
 Route::get('/getAttendance','API\AttendanceController@GetAttendance');
-Route::get('/attendance','API\AttendanceController@AttendanceByDates');
+Route::get('/attendance','API\AttendanceController@getDatesFromRange');
 
 //Class Stories
 Route::get('/stories','API\StoriesController@index');

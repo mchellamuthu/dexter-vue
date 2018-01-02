@@ -13,6 +13,7 @@ use App\Student;
 use Validator;
 use App\MyInstitute;
 use App\Attendance;
+use Carbon\Carbon;
 class AttendanceController extends Controller
 {
 
@@ -34,10 +35,10 @@ class AttendanceController extends Controller
     // $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
     $myclassroom = MyClassRoom::where(['class_id'=>$request->classroom,'institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true]);
     $attendance = Attendance::firstOrCreate(['date'=>date('Y-m-d'),'class_room_id'=>$request->classroom],['institute_id'=>$request->institute_id,'user_id'=>$request->userId]);
-    $students = $request->student['id'];
+    $students = $request->input('student[id]');
     $sync_data = [];
     for ($i=0; $i < count($students); $i++) {
-      $sync_data[$students[$i]] = ['date'=>date('Y-m-d'),'status'=>$request->student['status'][$i]];
+      $sync_data[$students[$i]] = ['date'=>date('Y-m-d'),'status'=>$request->input('student[status]')[$i]];
     }
     $attendance->students()->sync($sync_data);
 
@@ -110,4 +111,46 @@ class AttendanceController extends Controller
     return response()->json(['status'=>'OK','data'=>$records,'errors'=>''], 200);
 
   }
+
+  public function getDatesFromRange(Request $request)
+  {
+    // dd($request->student['id'  ]);
+    $validator = Validator::make($request->all(), [
+      'institute_id'=>'required|exists:institutes,id',
+      'userId'=>'required|exists:users,id',
+      'classroom'=>'required|exists:class_rooms,id',
+      'start_date'=>'required|date',
+      'end_date'=>'required|date',
+  ]);
+    if ($validator->fails()) {
+        return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+    }
+    $user_id = $request->userId;
+    $institute_id = $request->institute_id;
+    $myclassroom = MyClassRoom::where(['class_id'=>$request->classroom,'institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true]);
+
+    $period = new DatePeriod(
+     new DateTime($request->start_date),
+     new DateInterval('P1D'),
+     new DateTime($request->end_date)
+    );
+    $data = [];
+    foreach ($period as $key => $value) {
+        $date = $value->format('Y-m-d');
+        $attendance = Attendance::where(['class_room_id'=>$request->classroom,'institute_id'=>$request->institute_id])->whereDate('date',$date)->first();
+        $records =  $attendance->students_list->map(function($row){
+            return [
+              '_id'=>$row->student_id,
+              'user'=>$row->student->user->id,
+              'first_name'=>$row->student->user->first_name,
+              'last_name'=>$row->student->user->last_name,
+              'status'=>$row->status,
+              'avatar'=>$row->student->avatar,
+            ];
+        });
+        $data[] = ['date'=>$date,'records'=>$records];
+      }
+        return response()->json(['status'=>'OK','data'=>$data,'errors'=>''], 200);
+}
+
 }
