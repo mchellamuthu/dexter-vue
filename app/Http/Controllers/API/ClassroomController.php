@@ -198,7 +198,7 @@ class ClassroomController extends Controller
     public function destroy(Request $request)
     {
         $validator = Validator::make($request->all(), [
-        'userId'=>'required|exists:uinfosers,id',
+        'userId'=>'required|exists:users,id',
         'institute_id'=>'required|exists:institutes,id',
         'classroom'=>'required|exists:class_rooms,id',
     ]);
@@ -219,7 +219,7 @@ class ClassroomController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function restore(Request $inforequest)
+    public function restore(Request $request)
     {
         $validator = Validator::make($request->all(), [
         'userId'=>'required|exists:users,id',
