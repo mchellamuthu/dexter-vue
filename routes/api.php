@@ -89,6 +89,8 @@ Route::get('/skillInfo','API\SkillController@show');
 Route::post('/studentPoints','API\PointsController@store');
 Route::post('/classroomPoints','API\PointsController@ClassRoomPoints');
 Route::post('/groupPoints','API\PointsController@groupPoints');
+Route::get('/getStudentPoints','API\PointsController@getStudentPoints');
+Route::get('/getClassRoomPoints','API\PointsController@getClassRoomPoints');
 // STUDENT ATTENDANCE
 Route::post('/attendance','API\AttendanceController@store');
 Route::get('/getAttendance','API\AttendanceController@GetAttendance');
