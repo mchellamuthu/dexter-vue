@@ -117,7 +117,8 @@ class StudentController extends Controller
         $student   =  Student::where(['id'=>$request->student,'class_room_id'=>$request->classroom,'institute_id'=>$institute_id])->firstOrFail();
         $user = $student->user;
         $points = ['positive'=>$student->points->where('type','Positive')->sum('point'),'negative'=>$student->points->where('type','Negative')->sum('point')];
-        return response()->json(['status'=>'OK','data'=>$student,'points'=>$points,'errors'=>''], 200);
+        $points_history = $student->points;
+        return response()->json(['status'=>'OK','data'=>$student,'points_history'=>$points_history,'points'=>$points,'errors'=>''], 200);
     }
 
     /**
