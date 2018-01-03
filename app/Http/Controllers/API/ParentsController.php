@@ -55,7 +55,7 @@ class ParentsController extends Controller
       $student   =  Student::where(['id'=>$request->student,'class_room_id'=>$request->classroom])->firstOrFail();
       $sync_data = [$request->student=>['status'=>'Invite_Send','class_room_id'=>$request->classroom,'institute_id'=>$request->institute_id]];
       $parents->students()->sync($sync_data);
-      return response()->json(['status'=>'OK','data'=>$parents,'errors'=>''], 200);
+      return response()->json(['status'=>'OK','data'=>$student->parents,'errors'=>''], 200);
     }
 
 

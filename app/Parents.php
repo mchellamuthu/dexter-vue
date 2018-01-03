@@ -11,6 +11,6 @@ class Parents extends Model
     protected $fillable = ['user_id'];
     public function students()
     {
-        return $this->belongsToMany('Student', 'parent_students')->withTimestamps();
+        return $this->belongsToMany('App\Student', 'parent_students')->withPivot(['status','class_room_id','institute_id'])->withTimestamps();
     }
 }
