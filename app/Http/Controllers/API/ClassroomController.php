@@ -13,6 +13,7 @@ use App\TeacherGroup;
 use App\TeacherGroupMember;
 use Validator;
 use App\MyInstitute;
+use App\Point;
 class ClassroomController extends Controller
 {
     /**
@@ -138,6 +139,7 @@ class ClassroomController extends Controller
           'section'=>$classroom->section,
         ],
         'students'=>$students,
+        'points'=> Point::where('class_room_id',$request->classroom)->get(),
       ];
       return response()->json(['status'=>'OK','data'=>$classroom_data,'errors'=>$validator->messages()], 200);
     }
@@ -196,7 +198,7 @@ class ClassroomController extends Controller
     public function destroy(Request $request)
     {
         $validator = Validator::make($request->all(), [
-        'userId'=>'required|exists:users,id',
+        'userId'=>'required|exists:uinfosers,id',
         'institute_id'=>'required|exists:institutes,id',
         'classroom'=>'required|exists:class_rooms,id',
     ]);
@@ -217,7 +219,7 @@ class ClassroomController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function restore(Request $request)
+    public function restore(Request $inforequest)
     {
         $validator = Validator::make($request->all(), [
         'userId'=>'required|exists:users,id',
