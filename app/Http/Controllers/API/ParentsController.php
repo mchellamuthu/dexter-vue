@@ -53,7 +53,7 @@ class ParentsController extends Controller
       $user  = User::firstOrCreate(['email'=>$email]);
       $parents = Parents::firstOrCreate(['user_id'=>$user->id]);
       $student   =  Student::where(['id'=>$request->student,'class_room_id'=>$request->classroom])->firstOrFail();
-      $sync_data = [$request->student=>['status'=>'Invite_Send','class_room_id'=>$request->classroom]];
+      $sync_data = [$request->student=>['status'=>'Invite_Send','class_room_id'=>$request->classroom,'institute_id'=>$request->institute_id]];
       $parents->students()->sync($sync_data);
       return response()->json(['status'=>'OK','data'=>$parents,'errors'=>''], 200);
     }

@@ -16,7 +16,6 @@ class CreateParentsTable extends Migration
         Schema::create('parents', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->uuid('user_id');
-            $table->uuid('institute_id');
             $table->timestamps();
         });
     }

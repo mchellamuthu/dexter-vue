@@ -17,6 +17,7 @@ class CreateParentStudentsTable extends Migration
             $table->uuid('parents_id');
             $table->uuid('student_id');
             $table->uuid('class_room_id');
+            $table->uuid('institute_id');
             $table->enum('status',['Connected','Invite_Send','Blocked']);
             $table->timestamps();
         });
