@@ -15,7 +15,6 @@ use Validator;
 use App\StudentGroup;
 use App\StudentStory;
 use App\MyInstitute;
-use App\Like;
 
 class StoriesController extends Controller
 {
@@ -37,27 +36,9 @@ class StoriesController extends Controller
         $user_id = $request->userId;
         $institute_id = $request->institute_id;
         // $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
-        /*$myclassroom = MyClassRoom::where(['class_id'=>$request->classroom,'institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true]);*/
+        // $myclassroom = MyClassRoom::where(['class_id'=>$request->classroom,'institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
         $classroom = ClassRoom::where(['id'=>$request->classroom,'institute_id'=>$request->institute_id])->firstOrFail();
-
-        $stories = $classroom->stories->map(function ($item){
-          $user = request()->input('userId');
-          $likes = $item->likes->where('user_id',$user)->count();
-          if ($likes > 0) {
-            $liked =true;
-          }else{
-            $liked =false;
-          }
-            return [
-            'id'=>$item->id,
-            'body'=>$item->body,
-            'created'=>(string) $item->created_at,
-            'poster'=>$item->poster,
-            'likes'=>$item->likes->count(),
-            'comments'=>$item->comments,
-            'liked'=>$liked,
-            ];
-        });
+        $stories = $classroom->stories;
         return response()->json(['status'=>'OK','data'=>$stories,'errors'=>''], 200);
     }
 
@@ -74,6 +55,7 @@ class StoriesController extends Controller
         'institute_id'=>'required|exists:institutes,id',
         'userId'=>'required|exists:users,id',
         'classroom'=>'required|exists:class_rooms,id',
+        'title'=>'required|string',
         'body'=>'required|string',
         'student'=>'exists:students,id',
         'group'=>'exists:student_groups,id'
@@ -91,6 +73,7 @@ class StoriesController extends Controller
         'institute_id'=>$institute_id,
         'user_id'=>$user_id,
         'class_room_id'=>$request->classroom,
+        'title'=>$request->title,
         'body'=>$request->body,
       ]);
         if (!empty($request->poster)) {
@@ -180,7 +163,7 @@ class StoriesController extends Controller
       }
       $user_id = $request->userId;
       $institute_id = $request->institute_id;
-      $story_id = $request->story;
+      $story_id = $request->$story;
       // $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
       // $myclassroom = MyClassRoom::where(['class_id'=>$request->classroom,'institute_id'=>$request->institute_id]);
       $classroom = ClassRoom::where(['id'=>$request->classroom,'institute_id'=>$request->institute_id])->firstOrFail();
@@ -199,7 +182,7 @@ class StoriesController extends Controller
                 $status = 'Liked';
             }
         }
-        $count = $post->likes->count();
+        $count = $post->likes->whereDeletedAt(null)->count();
         return response()->json(['status'=>'OK','data'=>$status,'count'=>$count]);
     }
 
@@ -217,13 +200,13 @@ class StoriesController extends Controller
       }
       $user_id = $request->userId;
       $institute_id = $request->institute_id;
-      $story_id = $request->story;
+      $story_id = $request->$story;
       // $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
       // $myclassroom = MyClassRoom::where(['class_id'=>$request->classroom,'institute_id'=>$request->institute_id]);
       $classroom = ClassRoom::where(['id'=>$request->classroom,'institute_id'=>$request->institute_id])->firstOrFail();
       $post = Story::where(['id'=>$story_id,'class_room_id'=>$request->classroom])->firstOrFail();
       $comment = $request->comment;
-      $post->comments()->create(['user_id'=>$user_id,'body'=>$comment]);
+      $post->comments()->create(['user_id'=>$user_id,'comment'=>$comment]);
       return response()->json(['status'=>'OK','data'=>$comment]);
     }
 
@@ -239,6 +222,7 @@ class StoriesController extends Controller
         'userId'=>'required|exists:users,id',
         'classroom'=>'required|exists:class_rooms,id',
         'story'=>'required|exists:stories,id',
+        'title'=>'required|string',
         'body'=>'required|string',
 
     ]);
@@ -247,33 +231,14 @@ class StoriesController extends Controller
         }
         $user_id = $request->userId;
         $classroom = ClassRoom::where(['id'=>$request->classroom])->firstOrFail();
-        $story = Story::where(['id'=>$request->story,'user_id'=>$user_id,'class_room_id'=>$request->classroom])->firstOrFail();
+        $story = Story::where(['id'=>$request->story,'user_id'=>$user_id,'class_room_id'=>$request->class_room_id])->firstOrFail();
+        $story->title = $request->title;
         $story->body = $request->body;
         if (!empty($request->poster)) {
             $story->poster = $request->poster;
         }
         $story->save();
-        $story = collect([$story]);
-        // return $story;
-        $stories = $story->map(function ($item){
-          $user = request()->input('userId');
-          $likes = $item->likes->where('user_id',$user)->count();
-          if ($likes > 0) {
-            $liked =true;
-          }else{
-            $liked =false;
-          }
-            return [
-            'id'=>$item->id,
-            'body'=>$item->body,
-            'created'=>(string) $item->created_at,
-            'poster'=>$item->poster,
-            'likes'=>$item->likes->count(),
-            'comments'=>$item->comments,
-            'liked'=>$liked,
-            ];
-        });
-        return response()->json(['status'=>'OK','data'=>$stories,'errors'=>''], 200);
+        return response()->json(['status'=>'OK','data'=>$story,'errors'=>''], 200);
     }
 
     /**
@@ -295,7 +260,7 @@ class StoriesController extends Controller
         }
         $user_id = $request->userId;
         $classroom = ClassRoom::where(['id'=>$request->classroom])->firstOrFail();
-        $story = Story::where(['id'=>$request->story,'user_id'=>$user_id,'class_room_id'=>$request->classroom])->firstOrFail();
+        $story = Story::where(['id'=>$request->story,'user_id'=>$user_id,'class_room_id'=>$request->class_room_id])->firstOrFail();
         $story->forceDelete();
         return response()->json(['status'=>'OK','data'=>'','errors'=>''], 200);
     }

@@ -23,7 +23,7 @@ class ParentsController extends Controller
      */
     public function index(Request $request)
     {
-        
+
     }
 
 
@@ -55,14 +55,7 @@ class ParentsController extends Controller
       $student   =  Student::where(['id'=>$request->student,'class_room_id'=>$request->classroom])->firstOrFail();
       $sync_data = [$request->student=>['status'=>'Invite_Send','class_room_id'=>$request->classroom,'institute_id'=>$request->institute_id]];
       $parents->students()->sync($sync_data);
-      $parents_list =  $student->parents->map(function($item){
-          return [
-          '_id'=>$item->id,
-          'user'=>$item->user,
-          'status'=>$item->pivot->status
-          ];
-      });
-      return response()->json(['status'=>'OK','data'=>$parents_list,'errors'=>''], 200);
+      return response()->json(['status'=>'OK','data'=>$student->parents,'errors'=>''], 200);
     }
 
 
