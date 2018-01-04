@@ -13,7 +13,7 @@ class ClassRoom extends Model
 
     public $incrementing = false;
 
-    protected $fillable = ['class_name', 'avatar', 'institute_id', 'class_teacher', 'status', 'user_id'];
+    protected $fillable = ['class_name', 'avatar', 'institute_id', 'class_teacher', 'status','section', 'user_id'];
     protected $hidden = ['skills','students','stories'];
 
     public function groups()

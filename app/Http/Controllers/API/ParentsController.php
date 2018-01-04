@@ -23,7 +23,7 @@ class ParentsController extends Controller
      */
     public function index(Request $request)
     {
-        
+
     }
 
 
@@ -74,7 +74,16 @@ class ParentsController extends Controller
      */
     public function show(Parents $parents)
     {
-        //
+      $validator = Validator::make($request->all(), [
+      'userId'=>'required|exists:users,id',
+      'parents'=>'required|exists:parents,id',
+    ]);
+      if ($validator->fails()) {
+          return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+      }
+      $user_id = $request->userId;
+      $parents = Parents::where('id',$request->parents)->firstOrFail();
+      return $parents;
     }
 
     /**

@@ -234,7 +234,24 @@ class PointsController extends Controller
       $end_date->modify("+1 day");
       $classroom =  MyClassRoom::where(['class_id'=>$request->classroom,'institute_id'=>$institute_id,'approved'=>true])->firstOrFail();
       $history = Point::whereBetween('created_at',[$start_date,$end_date])->get();
-      return response()->json(['status'=>'OK','data'=>$history,'errors'=>'']);
+      if ($history->count() > 0) {
+        $records = $history->map(function($item){
+          return [
+            '_id'=>$item->id,
+            'skill_name'=>$item->skill_name,
+            'student_first_name'=>$item->student->user->first_name,
+            'student_last_name'=>$item->student->user->last_name,
+            'type'=>$item->type,
+            'teacher_first_name'=>$item->user->first_name,
+            'teacher_last_name'=>$item->user->last_name,
+            'added_at'=>(string)$item->created_at,
+            'point'=>$item->point,
+          ];
+        });
+      }else{
+        $records = [];
+      }
+      return response()->json(['status'=>'OK','data'=>$records,'errors'=>'']);
     }
 
     /**

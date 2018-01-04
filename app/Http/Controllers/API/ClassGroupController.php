@@ -154,4 +154,6 @@ class ClassGroupController extends Controller
         $class_group->delete();
         return response()->json(['status'=>'success','msg'=>'Class group was removed successfully!']);
     }
+
+    
 }
