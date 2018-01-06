@@ -13,7 +13,7 @@ use App\ClassRoom;
 use App\MyClassRoom;
 use Validator;
 use App\MyInstitute;
-
+use App\ParentInvite;
 class ParentsController extends Controller
 {
     /**
@@ -55,6 +55,16 @@ class ParentsController extends Controller
       $student   =  Student::where(['id'=>$request->student,'class_room_id'=>$request->classroom])->firstOrFail();
       $sync_data = [$request->student=>['status'=>'Invite_Send','class_room_id'=>$request->classroom,'institute_id'=>$request->institute_id]];
       $parents->students()->sync($sync_data);
+      // Generate Code
+      $code = 'P'.strtoupper(substr(uniqid(),0,6));
+      $InviteCode = ParentInvite::updateOrCreate([
+        'parents_id'=>$parents->id,
+        'student_id'=>$request->student,
+        'class_room_id'=>$request->classroom,
+        'user_id'=>$request->user_id,
+        'code'=>$code,
+      ]);
+      
       $parents_list =  $student->parents->map(function($item){
           return [
           '_id'=>$item->id,

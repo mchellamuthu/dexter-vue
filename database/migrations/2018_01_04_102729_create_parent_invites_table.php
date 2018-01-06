@@ -19,8 +19,8 @@ class CreateParentInvitesTable extends Migration
             $table->uuid('student_id');
             $table->uuid('class_room_id');
             $table->uuid('user_id');
-            $table->string('code');
-            $table->timestamp('expired_at');
+            $table->string('code')->unique();
+            $table->timestamp('expired_at')->nullable();
             $table->timestamps();
         });
     }

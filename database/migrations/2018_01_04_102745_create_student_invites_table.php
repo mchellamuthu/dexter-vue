@@ -16,11 +16,10 @@ class CreateStudentInvitesTable extends Migration
         Schema::create('student_invites', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->uuid('student_id');
-            $table->uuid('parents_id');
             $table->uuid('class_room_id');
             $table->uuid('user_id');
             $table->string('code');
-            $table->timestamp('expired_at');
+            $table->timestamp('expired_at')->nullable();
             $table->timestamps();
         });
     }

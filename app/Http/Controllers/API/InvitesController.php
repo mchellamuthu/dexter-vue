@@ -17,20 +17,28 @@ use App\StudentInvite;
 class InvitesController extends Controller
 {
 
-  public function InviteParent()
+  public function DownloadInvites()
   {
     $validator = Validator::make($request->all(), [
     'userId'=>'required|exists:users,id',
     'classroom'=>'required|exists:class_rooms,id',
-    'student'=>'required|exists:students,id',
-    'parent'=>'required|exists:parents,id',
+    'type'=>'required|in:Parent,Student',
   ]);
     if ($validator->fails()) {
         return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
     }
 
     $userId = $request->userId;
+
+
+  }
+
+
+
+  public function downloadParentsCode($classroom){
     
+  }
+  public function downloadStudentsCode($classroom){
 
   }
 }
