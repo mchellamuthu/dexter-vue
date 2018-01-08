@@ -109,3 +109,10 @@ Route::get('/GroupStories','API\StoriesController@GroupStories');
 
 // Parent Invite
 Route::post('/inviteParent','API\ParentsController@Invite');
+
+/**
+ * Message Routes
+ */
+
+Route::post('/sendMessage', 'API\MessageController@send');
+Route::get('/getMessage', 'API\MessageController@index');

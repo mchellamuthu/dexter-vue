@@ -57,4 +57,15 @@ class User extends Authenticatable
     public function classrooms(){
       return $this->hasMany('App\MyClassRoom');
     }
+
+    public function inbox()
+    {
+      return $this->hasMany('App\Message','msg_to','id');
+    }
+
+    public function send()
+    {
+      return $this->hasMany('App\Message','msg_from','id');
+    }
+
 }
