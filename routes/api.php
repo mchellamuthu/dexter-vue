@@ -118,3 +118,7 @@ Route::post('/sendMessage', 'API\MessageController@send');
 Route::get('/getMessage', 'API\MessageController@index');
 Route::get('/inviteTeacher', 'API\ClassroomController@inviteteachers');
 Route::get('/getAllteachers', 'API\ClassroomController@getteachers');
+
+// Download invite codes
+
+Route::get('/downloadInvites','API\InvitesController@DownloadInvites');

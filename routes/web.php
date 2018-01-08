@@ -1,5 +1,5 @@
 <?php
-
+// use PDF;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +15,8 @@
       {
         return view('welcome');
       });
+
+      
 // Route::group(['domain'=>'teach.'.$domain], function()
 // {
 //     Route::get('/', 'HomeController@index');

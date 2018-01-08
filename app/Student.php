@@ -12,7 +12,7 @@ class Student extends Model
     use Uuids;
 
     public $incrementing = false;
-    protected $fillable = ['user_id','institute_id','avatar','class_room_id'];
+    protected $fillable = ['user_id','institute_id','avatar','class_room_id','student_code'];
 
     public function user()
     {
@@ -37,6 +37,8 @@ class Student extends Model
     {
       return $this->belongsToMany('Attendance','users_attendance')->withTimestamps();
     }
+    
+
     public function stories()
     {
         return $this->hasMany('App\StudentStory', 'student_id', 'id');

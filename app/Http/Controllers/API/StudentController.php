@@ -12,6 +12,7 @@ use App\ClassRoom;
 use App\MyClassRoom;
 use Validator;
 use App\MyInstitute;
+use App\StudentCode;
 
 class StudentController extends Controller
 {
@@ -88,7 +89,16 @@ class StudentController extends Controller
             $avatar = $request->input('avatar')[$key];
             $mobileno = $request->input('mobile')[$key];
             $user  = User::firstOrCreate(['email'=>$email], ['first_name'=>$first_name,'last_name'=>$last_name]);
-            $student[] = Student::firstOrCreate(['user_id'=>$user->id,'rollno'=>$roll_no,'institute_id'=>$institute_id,'class_room_id'=>$request->classroom], ['avatar'=>$avatar]);
+            $code = strtoupper(substr(uniqid('P'), 0 ,6));
+
+            $student_row = Student::firstOrCreate(['user_id'=>$user->id,'rollno'=>$roll_no,'institute_id'=>$institute_id,'class_room_id'=>$request->classroom], ['avatar'=>$avatar,'student_code'=>$code]);
+            StudentCode::create([
+              'user_id'=>$request->userId,
+              'student_id'=>$student_row->id,
+              'class_room_id'=>$request->classroom,
+              'code'=>$code
+            ]);
+            $student[] = $student_row;
         }
         if (!empty($student)) {
               $student = collect($student);

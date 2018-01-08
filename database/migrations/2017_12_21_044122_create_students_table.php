@@ -19,6 +19,7 @@ class CreateStudentsTable extends Migration
           $table->uuid('institute_id');
           $table->uuid('class_room_id');
           $table->string('avatar');
+          $table->string('student_code')->nullable();
           $table->softDeletes();
           $table->timestamps();
         });
