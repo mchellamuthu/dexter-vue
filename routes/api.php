@@ -116,3 +116,5 @@ Route::post('/inviteParent','API\ParentsController@Invite');
 
 Route::post('/sendMessage', 'API\MessageController@send');
 Route::get('/getMessage', 'API\MessageController@index');
+Route::get('/inviteTeacher', 'API\ClassroomController@inviteteachers');
+Route::get('/getAllteachers', 'API\ClassroomController@getteachers');

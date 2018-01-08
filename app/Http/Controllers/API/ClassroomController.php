@@ -262,4 +262,64 @@ class ClassroomController extends Controller
         });
         return response()->json(['status'=>'success','data'=>$classrooms,'msg'=>'Classroom was restored successfully!']);
     }
+
+
+    public function inviteteachers(Request $request)
+    {
+      $validator = Validator::make($request->all(), [
+      'userId'=>'required|exists:users,id',
+      'institute_id'=>'required|exists:institutes,id',
+      'classroom'=>'required|exists:class_rooms,id',
+      'teacher'=>'required|exists:teachers,id',
+      ]);
+
+      if ($validator->fails()) {
+          return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+      }
+      $teacher = Teacher::where('id',$request->teacher)->firstOrFail();
+      $MyClassRoom = MyClassRoom::create(
+        ['user_id'=>$teacher->user_id,
+        'class_id'=>$request->classroom,
+        'role'=>'Teacher',
+        'approved'=>true,
+        'institute_id'=>$request->institute_id]
+      );
+      return response()->json(['status'=>'success','data'=>$MyClassRoom,'msg'=>'Teacher was invited successfully!']);
+    }
+
+    public function getteachers(Request $request)
+    {
+      $validator = Validator::make($request->all(), [
+      'userId'=>'required|exists:users,id',
+      'institute_id'=>'required|exists:institutes,id',
+      'classroom'=>'required|exists:class_rooms,id',
+      ]);
+
+      if ($validator->fails()) {
+          return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+      }
+      // $teachers = Teacher::where('institute_id',$request->institute_id)->firstOrFail();
+
+      $classrooms = MyClassRoom::where(
+        [
+          'class_id'=>$request->classroom,
+          'role'=>'Teacher',
+        ]
+      )->get();
+
+      if ($classrooms->count() > 0) {
+        $teachers = $classrooms->map(function($item){
+            return [
+              'id'=>$item->user_id,
+              'email'=>$item->user->email,
+              'connected'=>(boolean) $item->approved
+            ];
+        });
+      }else{
+        $teachers = [];
+      }
+      return response()->json(['status'=>'OK','data'=>$teachers,'errors'=>''], 200);
+    }
+
+
 }
