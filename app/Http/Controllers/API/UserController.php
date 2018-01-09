@@ -56,6 +56,7 @@ class UserController extends Controller
             'api_token'=>$item->api_token,
             'avatar'=>$item->avatar,
             'role'=>$item->role,
+            'parents'=>$item->parent,
             'institute'=>$institute_data
 
         ];

@@ -1,6 +1,7 @@
 <?php
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+
 // Avatars Routes
 
 /**
@@ -122,12 +123,28 @@ Route::get('/parentsInfo', function(Request $request)
   $user_id = $request->userId;
   $parents = \App\Parents::where('id',$request->parents)->firstOrFail();
   $parents->students;
+  return response()->json(['status'=>'OK','data'=>$parents,'errors'=>''], 200);
+});
 
-    return response()->json(['status'=>'OK','data'=>$parents,'errors'=>''], 200);
+
+Route::get('/userParents', function(Request $request)
+{
+  $validator = Validator::make($request->all(), [
+  'userId'=>'required|exists:users,id',
+  'parents'=>'required|exists:parents,id',
+]);
+  if ($validator->fails()) {
+      return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+  }
+  $user_id = $request->userId;
+  $parents = \App\Parents::where('id',$request->parents)->firstOrFail();
+  $parents->students;
+  return response()->json(['status'=>'OK','data'=>$parents,'errors'=>''], 200);
 });
 
 
 Route::post('/inviteParent','API\ParentsController@Invite');
+
 
 /**
  * Message Routes
@@ -141,3 +158,22 @@ Route::get('/getAllteachers', 'API\ClassroomController@getteachers');
 // Download invite codes
 
 Route::get('/downloadInvites','API\InvitesController@DownloadInvites');
+
+Route::post('/parentStories','API\StoriesController@parentStories');
+Route::get('/verifyCode', function(Request $request)
+{
+  $validator = Validator::make($request->all(), [
+  'userId'=>'required|exists:users,id',
+  'code'=>'required|exists:student_codes,code',
+]);
+  if ($validator->fails()) {
+      return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+  }
+  $code = \App\StudentCode::where('code',$request->code)->firstOrFail();
+  $classroom = $code->classroom;
+  $parent = \App\Parents::where(['user_id'=>$request->userId])->first();
+  $sync_data = [$code->student_id=>['status'=>'Connected','class_room_id'=>$classroom->id,'institute_id'=>$classroom->institute_id]];
+  $parent->students()->sync($sync_data);
+  return response()->json(['status'=>'OK','data'=>['classroom'=>$classroom,'student'=>$code->student],'errors'=>''], 200);
+
+});

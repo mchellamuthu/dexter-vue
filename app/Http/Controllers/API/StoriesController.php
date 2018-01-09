@@ -61,6 +61,48 @@ class StoriesController extends Controller
         return response()->json(['status'=>'OK','data'=>$stories,'errors'=>''], 200);
     }
 
+    public function parentStories(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+        'institute_id'=>'required|exists:institutes,id',
+        'userId'=>'required|exists:users,id',
+        'classrooms.*'=>'required|exists:class_rooms,id',
+    ]);
+        if ($validator->fails()) {
+            return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+        }
+        $user_id = $request->userId;
+        $institute_id = $request->institute_id;
+        // $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
+        /*$myclassroom = MyClassRoom::where(['class_id'=>$request->classroom,'institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true]);*/
+        // $classroom = ClassRoom::where(['id'=>$request->classroom,'institute_id'=>$request->institute_id])->firstOrFail();
+        $story =  Story::whereIn('class_room_id',$request->classrooms)->get();
+        if ($story->count() > 0) {
+          # code...
+          $stories = $story->map(function ($item){
+            $user = request()->input('userId');
+            $likes = $item->likes->where('user_id',$user)->count();
+            if ($likes > 0) {
+              $liked =true;
+            }else{
+              $liked =false;
+            }
+            return [
+              'id'=>$item->id,
+              'body'=>$item->body,
+              'created'=>(string) $item->created_at,
+              'poster'=>$item->poster,
+              'likes'=>$item->likes->count(),
+              'comments'=>$item->comments,
+              'liked'=>$liked,
+            ];
+          });
+        }else{
+          $stories = '';
+        }
+        return response()->json(['status'=>'OK','data'=>$stories,'errors'=>''], 200);
+    }
+
 
     /**
      * Store a newly created resource in storage.

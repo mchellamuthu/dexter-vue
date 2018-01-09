@@ -68,4 +68,8 @@ class User extends Authenticatable
       return $this->hasMany('App\Message','msg_from','id');
     }
 
+    public function parent(){
+      return $this->hasOne('App\Parents','user_id','id');
+    }
+
 }
