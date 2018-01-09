@@ -165,6 +165,26 @@ class StoriesController extends Controller
         $stories = $studentGroup->stories;
         return response()->json(['status'=>'OK','data'=>$stories,'errors'=>''], 200);
     }
+    public function classStories(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+        'institute_id'=>'required|exists:institutes,id',
+        'userId'=>'required|exists:users,id',
+        'classroom'=>'required|exists:class_rooms,id',
+        'group'=>'required|exists:student_groups,id',
+    ]);
+        if ($validator->fails()) {
+            return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+        }
+        $user_id = $request->userId;
+        $institute_id = $request->institute_id;
+        // $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
+        $myclassroom = MyClassRoom::where(['class_id'=>$request->classroom,'institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true]);
+        $classroom = ClassRoom::where(['id'=>$request->classroom,'institute_id'=>$request->institute_id])->firstOrFail();
+        $studentGroup = StudentGroup::where(['id'=>$request->group,'class_room_id'=>$request->classroom])->firstOrFail();
+        $stories = $studentGroup->stories;
+        return response()->json(['status'=>'OK','data'=>$stories,'errors'=>''], 200);
+    }
 
 
     public function likeStory(Request $request)

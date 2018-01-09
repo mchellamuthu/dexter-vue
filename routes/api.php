@@ -1,5 +1,6 @@
 <?php
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 // Avatars Routes
 
 /**
@@ -108,6 +109,24 @@ Route::get('/GroupStories','API\StoriesController@GroupStories');
 
 
 // Parent Invite
+// Route::get('/parentsInfo', 'API\ParentsController@update');
+Route::get('/parentsInfo', function(Request $request)
+{
+  $validator = Validator::make($request->all(), [
+  'userId'=>'required|exists:users,id',
+  'parents'=>'required|exists:parents,id',
+]);
+  if ($validator->fails()) {
+      return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+  }
+  $user_id = $request->userId;
+  $parents = \App\Parents::where('id',$request->parents)->firstOrFail();
+  $parents->students;
+
+    return response()->json(['status'=>'OK','data'=>$parents,'errors'=>''], 200);
+});
+
+
 Route::post('/inviteParent','API\ParentsController@Invite');
 
 /**

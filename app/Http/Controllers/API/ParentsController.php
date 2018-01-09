@@ -13,7 +13,7 @@ use App\ClassRoom;
 use App\MyClassRoom;
 use Validator;
 use App\MyInstitute;
-use App\ParentInvite;
+// use App\ParentInvite;
 class ParentsController extends Controller
 {
     /**
@@ -95,8 +95,9 @@ class ParentsController extends Controller
      * @param  \App\Parents  $parents
      * @return \Illuminate\Http\Response
      */
-    public function show(Parents $parents)
+    public function show(Request $request)
     {
+      dd($request->all());
       $validator = Validator::make($request->all(), [
       'userId'=>'required|exists:users,id',
       'parents'=>'required|exists:parents,id',
@@ -106,7 +107,7 @@ class ParentsController extends Controller
       }
       $user_id = $request->userId;
       $parents = Parents::where('id',$request->parents)->firstOrFail();
-      return $parents;
+      return response()->json(['status'=>'OK','data'=>'','errors'=>''], 200);
     }
 
     /**
