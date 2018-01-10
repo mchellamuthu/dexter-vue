@@ -159,4 +159,51 @@ class AttendanceController extends Controller
         }
         return response()->json(['status'=>'OK','data'=>$data,'errors'=>''], 200);
     }
+    public function getStudentAttendances(Request $request)
+    {
+        // dd($request->student['id'  ]);
+        $validator = Validator::make($request->all(), [
+      'student'=>'required|exists:students,id',
+      'userId'=>'required|exists:users,id',
+      'classroom'=>'required|exists:class_rooms,id',
+      'start_date'=>'required|date',
+      'end_date'=>'required|date',
+  ]);
+        if ($validator->fails()) {
+            return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+        }
+        $user_id = $request->userId;
+        $myclassroom = MyClassRoom::where(['class_id'=>$request->classroom])->first();
+        $start_date =     new DateTime($request->start_date);
+        $end_date =     new DateTime($request->end_date);
+        $end_date->modify("+1 day");
+        $period = new DatePeriod(
+      $start_date,
+     new DateInterval('P1D'),
+     $end_date
+    );
+        $data = [];
+        foreach ($period as $key => $value) {
+            $date = $value->format('Y-m-d');
+            $attendance = Attendance::where(['class_room_id'=>$request->classroom])->whereDate('date', $date)->first();
+            if (!empty($attendance)) {
+              $att_records = $attendance->students_list->where('student_id',$request->student);
+                $records =  $att_records->map(function ($row) {
+                    return [
+                '_id'=>$row->student_id,
+                'user'=>$row->student->user->id,
+                'first_name'=>$row->student->user->first_name,
+                'last_name'=>$row->student->user->last_name,
+                'status'=>$row->status,
+                'avatar'=>$row->student->avatar,
+              ];
+                });
+            } else {
+                $records = [];
+            }
+
+            $data[] = ['date'=>$date,'records'=>$records];
+        }
+        return response()->json(['status'=>'OK','data'=>$data,'errors'=>''], 200);
+    }
 }

@@ -160,6 +160,7 @@ Route::get('/getAllteachers', 'API\ClassroomController@getteachers');
 Route::get('/downloadInvites','API\InvitesController@DownloadInvites');
 
 Route::post('/parentStories','API\StoriesController@parentStories');
+Route::get('/getStudentAttendances','API\AttendanceController@getStudentAttendances');
 Route::get('/verifyCode', function(Request $request)
 {
   $validator = Validator::make($request->all(), [
