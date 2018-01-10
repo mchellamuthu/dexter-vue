@@ -13,7 +13,7 @@ class StudentStory extends Model
 
     public function story()
     {
-      return $this->belongsTo('App\Story');
+      return $this->belongsTo('App\Story','story_id','id');
     }
     public function student()
     {

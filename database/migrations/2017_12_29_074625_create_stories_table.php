@@ -16,8 +16,8 @@ class CreateStoriesTable extends Migration
         Schema::create('stories', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->uuid('user_id');
-            $table->uuid('institute_id');
-            $table->uuid('class_room_id');
+            $table->uuid('institute_id')->nullable();
+            $table->uuid('class_room_id')->nullable();
             $table->uuid('student_group_id')->nullable();
             $table->longText('title');
             $table->longText('body');

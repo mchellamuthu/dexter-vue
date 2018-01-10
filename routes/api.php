@@ -179,3 +179,4 @@ Route::get('/verifyCode', function(Request $request)
 });
 
 Route::get('/studentStories','API\StoriesController@studentStories');
+Route::get('/createStudentStory','API\StoriesController@createStudentStory');

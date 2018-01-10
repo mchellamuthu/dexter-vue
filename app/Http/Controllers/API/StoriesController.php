@@ -74,21 +74,21 @@ class StoriesController extends Controller
 
         $stories = $student->stories->map(function ($item){
           $user = request()->input('userId');
-          $likes = $item->likes->where('user_id',$user)->count();
+          $likes = $item->story->likes->where('user_id',$user)->count();
           if ($likes > 0) {
             $liked =true;
           }else{
             $liked =false;
           }
             return [
-            'id'=>$item->id,
-            'body'=>$item->body,
-            'created'=>(string) $item->created_at,
-            'poster'=>$item->poster,
-            'likes'=>$item->likes->count(),
-            'comments'=>$item->comments,
-            'user'=>$item->user,
-            'classroom'=>$item->classroom,
+            'id'=>$item->story->id,
+            'body'=>$item->story->body,
+            'created'=>(string) $item->story->created_at,
+            'poster'=>$item->story->poster,
+            'likes'=>$item->story->likes->count(),
+            'comments'=>$item->story->comments,
+            'user'=>$item->story->user,
+            'classroom'=>$item->story->classroom,
             'liked'=>$liked,
             ];
         });
@@ -186,6 +186,42 @@ class StoriesController extends Controller
             }
             $story->save();
         }
+        return response()->json(['status'=>'OK','data'=>$story,'errors'=>''], 200);
+    }
+
+    public function createStudentStory(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+        'userId'=>'required|exists:users,id',
+        'classroom'=>'required|exists:class_rooms,id',
+        'body'=>'required|string',
+        'student'=>'exists:students,id',
+    ]);
+        if ($validator->fails()) {
+            return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+        }
+        $user_id = $request->userId;
+        $institute_id = $request->institute_id;
+        // $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
+        // $myclassroom = MyClassRoom::where(['class_id'=>$request->classroom,'institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true]);
+        $classroom = ClassRoom::where(['id'=>$request->classroom])->firstOrFail();
+
+        $story = Story::create([
+          'user_id'=>$user_id,
+          'body'=>$request->body,
+        ]);
+          StudentStory::create([
+              'story_id'=>$story->id,
+              'student_id'=>$request->student,
+              'class_room_id'=>$request->classroom,
+            ]);
+        if (!empty($request->poster)) {
+            $story->poster = $request->poster;
+            $story->save();
+        }
+
+
+
         return response()->json(['status'=>'OK','data'=>$story,'errors'=>''], 200);
     }
 
