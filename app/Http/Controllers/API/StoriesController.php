@@ -60,6 +60,40 @@ class StoriesController extends Controller
         });
         return response()->json(['status'=>'OK','data'=>$stories,'errors'=>''], 200);
     }
+    public function studentStories(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+        'userId'=>'required|exists:users,id',
+        'student'=>'required|exists:students,id',
+    ]);
+        if ($validator->fails()) {
+            return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+        }
+        $user_id = $request->userId;
+        $student = Student::where(['id'=>$request->student])->firstOrFail();
+
+        $stories = $student->stories->map(function ($item){
+          $user = request()->input('userId');
+          $likes = $item->likes->where('user_id',$user)->count();
+          if ($likes > 0) {
+            $liked =true;
+          }else{
+            $liked =false;
+          }
+            return [
+            'id'=>$item->id,
+            'body'=>$item->body,
+            'created'=>(string) $item->created_at,
+            'poster'=>$item->poster,
+            'likes'=>$item->likes->count(),
+            'comments'=>$item->comments,
+            'user'=>$item->user,
+            'classroom'=>$item->classroom,
+            'liked'=>$liked,
+            ];
+        });
+        return response()->json(['status'=>'OK','data'=>$stories,'errors'=>''], 200);
+    }
 
     public function parentStories(Request $request)
     {

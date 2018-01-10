@@ -177,3 +177,5 @@ Route::get('/verifyCode', function(Request $request)
   return response()->json(['status'=>'OK','data'=>['classroom'=>$classroom,'student'=>$code->student],'errors'=>''], 200);
 
 });
+
+Route::get('/studentStories','API\StoriesController@studentStories');
