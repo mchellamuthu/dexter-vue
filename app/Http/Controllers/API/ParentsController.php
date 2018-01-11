@@ -16,6 +16,7 @@ use App\MyInstitute;
 // use App\ParentInvite;
 class ParentsController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *

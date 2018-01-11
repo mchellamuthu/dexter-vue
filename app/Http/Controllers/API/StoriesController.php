@@ -94,11 +94,62 @@ class StoriesController extends Controller
         });
         return response()->json(['status'=>'OK','data'=>$stories,'errors'=>''], 200);
     }
-
     public function parentStories(Request $request)
+   {
+       $validator = Validator::make($request->all(), [
+       // 'institute_id'=>'required|exists:institutes,id',
+       'userId'=>'required|exists:users,id',
+       'classrooms.*'=>'required_without_all:students|exists:class_rooms,id',
+       'students.*'=>'required_without_all:classrooms|exists:class_rooms,id',
+   ]);
+       if ($validator->fails()) {
+           return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+       }
+       $user_id = $request->userId;
+       // $institute_id = $request->institute_id;
+       // $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
+       /*$myclassroom = MyClassRoom::where(['class_id'=>$request->classroom,'institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true]);*/
+       // $classroom = ClassRoom::where(['id'=>$request->classroom,'institute_id'=>$request->institute_id])->firstOrFail();
+       $story = Story::query();
+       if (!empty($request->classrooms)) {
+         $story->whereIn('class_room_id',$request->classrooms);
+       }
+       if (!empty($request->classrooms)) {
+         $story->orWhereHas('students',function($q){
+             $students = request()->input('students');
+             $q->whereIn('student_id',$students);
+         });
+       }
+      $parentStory = $story->get();
+       if ($parentStory->count() > 0) {
+         # code...
+         $stories = $parentStory->map(function ($item){
+           $user = request()->input('userId');
+           $likes = $item->likes->where('user_id',$user)->count();
+           if ($likes > 0) {
+             $liked =true;
+           }else{
+             $liked =false;
+           }
+           return [
+             'id'=>$item->id,
+             'body'=>$item->body,
+             'created'=>(string) $item->created_at,
+             'poster'=>$item->poster,
+             'likes'=>$item->likes->count(),
+             'comments'=>$item->comments,
+             'liked'=>$liked,
+           ];
+         });
+       }else{
+         $stories = '';
+       }
+       return response()->json(['status'=>'OK','data'=>$stories,'errors'=>''], 200);
+   }
+    public function parentStoriescombined(Request $request)
     {
         $validator = Validator::make($request->all(), [
-        'institute_id'=>'required|exists:institutes,id',
+        // 'institute_id'=>'required|exists:institutes,id',
         'userId'=>'required|exists:users,id',
         'classrooms.*'=>'exists:class_rooms,id',
         'students.*'=>'exists:students,id',
@@ -113,6 +164,7 @@ class StoriesController extends Controller
         // $classroom = ClassRoom::where(['id'=>$request->classroom,'institute_id'=>$request->institute_id])->firstOrFail();
         if (!empty($request->students)) {
           $student = StudentStory::whereIn(['id'=>$request->student])->get();
+            if ($student->count() > 0) {
           $student_stories = $student->map(function ($item){
             $user = request()->input('userId');
             $likes = $item->story->likes->where('user_id',$user)->count();
@@ -133,34 +185,43 @@ class StoriesController extends Controller
               'liked'=>$liked,
               ];
           });
+        }
+        else{
+          $student_stories = [];
+        }
         }else{
           $student_stories =[];
         }
-        $story =  Story::whereIn('class_room_id',$request->classrooms)->get();
-        if ($story->count() > 0) {
-          $stories = $story->map(function ($item){
-            $user = request()->input('userId');
-            $likes = $item->likes->where('user_id',$user)->count();
-            if ($likes > 0) {
-              $liked =true;
-            }else{
-              $liked =false;
-            }
-            return [
-              'id'=>$item->id,
-              'body'=>$item->body,
-              'created'=>(string) $item->created_at,
-              'poster'=>$item->poster,
-              'likes'=>$item->likes->count(),
-              'comments'=>$item->comments,
-              'liked'=>$liked,
-              'name'=>$item->classroom->class_name,
-              'user'=>$item->user,
-            ];
-          });
+        if(!empty($request->classrooms)){
+          $story =  Story::whereIn('class_room_id',$request->classrooms)->get();
+          if ($story->count() > 0) {
+            $stories = $story->map(function ($item){
+              $user = request()->input('userId');
+              $likes = $item->likes->where('user_id',$user)->count();
+              if ($likes > 0) {
+                $liked =true;
+              }else{
+                $liked =false;
+              }
+              return [
+                'id'=>$item->id,
+                'body'=>$item->body,
+                'created'=>(string) $item->created_at,
+                'poster'=>$item->poster,
+                'likes'=>$item->likes->count(),
+                'comments'=>$item->comments,
+                'liked'=>$liked,
+                'name'=>$item->classroom->class_name,
+                'user'=>$item->user,
+              ];
+            });
+          }else{
+            $stories = [];
+          }
         }else{
           $stories = [];
         }
+
         $result = array_merge($student_stories, $stories);
         return response()->json(['status'=>'OK','data'=>$result,'errors'=>''], 200);
     }
