@@ -88,6 +88,7 @@ class ClassroomController extends Controller
       ]);
       $MyClassRoom = MyClassRoom::create(
         ['user_id'=>$request->userId,
+        'admin'=>$request->userId,
         'class_id'=>$classroom->id,
         'role'=>'Teacher',
         'approved'=>true,
@@ -312,6 +313,9 @@ class ClassroomController extends Controller
             return [
               'id'=>$item->user_id,
               'email'=>$item->user->email,
+              'first_name'=>$item->user->first_name,
+              'last_name'=>$item->user->last_name,
+              'avatar'=>$item->user->avatar,
               'connected'=>(boolean) $item->approved
             ];
         });

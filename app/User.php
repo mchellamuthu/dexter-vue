@@ -72,4 +72,10 @@ class User extends Authenticatable
       return $this->hasOne('App\Parents','user_id','id');
     }
 
+    public function assignedclassrooms()
+    {
+      return $this->belongsToMany('App\ClassRoom','my_class_rooms','user_id','class_id')->withPivot(['id','user_id','institute_id','class_id','role','approved','admin'])->withTimestamps();
+
+    }
+
 }

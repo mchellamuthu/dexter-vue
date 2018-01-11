@@ -154,6 +154,7 @@ Route::post('/sendMessage', 'API\MessageController@send');
 Route::get('/getMessage', 'API\MessageController@index');
 Route::get('/inviteTeacher', 'API\ClassroomController@inviteteachers');
 Route::get('/getAllteachers', 'API\ClassroomController@getteachers');
+Route::post('/assignClassroom', 'API\TeacherController@assign');
 
 // Download invite codes
 
@@ -181,3 +182,4 @@ Route::get('/verifyCode', function(Request $request)
 
 Route::get('/studentStories','API\StoriesController@studentStories');
 Route::get('/createStudentStory','API\StoriesController@createStudentStory');
+Route::get('/myclassrooms','API\TeacherController@assign');

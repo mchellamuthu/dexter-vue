@@ -35,4 +35,9 @@ class ClassRoom extends Model
     {
        return $this->hasMany('App\Story','class_room_id','id')->whereDeletedAt(null);
     }
+
+    public function teachers()
+    {
+      return $this->belongsToMany('App\User','my_class_rooms','class_id','user_id')->withPivot(['id','admin','user_id','institute_id','class_id','role','approved'])->withTimestamps();
+    }
 }

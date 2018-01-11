@@ -97,19 +97,14 @@ class StoriesController extends Controller
     public function parentStories(Request $request)
    {
        $validator = Validator::make($request->all(), [
-       // 'institute_id'=>'required|exists:institutes,id',
        'userId'=>'required|exists:users,id',
        'classrooms.*'=>'required_without_all:students|exists:class_rooms,id',
-       'students.*'=>'required_without_all:classrooms|exists:class_rooms,id',
+       'students.*'=>'required_without_all:classrooms|exists:students,id',
    ]);
        if ($validator->fails()) {
            return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
        }
        $user_id = $request->userId;
-       // $institute_id = $request->institute_id;
-       // $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
-       /*$myclassroom = MyClassRoom::where(['class_id'=>$request->classroom,'institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true]);*/
-       // $classroom = ClassRoom::where(['id'=>$request->classroom,'institute_id'=>$request->institute_id])->firstOrFail();
        $story = Story::query();
        if (!empty($request->classrooms)) {
          $story->whereIn('class_room_id',$request->classrooms);
@@ -122,7 +117,6 @@ class StoriesController extends Controller
        }
       $parentStory = $story->get();
        if ($parentStory->count() > 0) {
-         # code...
          $stories = $parentStory->map(function ($item){
            $user = request()->input('userId');
            $likes = $item->likes->where('user_id',$user)->count();

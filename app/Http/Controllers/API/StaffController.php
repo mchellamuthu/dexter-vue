@@ -194,6 +194,8 @@ class StaffController extends Controller
         $staff_id = $request->staff;
         $institute = MyInstitute::where(['institute_id'=>$request->institute_id,'user_id'=>$user_id,'approved'=>true])->firstOrFail();
         $staff = Teacher::where('id', $staff_id)->firstOrFail();
+        $classrooms = MyClassRoom::where('user_id',$staff->user_id)->where('institute_id',$request->institute_id);
+        $classrooms->delete();
         $staff->groups()->detach();
         $staff->delete();
         return response()->json(['status'=>'success','msg'=>'Staff was removed successfully!']);
