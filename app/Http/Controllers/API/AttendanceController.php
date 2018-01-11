@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\API;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
@@ -159,7 +159,7 @@ class AttendanceController extends Controller
         }
         return response()->json(['status'=>'OK','data'=>$data,'errors'=>''], 200);
     }
-    public function getStudentAttendances(Request $request)
+    public function getStudentAttendancesBycount(Request $request)
     {
         // dd($request->student['id'  ]);
         $validator = Validator::make($request->all(), [
@@ -178,32 +178,69 @@ class AttendanceController extends Controller
         $end_date =     new DateTime($request->end_date);
         $end_date->modify("+1 day");
         $period = new DatePeriod(
-      $start_date,
-     new DateInterval('P1D'),
-     $end_date
-    );
+          $start_date,
+          new DateInterval('P1D'),
+          $end_date
+        );
         $data = [];
-        foreach ($period as $key => $value) {
-            $date = $value->format('Y-m-d');
-            $attendance = Attendance::where(['class_room_id'=>$request->classroom])->whereDate('date', $date)->first();
-            if (!empty($attendance)) {
-              $att_records = $attendance->students_list->where('student_id',$request->student);
-                $records =  $att_records->map(function ($row) {
-                    return [
-                '_id'=>$row->student_id,
-                'user'=>$row->student->user->id,
-                'first_name'=>$row->student->user->first_name,
-                'last_name'=>$row->student->user->last_name,
-                'status'=>$row->status,
-                'avatar'=>$row->student->avatar,
-              ];
-                });
-            } else {
-                $records = [];
-            }
+        $present_sql = DB::table('users_attendance')->where('student_id',$request->student)->whereBetween('date',[$start_date,$end_date])->where('status','Present')->get();
+        $absent_sql = DB::table('users_attendance')->where('student_id',$request->student)->whereBetween('date',[$start_date,$end_date])->where('status','Absent')->get();
+        $Late_sql = DB::table('users_attendance')->where('student_id',$request->student)->whereBetween('date',[$start_date,$end_date])->where('status','Late')->get();
+        $Leave_Early_sql = DB::table('users_attendance')->where('student_id',$request->student)->whereBetween('date',[$start_date,$end_date])->where('status','Leave_Early')->get();
 
-            $data[] = ['date'=>$date,'records'=>$records];
-        }
+        $data = [
+          'Present'=>$present_sql->count(),
+          'Absent'=>$absent_sql->count(),
+          'Late'=>$Late_sql->count(),
+          'Leave_Early'=>$Leave_Early_sql->count(),
+        ];
         return response()->json(['status'=>'OK','data'=>$data,'errors'=>''], 200);
     }
+
+    public function getStudentAttendances(Request $request)
+   {
+       // dd($request->student['id'  ]);
+       $validator = Validator::make($request->all(), [
+     'student'=>'required|exists:students,id',
+     'userId'=>'required|exists:users,id',
+     'classroom'=>'required|exists:class_rooms,id',
+     'start_date'=>'required|date',
+     'end_date'=>'required|date',
+ ]);
+       if ($validator->fails()) {
+           return response()->json(['status'=>'OK','data'=>'','errors'=>$validator->messages()], 200);
+       }
+       $user_id = $request->userId;
+       $myclassroom = MyClassRoom::where(['class_id'=>$request->classroom])->first();
+       $start_date =     new DateTime($request->start_date);
+       $end_date =     new DateTime($request->end_date);
+       $end_date->modify("+1 day");
+       $period = new DatePeriod(
+     $start_date,
+    new DateInterval('P1D'),
+    $end_date
+   );
+       $data = [];
+       foreach ($period as $key => $value) {
+           $date = $value->format('Y-m-d');
+           $attendance = Attendance::where(['class_room_id'=>$request->classroom])->whereDate('date', $date)->first();
+           if (!empty($attendance)) {
+             $att_records = $attendance->students_list->where('student_id',$request->student);
+               $records =  $att_records->map(function ($row) {
+                   return [
+               '_id'=>$row->student_id,
+               'user'=>$row->student->user->id,
+               'first_name'=>$row->student->user->first_name,
+               'last_name'=>$row->student->user->last_name,
+               'status'=>$row->status,
+               'avatar'=>$row->student->avatar,
+             ];
+               });
+           } else {
+               $records = [];
+           }
+           $data[] = ['date'=>$date,'records'=>$records];
+       }
+       return response()->json(['status'=>'OK','data'=>$data,'errors'=>''], 200);
+   }
 }
