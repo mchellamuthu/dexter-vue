@@ -39,7 +39,7 @@ class StudentController extends Controller
         // $students = $classroom->students;
 
         $students = $classroom->students->map(function($row){
-            return ['_id'=>$row->id,'avatar'=>$row->avatar,'first_name'=>$row->user->first_name,'last_name'=>$row->user->last_name,'user_id'=>$row->user_id,'points'=>$row->points->sum('point'),
+            return ['_id'=>$row->id,'avatar'=>$row->avatar,'first_name'=>$row->first_name,'last_name'=>$row->last_name,'user_id'=>$row->user_id,'points'=>$row->points->sum('point'),
             'parents'=>$row->parents->map(function($item){
                 return [
                   'id'=>$item->id,
@@ -91,7 +91,7 @@ class StudentController extends Controller
             $user  = User::firstOrCreate(['email'=>$email], ['first_name'=>$first_name,'last_name'=>$last_name]);
             $code = strtoupper(substr(uniqid('P'), 0 ,6));
 
-            $student_row = Student::firstOrCreate(['user_id'=>$user->id,'rollno'=>$roll_no,'institute_id'=>$institute_id,'class_room_id'=>$request->classroom], ['avatar'=>$avatar,'student_code'=>$code]);
+            $student_row = Student::firstOrCreate(['user_id'=>$user->id,'rollno'=>$roll_no,'institute_id'=>$institute_id,'class_room_id'=>$request->classroom], ['avatar'=>$avatar,'student_code'=>$code,'first_name'=>$first_name,'last_name'=>$last_name,'email'=>$email]);
             StudentCode::create([
               'user_id'=>$request->userId,
               'student_id'=>$student_row->id,
@@ -104,7 +104,7 @@ class StudentController extends Controller
               $student = collect($student);
               $students = $student->map(function ($row)
               {
-                return ['_id'=>$row->id,'user'=>$row->user->id,'avatar'=>$row->avatar,'first_name'=>$row->user->first_name,'last_name'=>$row->user->last_name,'points'=>$row->points->sum('point')];
+                return ['_id'=>$row->id,'user'=>$row->user->id,'avatar'=>$row->avatar,'first_name'=>$row->first_name,'last_name'=>$row->last_name,'points'=>$row->points->sum('point')];
               });
             return response()->json(['status'=>'success','data'=>$students,'msg'=>'Students has been added']);
         } else {
